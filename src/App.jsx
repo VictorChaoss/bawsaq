@@ -14,6 +14,7 @@ function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [activeTab, setActiveTab] = useState('Discover');
   const [activeFilter, setActiveFilter] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   function handleTabChange(tab) {
     setActiveTab(tab);
@@ -22,7 +23,12 @@ function App() {
 
   return (
     <div className="app-shell">
-      <Header activeTab={activeTab} setActiveTab={handleTabChange} />
+      <Header 
+        activeTab={activeTab} 
+        setActiveTab={handleTabChange} 
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
 
       <div className="page-body">
 
@@ -39,7 +45,7 @@ function App() {
                 <div style={{ paddingTop: 20 }}>
                   <TokenomicsBanner />
                 </div>
-                <StockTable filter={activeFilter} onSelectStock={setSelectedStock} />
+                <StockTable filter={activeFilter} onSelectStock={setSelectedStock} searchQuery={searchQuery} />
               </div>
             </>
           )

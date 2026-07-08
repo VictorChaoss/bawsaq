@@ -115,6 +115,33 @@ function DiscoverPage({ setActiveTab }) {
               <h3>Premium Features</h3>
               <p>Holding $BSQ unlocks premium terminal features, including advanced charting, early listing alerts, and zero-fee routing.</p>
             </div>
+            <div className="mechanic" style={{ marginTop: '16px' }}>
+              <h3 style={{ color: 'var(--text-1)' }}>Official Contract Address</h3>
+              <div style={{ 
+                background: '#000', 
+                padding: '12px', 
+                borderRadius: '6px', 
+                border: '1px solid var(--purple)', 
+                color: 'var(--text-1)', 
+                fontFamily: 'monospace', 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center', 
+                marginTop: '8px' 
+              }}>
+                <span style={{ fontSize: '13px' }}>Coming Soon...</span>
+                <button 
+                  style={{ background: 'var(--purple)', border: 'none', padding: '4px 8px', borderRadius: '4px', color: '#fff', cursor: 'pointer', fontSize: '12px', fontWeight: 'bold' }}
+                  onClick={() => {
+                    navigator.clipboard.writeText('Coming Soon...');
+                    alert('CA copied!');
+                  }}
+                >
+                  Copy
+                </button>
+              </div>
+              <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--text-3)' }}>Ensure you are only interacting with this official contract address to avoid scams.</p>
+            </div>
           </div>
         </HoverCard>
       </div>

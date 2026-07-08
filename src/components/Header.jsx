@@ -27,7 +27,7 @@ function TickerItem({ item }) {
   );
 }
 
-function Header({ activeTab, setActiveTab }) {
+function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
   const [logoError, setLogoError] = useState(false);
   const doubled = [...TICKER_DATA, ...TICKER_DATA];
 
@@ -63,19 +63,17 @@ function Header({ activeTab, setActiveTab }) {
         <div className="header-right flex items-center">
           <div className="search-wrap">
             <Search size={14} color="var(--text-3)" />
-            <input placeholder="Search token or contract..." />
+            <input 
+              placeholder="Search token..." 
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                if (e.target.value.length > 0 && activeTab !== 'Explore') {
+                  setActiveTab('Explore');
+                }
+              }}
+            />
           </div>
-          <div className="net-pill">
-            <div className="net-dot" />
-            <span>Solana</span>
-            <ChevronDown size={12} color="var(--text-2)" />
-          </div>
-          <button className="icon-btn"><Bell size={15} /></button>
-          <button className="icon-btn"><Settings size={15} /></button>
-          <button className="btn-connect">
-            <Zap size={13} style={{ display: 'inline', marginRight: 6 }} />
-            Connect
-          </button>
         </div>
       </header>
 

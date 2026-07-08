@@ -65,8 +65,14 @@ function StockRow({ stock, index, onClick }) {
   );
 }
 
-function StockTable({ filter, onSelectStock }) {
+function StockTable({ filter, onSelectStock, searchQuery }) {
   const filteredStocks = mockStocks.filter(s => {
+    if (searchQuery) {
+      return (
+        s.ticker.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        s.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
     if (filter === 'Unregulated 🏴‍☠️') return !!s.unregulated;
     if (s.unregulated) return false; // Exclude unregulated from all other tabs
     

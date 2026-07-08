@@ -83,10 +83,23 @@ function StockDetail({ stock, onBack }) {
             </div>
           </div>
         </div>
-        <div className="header-right">
+        <div className="header-right" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
           <a href={`https://pump.fun/coin/${stock.contract || ''}`} target="_blank" rel="noreferrer" className="pump-btn">
             Trade on Pump.fun <ExternalLink size={14} />
           </a>
+          {stock.contract && (
+            <div 
+              className="ca-pill" 
+              style={{ fontSize: '11px', color: 'var(--text-2)', background: 'var(--bg-2)', padding: '4px 8px', borderRadius: '4px', border: '1px solid var(--border-1)', cursor: 'pointer', userSelect: 'all' }}
+              onClick={() => {
+                const caText = stock.contract === 'PUMP' ? 'Coming Soon...' : stock.contract;
+                navigator.clipboard.writeText(caText);
+                alert('Copied CA: ' + caText);
+              }}
+            >
+              CA: {stock.contract === 'PUMP' ? 'Coming Soon...' : stock.contract}
+            </div>
+          )}
         </div>
       </div>
 
