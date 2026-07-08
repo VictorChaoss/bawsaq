@@ -152,20 +152,15 @@ function DiscoverPage({ setActiveTab }) {
             </div>
             <div className="mechanic" style={{ marginTop: '16px' }}>
               <h3 style={{ color: 'var(--text-1)' }}>Official Contract Address</h3>
-              <div 
-                  className="ca-box"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--bg-3)', padding: '6px 12px', borderRadius: '6px', border: '1px solid var(--border-2)', cursor: 'pointer', marginTop: '8px', transition: 'background 0.2s', userSelect: 'none' }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-4)'}
-                  onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-3)'}
-                  onClick={() => {
-                    navigator.clipboard.writeText('BawsaqPump11111111111111111111111111111111');
-                    alert('CA copied!');
-                  }}
-                >
-                  <span style={{ fontWeight: 'bold', color: 'var(--text-2)', fontSize: '13px' }}>CA:</span>
-                  <span style={{ fontFamily: 'monospace', fontSize: '13px', color: 'var(--text-1)' }}>BawsaqPump... (TBD)</span>
-                  <Copy size={14} style={{ opacity: 0.7, color: 'var(--text-2)', marginLeft: '4px' }} />
-                </div>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'rgba(0,255,102,0.07)', padding: '6px 14px',
+                borderRadius: '999px', border: '1px solid rgba(0,255,102,0.25)',
+                marginTop: '10px'
+              }}>
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'blink 1.5s ease-in-out infinite' }} />
+                <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', color: 'var(--green)', textTransform: 'uppercase', fontFamily: 'monospace' }}>CA Launching Soon</span>
+              </div>
               <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--text-3)' }}>Ensure you are only interacting with this official contract address to avoid scams.</p>
             </div>
           </div>

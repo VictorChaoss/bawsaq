@@ -88,23 +88,31 @@ function StockDetail({ stock, onBack }) {
             Trade on Pump.fun <ExternalLink size={14} />
           </a>
           {stock.contract && (
-            <div 
-              className="ca-box" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-1)', background: 'var(--bg-3)', padding: '6px 12px', borderRadius: '6px', border: '1px solid var(--border-2)', cursor: 'pointer', userSelect: 'none', transition: 'background 0.2s', ...((stock.contract === 'PUMP' && { color: 'var(--text-2)' }) || {}) }}
-              onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-4)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-3)'}
-              onClick={() => {
-                const caText = stock.contract === 'PUMP' ? 'BawsaqPump11111111111111111111111111111111' : stock.contract;
-                navigator.clipboard.writeText(caText);
-                alert('Copied CA: ' + caText);
-              }}
-            >
-              <span style={{ color: 'var(--text-2)' }}>CA:</span>
-              <span style={{ fontFamily: 'monospace' }}>
-                {stock.contract === 'PUMP' ? 'BawsaqPump... (TBD)' : `${stock.contract.slice(0, 8)}...${stock.contract.slice(-4)}`}
-              </span>
-              <Copy size={14} style={{ color: 'var(--text-2)', marginLeft: '4px' }} />
-            </div>
+            stock.contract === 'PUMP' ? (
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'rgba(0,255,102,0.07)', padding: '5px 12px',
+                borderRadius: '999px', border: '1px solid rgba(0,255,102,0.25)',
+                animation: 'pulse-green 2s ease-in-out infinite'
+              }}>
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'pulse-green 1.5s ease-in-out infinite' }} />
+                <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', color: 'var(--green)', textTransform: 'uppercase', fontFamily: 'monospace' }}>CA Launching Soon</span>
+              </div>
+            ) : (
+              <div
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', background: 'var(--bg-3)', padding: '6px 12px', borderRadius: '6px', border: '1px solid var(--border-2)', cursor: 'pointer', userSelect: 'none', transition: 'background 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-4)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-3)'}
+                onClick={() => {
+                  navigator.clipboard.writeText(stock.contract);
+                  alert('CA copied!');
+                }}
+              >
+                <span style={{ color: 'var(--text-2)' }}>CA:</span>
+                <span style={{ fontFamily: 'monospace' }}>{stock.contract.slice(0, 8)}...{stock.contract.slice(-4)}</span>
+                <Copy size={14} style={{ color: 'var(--text-2)', marginLeft: '4px' }} />
+              </div>
+            )
           )}
         </div>
       </div>
