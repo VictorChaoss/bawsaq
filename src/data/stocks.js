@@ -53,8 +53,7 @@ export function makeStock({ ticker, name, exchange, sector, desc, contract }) {
     buyTax: 0,
     sellTax: 0,
     liquidity: formatNum(rawMcap * 0.1),
-    holders: Math.floor(volume / 50).toLocaleString(),
-    contract: null
+    holders: Math.floor(volume / 50).toLocaleString()
   };
 }
 
