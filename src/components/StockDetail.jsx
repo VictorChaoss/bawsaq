@@ -118,14 +118,11 @@ function StockDetail({ stock, onBack }) {
       </div>
 
       {/* Clean Chart Area */}
-      <div className="minimal-chart-container" style={{ padding: (stock.contract && stock.contract !== 'PUMP') ? '0' : '20px 0 0 0' }}>
+      <div className={`minimal-chart-container${(stock.contract && stock.contract !== 'PUMP') ? '' : ' fake-chart-wrap'}`}>
         {(stock.contract && stock.contract !== 'PUMP') ? (
-          <iframe 
-            width="100%" 
-            height="400" 
-            src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark&info=0&trades=0`} 
-            frameBorder="0"
-            style={{ borderRadius: '8px' }}
+          <iframe
+            src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark&info=0&trades=0`}
+            allowFullScreen
           ></iframe>
         ) : (
           <>
