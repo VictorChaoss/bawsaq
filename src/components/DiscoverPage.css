@@ -360,3 +360,51 @@
     gap: 16px;
   }
 }
+
+/* Ticker Tape */
+.ticker-tape-container {
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border-1);
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.ticker-tape-track {
+  display: inline-flex;
+  animation: scroll-ticker 40s linear infinite;
+}
+
+.ticker-tape-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  border-right: 1px solid var(--border-2);
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.ticker-symbol {
+  font-weight: bold;
+  color: var(--text-1);
+}
+
+.ticker-price {
+  color: var(--text-2);
+}
+
+.ticker-change.text-green { color: var(--green); }
+.ticker-change.text-red { color: var(--red); }
+
+@keyframes scroll-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

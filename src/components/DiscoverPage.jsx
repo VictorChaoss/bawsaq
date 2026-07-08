@@ -1,6 +1,26 @@
 import React, { useRef } from 'react';
-import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck, Copy } from 'lucide-react';
+import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck, Copy, HelpCircle } from 'lucide-react';
+import { mockStocks } from '../data/stocks';
 import './DiscoverPage.css';
+
+function TickerTape() {
+  const scrollStocks = mockStocks.slice(0, 20);
+  return (
+    <div className="ticker-tape-container">
+      <div className="ticker-tape-track">
+        {[...scrollStocks, ...scrollStocks].map((stock, i) => (
+          <div key={i} className="ticker-item">
+            <span className="ticker-symbol">{stock.ticker}</span>
+            <span className="ticker-price">{stock.price}</span>
+            <span className={`ticker-change ${stock.change24h >= 0 ? 'text-green' : 'text-red'}`}>
+              {stock.change24h >= 0 ? '+' : ''}{stock.change24h}%
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function HoverCard({ children, className, glowColor }) {
   const cardRef = useRef(null);
@@ -29,13 +49,14 @@ function HoverCard({ children, className, glowColor }) {
 function DiscoverPage({ setActiveTab }) {
   return (
     <div className="discover-page">
+      <TickerTape />
       <div className="discover-hero">
         <div className="discover-hero-inner">
           <div className="discover-eyebrow">The Ecosystem</div>
-          <h1 className="discover-title">How BAWSAQ Works</h1>
+          <h1 className="discover-title">The GTA Stock Market, Live on Solana</h1>
           <p className="discover-subtitle">
-            BAWSAQ isn't just an exchange; it's a decentralized ecosystem. Learn how 
-            token deployments, GTA news, and the native $BSQ token fuel the platform.
+            Trade your favorite Grand Theft Auto companies as real crypto tokens. 
+            BAWSAQ is the iconic in-game stock exchange, brought on-chain to Solana.
           </p>
         </div>
       </div>
@@ -57,6 +78,20 @@ function DiscoverPage({ setActiveTab }) {
       </div>
 
       <div className="discover-grid">
+        {/* WTF is BAWSAQ? */}
+        <HoverCard glowColor="rgba(255, 255, 255, 0.15)">
+          <div className="card-icon-wrap" style={{ background: 'rgba(255,255,255,0.1)' }}>
+            <HelpCircle size={24} color="#fff" />
+          </div>
+          <h2 className="card-title">WTF is BAWSAQ?</h2>
+          <p className="card-desc">
+            If you've played GTA V, you know <strong>BAWSAQ</strong>. It's the notorious in-game stock market where players trade fictional companies like Ammu-Nation, Cluckin' Bell, and Los Santos Customs.
+          </p>
+          <p className="card-desc mt-2">
+            We brought those iconic companies out of the game and onto the Solana blockchain. You're no longer just pretending to trade—you are buying and selling real GTA-themed meme tokens on a fully functional, decentralized terminal.
+          </p>
+        </HoverCard>
+
         {/* Token Listings */}
         <HoverCard glowColor="rgba(0, 255, 102, 0.15)">
           <div className="card-icon-wrap bg-green-tint">
