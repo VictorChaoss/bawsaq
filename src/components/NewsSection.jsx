@@ -60,23 +60,62 @@ function NewsSkeleton() {
   );
 }
 
+const MOCK_NEWS = [
+  {
+    title: "Grand Theft Auto VI Trailer 1",
+    pubDate: new Date(Date.now() - 86400000 * 2).toISOString(),
+    link: "https://www.youtube.com/watch?v=QdBZY2fkU-0",
+    thumbnail: "https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg",
+    description: "Grand Theft Auto VI heads to the state of Leonida, home to the neon-soaked streets of Vice City and beyond in the biggest, most immersive evolution of the Grand Theft Auto series yet."
+  },
+  {
+    title: "The Chop Shop Update Now Available in GTA Online",
+    pubDate: new Date(Date.now() - 86400000 * 14).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/70a68d06371c66289d0a68f037f00d8b746816fa.jpg",
+    description: "Team up with Liberty City real estate mogul Yusuf Amir on an all-new illicit venture. Steal the most coveted vehicles in Los Santos."
+  },
+  {
+    title: "Earn Double Rewards in Acid Lab Sell Missions",
+    pubDate: new Date(Date.now() - 86400000 * 3).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/892e86b2404b901bc7190089a812061e86ba841b.jpg",
+    description: "This week in GTA Online, capitalize on the chaos of Los Santos and earn 2X GTA$ and RP on all Acid Lab Sell Missions."
+  },
+  {
+    title: "New Vehicle: The Gallivanter Baller ST-D",
+    pubDate: new Date(Date.now() - 86400000 * 7).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/32b005e0c52bb7a5991ee8618e0018f99059f1be.jpg",
+    description: "The highly anticipated Gallivanter Baller ST-D is now available for purchase at Legendary Motorsport."
+  },
+  {
+    title: "Community Series Update: Double GTA$ and RP",
+    pubDate: new Date(Date.now() - 86400000 * 10).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/866039537f827284b1a455a29cc88a6d091a18c6.jpg",
+    description: "Jump into the latest batch of incredible Jobs created by the community and earn double rewards all week long."
+  },
+  {
+    title: "GTA+ Member Benefits for This Month",
+    pubDate: new Date(Date.now() - 86400000 * 20).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/b5a519d1cb23bb19a4a15998a101b0b00c3b8895.jpg",
+    description: "Claim the new Ocelot Jugular, a free Chameleon Paint job, and access to classic Rockstar titles."
+  }
+];
+
 function NewsSection() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then(r => r.json())
-      .then(data => {
-        if (data.status === 'ok' && data.items?.length) {
-          setItems(data.items);
-        } else {
-          setError(true);
-        }
-      })
-      .catch(() => setError(true))
-      .finally(() => setLoading(false));
+    // Simulate network load
+    const timer = setTimeout(() => {
+      setItems(MOCK_NEWS);
+      setLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -102,14 +141,7 @@ function NewsSection() {
         </div>
       )}
 
-      {error && (
-        <div className="news-error">
-          <span>⚠</span>
-          <span>Could not load Rockstar Newswire. <a href="https://www.rockstargames.com/newswire" target="_blank" rel="noopener noreferrer">Visit directly →</a></span>
-        </div>
-      )}
-
-      {!loading && !error && (
+      {!loading && (
         <div className="news-grid">
           {items.map((item, i) => <NewsCard key={i} item={item} />)}
         </div>

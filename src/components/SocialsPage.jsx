@@ -1,0 +1,82 @@
+import React from 'react';
+import { MessageCircle, ExternalLink, MessageSquare, BookOpen } from 'lucide-react';
+import './SocialsPage.css';
+
+const XIcon = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4l16 16M4 20L20 4" />
+  </svg>
+);
+
+function SocialsPage() {
+  const links = [
+    {
+      title: 'X (Twitter)',
+      desc: 'Follow the official BAWSAQ updates, listing announcements, and market news.',
+      url: 'https://x.com/bawsaq_x',
+      icon: <XIcon size={24} />,
+      color: '#1DA1F2',
+      bgTint: 'rgba(29, 161, 242, 0.1)'
+    },
+    {
+      title: 'Pump.fun',
+      desc: 'Deploy and trade the newest tokens before they hit the broader market.',
+      url: 'https://pump.fun',
+      icon: <ExternalLink size={24} />,
+      color: '#10B981',
+      bgTint: 'rgba(16, 185, 129, 0.1)'
+    }
+  ];
+
+  return (
+    <div className="socials-page">
+      <div className="socials-hero">
+        <div className="socials-hero-inner">
+          <div className="socials-eyebrow">Connect with the Network</div>
+          <h1 className="socials-title">Community & Socials</h1>
+          <p className="socials-subtitle">
+            The market is driven by sentiment. Join the BAWSAQ community across our official channels 
+            to stay ahead of the curve, discuss trades, and catch the latest drops.
+          </p>
+        </div>
+      </div>
+
+      <div className="socials-grid">
+        {links.map((link, idx) => (
+          <a 
+            key={idx} 
+            href={link.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`social-card ${link.comingSoon ? 'coming-soon' : ''}`}
+            onClick={(e) => link.comingSoon && e.preventDefault()}
+          >
+            <div className="social-icon-wrap" style={{ background: link.bgTint, color: link.color }}>
+              {link.icon}
+            </div>
+            <div className="social-card-content">
+              <div className="social-card-header">
+                <h2>{link.title}</h2>
+                {link.comingSoon && <span className="badge-soon">Coming Soon</span>}
+              </div>
+              <p>{link.desc}</p>
+            </div>
+            {!link.comingSoon && <ExternalLink size={16} className="link-arrow" color="var(--text-3)" />}
+          </a>
+        ))}
+      </div>
+
+      <div className="bleeter-teaser">
+        <div className="bleeter-inner">
+          <div className="bleeter-icon">🐦</div>
+          <div className="bleeter-text">
+            <h3>Bleeter Integration</h3>
+            <p>Live simulated GTA news feed coming to the terminal soon...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default SocialsPage;

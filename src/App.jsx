@@ -7,6 +7,7 @@ import StockDetail from './components/StockDetail';
 import NewsSection from './components/NewsSection';
 import AboutPage from './components/AboutPage';
 import DiscoverPage from './components/DiscoverPage';
+import SocialsPage from './components/SocialsPage';
 import './App.css';
 
 function App() {
@@ -57,13 +58,8 @@ function App() {
         {/* ── Discover ── */}
         {activeTab === 'Discover' && <DiscoverPage setActiveTab={handleTabChange} />}
 
-        {/* ── Socials (placeholder) ── */}
-        {activeTab === 'Socials' && (
-          <div className="container" style={{ paddingTop: 60, textAlign: 'center', color: 'var(--text-3)' }}>
-            <h2 style={{ color: 'var(--text-1)', marginBottom: '1rem' }}>Community & Socials</h2>
-            <p style={{ fontSize: 16 }}>Links to Twitter, Telegram, and Discord coming soon.</p>
-          </div>
-        )}
+        {/* ── Socials ── */}
+        {activeTab === 'Socials' && <SocialsPage />}
 
       </div>
     </div>
