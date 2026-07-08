@@ -1,0 +1,134 @@
+/* ─── Stock Table ─── */
+.stock-table-wrap { padding: 20px 0; }
+
+/* Stats bar above table */
+.stats-bar {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.stat-item { display: flex; flex-direction: column; gap: 3px; }
+.stat-label { font-size: 11px; font-weight: 500; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.stat-value { font-size: 18px; font-weight: 800; color: var(--text-1); }
+.stat-value span { font-size: 12px; font-weight: 500; }
+
+/* Table header */
+.table-head {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 10px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+
+/* Rows */
+.table-body { display: flex; flex-direction: column; gap: 2px; }
+
+.stock-row {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 68px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+.stock-row:hover {
+  background: var(--bg-surface);
+  border-color: var(--border);
+  transform: translateX(2px);
+}
+.stock-row:hover .row-arrow { opacity: 1; transform: translateX(0); }
+.stock-row.native { border-color: rgba(57,255,20,0.15); background: rgba(57,255,20,0.03); }
+.stock-row.native:hover { border-color: rgba(57,255,20,0.3); background: rgba(57,255,20,0.07); }
+
+/* Color accent bar on left */
+.row-accent {
+  position: absolute;
+  left: 0; top: 12px; bottom: 12px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.stock-row:hover .row-accent { opacity: 1; }
+
+/* Columns */
+.col-num    { width: 32px; color: var(--text-3); font-size: 12px; flex-shrink: 0; }
+.col-token  { flex: 2.5; display: flex; align-items: center; gap: 12px; min-width: 0; }
+.col-price  { flex: 1; min-width: 90px; }
+.col-1h     { flex: 0.8; min-width: 70px; }
+.col-24h    { flex: 0.8; min-width: 70px; }
+.col-7d     { flex: 0.8; min-width: 70px; }
+.col-mcap   { flex: 1; min-width: 90px; }
+.col-vol    { flex: 1; min-width: 90px; }
+.col-txns   { flex: 1; min-width: 80px; }
+.col-action { flex: 0.7; display: flex; justify-content: flex-end; min-width: 80px; }
+
+/* Token avatar */
+.token-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.token-name   { font-size: 14px; font-weight: 700; }
+.token-sub    { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+.sector-tag   { font-size: 10px; font-weight: 600; color: var(--text-3); background: var(--bg-elevated); padding: 2px 6px; border-radius: 4px; }
+.native-badge { font-size: 10px; font-weight: 700; color: var(--green); background: var(--green-dim); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(57,255,20,0.2); }
+
+/* Buy/sell mini bars */
+.bs-bar { display: flex; gap: 2px; margin-top: 3px; }
+.bs-fill { height: 3px; border-radius: 99px; transition: width 0.3s ease; }
+.bs-fill.buy { background: var(--green); }
+.bs-fill.sell { background: var(--red); }
+
+/* Change cell */
+.chg-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Action button */
+.btn-trade {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(57,255,20,0.2);
+  background: rgba(57,255,20,0.08);
+  color: var(--green);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-trade:hover {
+  background: rgba(57,255,20,0.18);
+  border-color: rgba(57,255,20,0.4);
+  box-shadow: 0 0 12px rgba(57,255,20,0.15);
+}
+
+/* Arrow indicator on row hover */
+.row-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.15s;
+  color: var(--text-3);
+  margin-left: 6px;
+  font-size: 12px;
+}

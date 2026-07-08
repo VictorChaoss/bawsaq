@@ -1,0 +1,313 @@
+.about-page {
+  padding-bottom: 80px;
+}
+
+/* ── Hero ── */
+.about-hero {
+  background: linear-gradient(180deg, rgba(57,255,20,0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0 60px;
+  margin-bottom: 0;
+}
+.about-hero-inner {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.about-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+.about-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  color: var(--text-1);
+}
+.about-subtitle {
+  font-size: 18px;
+  color: var(--text-2);
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+/* ── Sections ── */
+.about-section {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 60px 24px 0;
+}
+.section-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid rgba(57,255,20,0.2);
+  padding: 3px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+/* ── About body ── */
+.about-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.about-body-grid p {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+.about-body-grid strong { color: var(--text-1); font-weight: 700; }
+.about-body-grid .text-green { color: var(--green); }
+
+/* ── Locations ── */
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.location-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.location-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+}
+.location-img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+.location-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.location-card:hover .location-img-wrap img { transform: scale(1.03); }
+.location-game-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(6,6,8,0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-bright);
+  color: var(--text-1);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+.location-body { padding: 20px; }
+.location-address {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.location-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+/* Map placeholder for missing images */
+.location-map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.map-pin { font-size: 32px; position: relative; z-index: 1; }
+.map-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  position: relative;
+  z-index: 1;
+  background: rgba(6,6,8,0.7);
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-bright);
+}
+
+/* ── Timeline ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--border);
+  padding-left: 28px;
+  margin-left: 12px;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 36px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-base);
+  border: 2px solid var(--border-bright);
+}
+.timeline-item:not(.upcoming) .timeline-dot {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 8px var(--green-glow);
+}
+.timeline-item.upcoming .timeline-dot {
+  border-color: var(--green);
+  border-style: dashed;
+}
+.timeline-year {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.timeline-label {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-1);
+  margin-bottom: 6px;
+}
+.timeline-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 560px;
+}
+.timeline-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid rgba(57,255,20,0.2);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* ── GTA 6 Teaser ── */
+.gta6-teaser {
+  margin-top: 60px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(57,255,20,0.04) 0%, rgba(6,6,8,0) 50%);
+  padding: 60px 0;
+}
+.gta6-inner {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.gta6-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.gta6-title {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.gta6-desc {
+  font-size: 15px;
+  color: var(--text-2);
+  max-width: 640px;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.gta6-desc strong { color: var(--text-1); }
+.gta6-stats {
+  display: flex;
+  gap: 48px;
+}
+.gta6-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gta6-stat-val {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-1);
+  line-height: 1;
+}
+.gta6-stat-val.text-green { color: var(--green); text-shadow: 0 0 20px var(--green-glow); }
+.gta6-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Credit ── */
+.about-credit {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  font-size: 12px;
+  color: var(--text-3);
+}
+.about-credit a { color: var(--text-2); transition: color 0.15s; }
+.about-credit a:hover { color: var(--green); }
+
+@media (max-width: 1024px) {
+  .about-body-grid { grid-template-columns: 1fr 1fr; }
+  .locations-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .about-body-grid { grid-template-columns: 1fr; }
+  .gta6-stats { gap: 24px; flex-wrap: wrap; }
+}

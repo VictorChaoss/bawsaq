@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+:root {
+  --bg-base:       #060608;
+  --bg-surface:    #0D0F14;
+  --bg-elevated:   #13161D;
+  --bg-card:       #181C25;
+  --bg-hover:      #1E2330;
+  --border:        rgba(255,255,255,0.06);
+  --border-bright: rgba(255,255,255,0.12);
+  --green:         #39FF14;
+  --green-dim:     rgba(57,255,20,0.12);
+  --green-glow:    rgba(57,255,20,0.25);
+  --red:           #FF2D55;
+  --red-dim:       rgba(255,45,85,0.12);
+  --text-1:        #FFFFFF;
+  --text-2:        #8892A4;
+  --text-3:        #4B5563;
+  --font:          'Inter', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-base);
+  color: var(--text-1);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+/* Resets */
+button { cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; font-size: inherit; }
+a { text-decoration: none; color: inherit; }
+input, textarea { outline: none; font-family: inherit; }
+
+/* Layout helpers */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+.w-full { width: 100%; }
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 12px; }
+.mt-4 { margin-top: 16px; }
+.mt-6 { margin-top: 24px; }
+
+/* Text */
+.text-green   { color: var(--green); }
+.text-red     { color: var(--red); }
+.text-2       { color: var(--text-2); }
+.text-3       { color: var(--text-3); }
+.text-xs      { font-size: 11px; }
+.text-sm      { font-size: 12px; }
+.text-base    { font-size: 13px; }
+.text-lg      { font-size: 15px; }
+.text-xl      { font-size: 18px; }
+.text-2xl     { font-size: 22px; }
+.font-medium  { font-weight: 500; }
+.font-semibold{ font-weight: 600; }
+.font-bold    { font-weight: 700; }
+.font-black   { font-weight: 900; }
+.uppercase    { text-transform: uppercase; }
+.tracking-wide{ letter-spacing: 0.05em; }
+.tracking-wider{ letter-spacing: 0.1em; }
+
+/* Surfaces */
+.surface {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* Green neon glow accent */
+.green-glow-text {
+  color: var(--green);
+  text-shadow: 0 0 20px var(--green-glow), 0 0 40px rgba(57,255,20,0.1);
+}
+
+/* Buttons */
+.btn-green {
+  background: var(--green);
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  letter-spacing: 0.02em;
+}
+.btn-green:hover {
+  background: #4FFF2A;
+  box-shadow: 0 0 20px var(--green-glow);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--text-2);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.btn-ghost:hover {
+  color: var(--text-1);
+  background: var(--bg-elevated);
+}
+
+/* Pill badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(57,255,20,0.2); }
+.badge-red   { background: var(--red-dim);   color: var(--red);   border: 1px solid rgba(255,45,85,0.2); }
+.badge-gray  { background: var(--bg-elevated); color: var(--text-2); border: 1px solid var(--border); }
+
+/* Divider */
+.divider { height: 1px; background: var(--border); width: 100%; }
+
+/* Scanline noise overlay for that GTA terminal vibe */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Page layout */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+}
+
+.container {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

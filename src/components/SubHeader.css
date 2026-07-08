@@ -1,0 +1,80 @@
+/* ─── SubHeader / Filter Bar ─── */
+.subheader {
+  padding: 0 24px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.filter-tabs { display: flex; align-items: center; gap: 4px; }
+.filter-tab {
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  transition: all 0.15s;
+}
+.filter-tab:hover { color: var(--text-1); background: var(--bg-elevated); }
+.filter-tab.active {
+  background: var(--bg-card);
+  color: var(--text-1);
+  border: 1px solid var(--border-bright);
+}
+
+.subheader-right { display: flex; align-items: center; gap: 8px; }
+
+.sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+}
+.sort-btn:hover { color: var(--text-1); border-color: var(--border-bright); }
+
+.timeframe-group { display: flex; gap: 4px; }
+.tf-btn {
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  transition: all 0.15s;
+}
+.tf-btn:hover { color: var(--text-2); }
+.tf-btn.active {
+  color: var(--green);
+  background: var(--green-dim);
+}
+
+.live-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: 0.05em;
+}
+.live-dot::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green-glow);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}

@@ -1,0 +1,406 @@
+{
+  "bawsaq": [
+    {
+      "ticker": "AMU",
+      "name": "Ammu-Nation",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BDG",
+      "name": "Badger",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BET",
+      "name": "Betta Pharmaceuticals",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BFA",
+      "name": "Bürgerfahrzeug",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BIN",
+      "name": "Binco",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BLE",
+      "name": "Bleeter",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BRU",
+      "name": "Brute",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "BTR",
+      "name": "BitterSweet",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "CNT",
+      "name": "CNT",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "CRE",
+      "name": "Crevis",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "DGP",
+      "name": "Daily Globe",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "EYE",
+      "name": "Eyefind",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "FAC",
+      "name": "Facade",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "FRT",
+      "name": "Fruit",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "GOT",
+      "name": "The Grain of Truth",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "HAL",
+      "name": "Hawk & Little",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "HVY",
+      "name": "HVY",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "LSC",
+      "name": "Los Santos Customs",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "LST",
+      "name": "Los Santos Transit",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "LTD",
+      "name": "Limited Gasoline",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "MAI",
+      "name": "Maibatsu Corporation",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "PIS",
+      "name": "Pißwasser",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "PMP",
+      "name": "Pump & Run Gymnasium",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "PON",
+      "name": "Ponsonbys",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "RON",
+      "name": "RON",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "SHK",
+      "name": "Shark",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "SHR",
+      "name": "Shrewsbury",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "SHT",
+      "name": "Schyster",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "SPU",
+      "name": "Sprunk",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "SUB",
+      "name": "Sub Urban",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "TNK",
+      "name": "Tinkle",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "UMA",
+      "name": "Übermacht",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "VAP",
+      "name": "Vapid",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "VOM",
+      "name": "Vom Feuer",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "WAP",
+      "name": "Los Santos Department of Water & Power",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "WIW",
+      "name": "Wiwang",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "WIZ",
+      "name": "Whiz",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "WZL",
+      "name": "Weazel",
+      "exchange": "BAWSAQ"
+    },
+    {
+      "ticker": "ZIT",
+      "name": "Zit",
+      "exchange": "BAWSAQ"
+    }
+  ],
+  "lcn": [
+    {
+      "ticker": "ARK",
+      "name": "Animal Ark",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "AUG",
+      "name": "AuguryInsurance",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BAN",
+      "name": "CoolBeans",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BEN",
+      "name": "BeanMachine",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BGR",
+      "name": "BurgerShot",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BIL",
+      "name": "Bilkinton",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BOL",
+      "name": "BankOfLiberty",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BOM",
+      "name": "BobMulét",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "BUL",
+      "name": "Bullhead",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "CLK",
+      "name": "CluckinBell",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "DEB",
+      "name": "Debonaire",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "DOP",
+      "name": "DollarPills",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "ECL",
+      "name": "eCola",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "EMU",
+      "name": "AirEmu",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "FLC",
+      "name": "Fleeca",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "FUS",
+      "name": "FlyUS",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "GAS",
+      "name": "GastroBand",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "GCD",
+      "name": "GoldCoast",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "GOP",
+      "name": "GoPostal",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "GRU",
+      "name": "GruppeSechs",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "HAF",
+      "name": "Hammerstein&Faust",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "HJK",
+      "name": "Hijak",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "KRP",
+      "name": "Krapea",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "LFI",
+      "name": "LifeInvader",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "LOG",
+      "name": "Logger",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "MAX",
+      "name": "MaxRenda",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "MAZ",
+      "name": "MazeBank",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "MER",
+      "name": "Merryweather",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "MOR",
+      "name": "MorsMutualInsurance",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "POP",
+      "name": "PostOP",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "PRO",
+      "name": "ProLaps",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "RAI",
+      "name": "Raine",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "RIM",
+      "name": "RichardsMajestic",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "RLS",
+      "name": "RadioLosSantos",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "RWC",
+      "name": "RedwoodCigarettes",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "SSS",
+      "name": "Slaughter, Slaughter & Slaughter",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "TBO",
+      "name": "TacoBomb",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "UNI",
+      "name": "VanillaUnicorn",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "UPA",
+      "name": "Up-n-Atom",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "VAG",
+      "name": "Vangelico",
+      "exchange": "LCN"
+    },
+    {
+      "ticker": "WFM",
+      "name": "WorldWideFM",
+      "exchange": "LCN"
+    }
+  ]
+}
