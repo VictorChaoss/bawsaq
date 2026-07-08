@@ -78,5 +78,13 @@ export const stockImageMap = {
   "SUB": "/explore_photos/Stock-SUB.webp",
   "GTAVI": "/explore_photos/GTA 6.avif",
   "MACCA": "/explore_photos/Macca.avif",
-  "BSQ": "/logo.jpeg"
+  "BSQ": "/logo.jpeg",
+  "CBE": "/explore_photos/CluckinBell-GTAO-Logo.webp",
+  "GSX": "/explore_photos/Gruppe_Sechs_Logo_2008.webp",
+  "MWS": "/explore_photos/MerryweatherSecurity-GTAV-Logo.webp",
+  "MMI": "/explore_photos/MorsMutual-Logo-GTAV.webp",
+  "VUN": "/explore_photos/VanillaUnicorn-GTAV-Logo.webp",
+  "SPR": "/explore_photos/Sprunk-HDUniverse-Logo.webp",
+  "RED": "/explore_photos/RedwoodCigarettes-GTAIV-Logo.webp",
+  "PSS": "/explore_photos/Pisswasser.webp"
 };

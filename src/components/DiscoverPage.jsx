@@ -129,11 +129,11 @@ function DiscoverPage({ setActiveTab }) {
                 alignItems: 'center', 
                 marginTop: '8px' 
               }}>
-                <span style={{ fontSize: '13px' }}>Coming Soon...</span>
+                <span style={{ fontSize: '13px' }}>TBD1111111111111111111111111111111111111111</span>
                 <button 
                   style={{ background: 'var(--purple)', border: 'none', padding: '4px 8px', borderRadius: '4px', color: '#fff', cursor: 'pointer', fontSize: '12px', fontWeight: 'bold' }}
                   onClick={() => {
-                    navigator.clipboard.writeText('Coming Soon...');
+                    navigator.clipboard.writeText('TBD1111111111111111111111111111111111111111');
                     alert('CA copied!');
                   }}
                 >

@@ -92,28 +92,40 @@ function StockDetail({ stock, onBack }) {
               className="ca-pill" 
               style={{ fontSize: '11px', color: 'var(--text-2)', background: 'var(--bg-2)', padding: '4px 8px', borderRadius: '4px', border: '1px solid var(--border-1)', cursor: 'pointer', userSelect: 'all' }}
               onClick={() => {
-                const caText = stock.contract === 'PUMP' ? 'Coming Soon...' : stock.contract;
+                const caText = stock.contract === 'PUMP' ? 'TBD1111111111111111111111111111111111111111' : stock.contract;
                 navigator.clipboard.writeText(caText);
                 alert('Copied CA: ' + caText);
               }}
             >
-              CA: {stock.contract === 'PUMP' ? 'Coming Soon...' : stock.contract}
+              CA: {stock.contract === 'PUMP' ? 'TBD1111111111111111111111111111111111111111' : stock.contract}
             </div>
           )}
         </div>
       </div>
 
       {/* Clean Chart Area */}
-      <div className="minimal-chart-container">
-        <div className="chart-overlay-stats">
-          <div className="stat-price">
-            {isPositive ? <TrendingUp size={24} color="var(--green)" /> : <TrendingDown size={24} color="var(--red)" />}
-            <span style={{ color: isPositive ? 'var(--green)' : 'var(--red)' }}>
-              {isPositive ? '+' : ''}{stock.change24h}%
-            </span>
-          </div>
-        </div>
-        <FakeChart isPositive={isPositive} />
+      <div className="minimal-chart-container" style={{ padding: (stock.contract && stock.contract !== 'PUMP') ? '0' : '20px 0 0 0' }}>
+        {(stock.contract && stock.contract !== 'PUMP') ? (
+          <iframe 
+            width="100%" 
+            height="400" 
+            src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark`} 
+            frameBorder="0"
+            style={{ borderRadius: '8px' }}
+          ></iframe>
+        ) : (
+          <>
+            <div className="chart-overlay-stats">
+              <div className="stat-price">
+                {isPositive ? <TrendingUp size={24} color="var(--green)" /> : <TrendingDown size={24} color="var(--red)" />}
+                <span style={{ color: isPositive ? 'var(--green)' : 'var(--red)' }}>
+                  {isPositive ? '+' : ''}{stock.change24h}%
+                </span>
+              </div>
+            </div>
+            <FakeChart isPositive={isPositive} />
+          </>
+        )}
       </div>
 
       {/* Expandable Content Area */}
