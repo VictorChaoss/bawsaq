@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, TrendingUp, TrendingDown, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, TrendingUp, TrendingDown, ExternalLink, ChevronDown, ChevronUp, Copy } from 'lucide-react';
 import './StockDetail.css';
 import { stockImageMap } from '../data/imageMap.js';
 
@@ -89,15 +89,21 @@ function StockDetail({ stock, onBack }) {
           </a>
           {stock.contract && (
             <div 
-              className="ca-pill" 
-              style={{ fontSize: '11px', color: 'var(--text-2)', background: 'var(--bg-2)', padding: '4px 8px', borderRadius: '4px', border: '1px solid var(--border-1)', cursor: 'pointer', userSelect: 'all' }}
+              className="ca-box" 
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-1)', background: 'var(--bg-3)', padding: '6px 12px', borderRadius: '6px', border: '1px solid var(--border-2)', cursor: 'pointer', userSelect: 'none', transition: 'background 0.2s', ...((stock.contract === 'PUMP' && { color: 'var(--text-2)' }) || {}) }}
+              onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-4)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-3)'}
               onClick={() => {
-                const caText = stock.contract === 'PUMP' ? 'TBD1111111111111111111111111111111111111111' : stock.contract;
+                const caText = stock.contract === 'PUMP' ? 'BawsaqPump11111111111111111111111111111111' : stock.contract;
                 navigator.clipboard.writeText(caText);
                 alert('Copied CA: ' + caText);
               }}
             >
-              CA: {stock.contract === 'PUMP' ? 'TBD1111111111111111111111111111111111111111' : stock.contract}
+              <span style={{ color: 'var(--text-2)' }}>CA:</span>
+              <span style={{ fontFamily: 'monospace' }}>
+                {stock.contract === 'PUMP' ? 'BawsaqPump... (TBD)' : `${stock.contract.slice(0, 8)}...${stock.contract.slice(-4)}`}
+              </span>
+              <Copy size={14} style={{ color: 'var(--text-2)', marginLeft: '4px' }} />
             </div>
           )}
         </div>

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck, Copy } from 'lucide-react';
 import './DiscoverPage.css';
 
 function HoverCard({ children, className, glowColor }) {
@@ -117,29 +117,20 @@ function DiscoverPage({ setActiveTab }) {
             </div>
             <div className="mechanic" style={{ marginTop: '16px' }}>
               <h3 style={{ color: 'var(--text-1)' }}>Official Contract Address</h3>
-              <div style={{ 
-                background: '#000', 
-                padding: '12px', 
-                borderRadius: '6px', 
-                border: '1px solid var(--purple)', 
-                color: 'var(--text-1)', 
-                fontFamily: 'monospace', 
-                display: 'flex', 
-                justifyContent: 'space-between', 
-                alignItems: 'center', 
-                marginTop: '8px' 
-              }}>
-                <span style={{ fontSize: '13px' }}>TBD1111111111111111111111111111111111111111</span>
-                <button 
-                  style={{ background: 'var(--purple)', border: 'none', padding: '4px 8px', borderRadius: '4px', color: '#fff', cursor: 'pointer', fontSize: '12px', fontWeight: 'bold' }}
+              <div 
+                  className="ca-box"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--bg-3)', padding: '6px 12px', borderRadius: '6px', border: '1px solid var(--border-2)', cursor: 'pointer', marginTop: '8px', transition: 'background 0.2s', userSelect: 'none' }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-4)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-3)'}
                   onClick={() => {
-                    navigator.clipboard.writeText('TBD1111111111111111111111111111111111111111');
+                    navigator.clipboard.writeText('BawsaqPump11111111111111111111111111111111');
                     alert('CA copied!');
                   }}
                 >
-                  Copy
-                </button>
-              </div>
+                  <span style={{ fontWeight: 'bold', color: 'var(--text-2)', fontSize: '13px' }}>CA:</span>
+                  <span style={{ fontFamily: 'monospace', fontSize: '13px', color: 'var(--text-1)' }}>BawsaqPump... (TBD)</span>
+                  <Copy size={14} style={{ opacity: 0.7, color: 'var(--text-2)', marginLeft: '4px' }} />
+                </div>
               <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--text-3)' }}>Ensure you are only interacting with this official contract address to avoid scams.</p>
             </div>
           </div>
