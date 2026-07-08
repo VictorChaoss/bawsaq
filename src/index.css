@@ -180,3 +180,21 @@ body::before {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+/* Mobile Breakpoints (Global) */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+  .container {
+    padding: 0 12px;
+  }
+  .stats-bar {
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .stats-bar::-webkit-scrollbar {
+    display: none;
+  }
+}

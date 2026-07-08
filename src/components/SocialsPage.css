@@ -162,3 +162,36 @@
   color: var(--text-2);
   font-size: 14px;
 }
+
+/* Mobile Breakpoints (SocialsPage) */
+@media (max-width: 768px) {
+  .socials-title {
+    font-size: 32px;
+  }
+  
+  .socials-subtitle {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+  
+  .socials-hero {
+    padding: 24px 0;
+    margin-bottom: 24px;
+  }
+  
+  .social-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .social-card-header {
+    justify-content: center;
+  }
+  
+  .bleeter-teaser {
+    border-radius: 12px;
+    border-left: none;
+    border-top: 3px solid #1DA1F2;
+  }
+}

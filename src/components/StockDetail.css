@@ -215,3 +215,29 @@
   font-weight: 500;
   color: var(--text-1);
 }
+
+/* Mobile Breakpoints (StockDetail) */
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .detail-top {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .dt-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .action-buttons .btn-primary, .action-buttons .btn-secondary {
+    flex: 1;
+  }
+}

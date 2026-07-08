@@ -186,3 +186,50 @@
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Mobile Breakpoints (Header) */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .header-left {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    overflow-x: auto;
+    padding-bottom: 4px;
+    width: 100%;
+  }
+  
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .search-wrap {
+    display: none; /* Hide search bar on mobile */
+  }
+
+  .net-pill {
+    padding: 0 8px;
+  }
+  
+  .net-pill span:not(.net-dot) {
+    display: none; /* Hide network text, just show dot on mobile */
+  }
+
+  .btn-connect {
+    padding: 0 12px;
+  }
+}

@@ -14,7 +14,7 @@ function SocialsPage() {
       title: 'X (Twitter)',
       desc: 'Follow the official BAWSAQ updates, listing announcements, and market news.',
       url: 'https://x.com/bawsaq_x',
-      icon: <XIcon size={24} />,
+      icon: <img src="/socials/x.jpg" alt="X (Twitter)" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
       color: '#1DA1F2',
       bgTint: 'rgba(29, 161, 242, 0.1)'
     },
@@ -22,9 +22,17 @@ function SocialsPage() {
       title: 'Pump.fun',
       desc: 'Deploy and trade the newest tokens before they hit the broader market.',
       url: 'https://pump.fun',
-      icon: <ExternalLink size={24} />,
+      icon: <img src="/socials/pumpfun.jpg" alt="Pump.fun" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
       color: '#10B981',
       bgTint: 'rgba(16, 185, 129, 0.1)'
+    },
+    {
+      title: 'Life Invader',
+      desc: 'The only social network you need. Stalk your friends, invade their lives, and never log off.',
+      url: '#',
+      icon: <img src="/socials/lifeinvader.png" alt="Life Invader" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      color: '#FF2D55',
+      bgTint: 'rgba(255, 45, 85, 0.1)'
     }
   ];
 

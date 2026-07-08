@@ -312,22 +312,46 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--green);
-  color: #000;
+  background: rgba(57,255,20,0.1);
+  color: var(--green);
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   font-size: 15px;
-  transition: opacity 0.2s;
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
+  background: rgba(57,255,20,0.2);
+  transform: translateY(-2px);
 }
 
+/* Mobile Breakpoints (DiscoverPage) */
 @media (max-width: 768px) {
+  .discover-title {
+    font-size: 32px;
+  }
+  
+  .discover-subtitle {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .discover-hero, .features-section, .network-stats, .cta-section {
+    padding: 24px 12px;
+  }
   .discover-grid {
     grid-template-columns: 1fr;
   }

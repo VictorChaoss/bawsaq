@@ -132,3 +132,45 @@
   margin-left: 6px;
   font-size: 12px;
 }
+
+/* Mobile Breakpoints (StockTable) */
+@media (max-width: 768px) {
+  .col-num {
+    display: none;
+  }
+  
+  .row-arrow {
+    display: none;
+  }
+  
+  .table-head {
+    padding: 0 8px 8px;
+  }
+  
+  .stock-row {
+    padding: 0 8px;
+  }
+  
+  .token-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+  
+  .token-name {
+    font-size: 13px;
+  }
+  
+  .token-sub {
+    font-size: 9px;
+  }
+  
+  .btn-trade {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+  
+  .stats-bar {
+    gap: 16px;
+  }
+}
