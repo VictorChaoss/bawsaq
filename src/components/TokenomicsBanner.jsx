@@ -12,7 +12,7 @@ function TokenomicsBanner() {
         <div>
           <div className="banner-title">The Central Hub for GTA Stocks</div>
           <p className="banner-desc">
-            Every GTA company deployed on this terminal pays 100% of its deployment fees and ongoing trading taxes directly into <strong>$BAWSAQ</strong> — the native hub token. More stocks listed = more volume = more value flowing into <strong>$BSQ</strong>. As GTA 6 drops, even more companies come online. You're not just trading stocks, you're holding equity in the whole ecosystem.
+            Want to see your GTA-themed token listed on the terminal? It's fully automated. Deploy your stock on Pump.fun and route a portion of the deployment funds to the <strong>$BSQ Dev Wallet</strong>. Once received, your token instantly lists on BAWSAQ. All redirected funds flow directly into the native <strong>$BSQ</strong> token, creating a self-sustaining ecosystem.
           </p>
         </div>
       </div>
