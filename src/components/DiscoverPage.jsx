@@ -1,26 +1,6 @@
 import React, { useRef } from 'react';
 import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck, Copy, HelpCircle } from 'lucide-react';
-import { mockStocks } from '../data/stocks';
 import './DiscoverPage.css';
-
-function TickerTape() {
-  const scrollStocks = mockStocks.slice(0, 20);
-  return (
-    <div className="ticker-tape-container">
-      <div className="ticker-tape-track">
-        {[...scrollStocks, ...scrollStocks].map((stock, i) => (
-          <div key={i} className="ticker-item">
-            <span className="ticker-symbol">{stock.ticker}</span>
-            <span className="ticker-price">{stock.price}</span>
-            <span className={`ticker-change ${stock.change24h >= 0 ? 'text-green' : 'text-red'}`}>
-              {stock.change24h >= 0 ? '+' : ''}{stock.change24h}%
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function HoverCard({ children, className, glowColor }) {
   const cardRef = useRef(null);
@@ -49,7 +29,6 @@ function HoverCard({ children, className, glowColor }) {
 function DiscoverPage({ setActiveTab }) {
   return (
     <div className="discover-page">
-      <TickerTape />
       <div className="discover-hero">
         <div className="discover-hero-inner">
           <div className="discover-eyebrow">The Ecosystem</div>
