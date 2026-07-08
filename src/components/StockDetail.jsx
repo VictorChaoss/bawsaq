@@ -123,7 +123,7 @@ function StockDetail({ stock, onBack }) {
           <iframe 
             width="100%" 
             height="400" 
-            src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark`} 
+            src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark&info=0&trades=0`} 
             frameBorder="0"
             style={{ borderRadius: '8px' }}
           ></iframe>
