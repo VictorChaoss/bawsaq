@@ -168,6 +168,51 @@ function DiscoverPage({ setActiveTab }) {
       </div>
 
       {/* Terminal Wizard: How to Buy */}
+      {/* GTA 6 Hype Banner */}
+      <div style={{
+        maxWidth: '1000px', margin: '0 auto 60px auto',
+        background: 'linear-gradient(135deg, rgba(255,60,0,0.08) 0%, rgba(168,85,247,0.08) 50%, rgba(0,255,102,0.06) 100%)',
+        border: '1px solid rgba(255,60,0,0.2)',
+        borderRadius: '20px',
+        padding: '48px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Background glow orb */}
+        <div style={{
+          position: 'absolute', top: '-60px', right: '-60px',
+          width: '300px', height: '300px',
+          background: 'radial-gradient(circle, rgba(255,60,0,0.15) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '16px' }}>
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: '6px',
+            background: 'rgba(255,60,0,0.15)', border: '1px solid rgba(255,60,0,0.4)',
+            borderRadius: '999px', padding: '4px 12px',
+            fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px',
+            color: '#ff6b35', textTransform: 'uppercase', fontFamily: 'monospace'
+          }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ff6b35', display: 'inline-block', animation: 'blink 1.5s ease-in-out infinite' }} />
+            GTA VI INCOMING
+          </span>
+        </div>
+        <h2 style={{
+          fontSize: '36px', fontWeight: '800', lineHeight: '1.2',
+          marginBottom: '20px', letterSpacing: '-0.5px',
+          background: 'linear-gradient(to right, #fff 0%, #ff6b35 60%, #a855f7 100%)',
+          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+        }}>
+          The biggest game in history.<br />It deserves the biggest GTA currency.
+        </h2>
+        <p style={{ fontSize: '16px', lineHeight: '1.7', color: 'var(--text-2)', maxWidth: '680px', marginBottom: '28px' }}>
+          Grand Theft Auto VI is projected to be the highest-grossing entertainment launch of all time — bigger than any movie, bigger than any game before it. Hundreds of millions of players will flood back to the GTA universe overnight.
+        </p>
+        <p style={{ fontSize: '16px', lineHeight: '1.7', color: 'var(--text-2)', maxWidth: '680px', marginBottom: '0' }}>
+          When they do, <strong style={{ color: 'var(--text-1)' }}>BAWSAQ</strong> will be the only place where that hype has a price. Every company from the game, every meme from the launch, every iconic GTA brand — all tradeable, all live, all on Solana. We're not just riding the wave. We're building the exchange for it.
+        </p>
+      </div>
+
       <div className="wizard-section">
         <h2 className="wizard-title">How to Buy $BSQ</h2>
         <div className="terminal-window">
