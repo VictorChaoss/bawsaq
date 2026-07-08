@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const [selectedStock, setSelectedStock] = useState(null);
-  const [activeTab, setActiveTab] = useState('Explore');
+  const [activeTab, setActiveTab] = useState('Discover');
   const [activeFilter, setActiveFilter] = useState('All');
 
   function handleTabChange(tab) {
