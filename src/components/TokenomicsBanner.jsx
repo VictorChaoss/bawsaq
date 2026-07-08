@@ -17,7 +17,9 @@ function TokenomicsBanner() {
         </div>
       </div>
       <div className="banner-right">
-        <button className="btn-green">Deploy a Stock</button>
+        <a href="https://pump.fun/create" target="_blank" rel="noreferrer" className="btn-green" style={{ textDecoration: 'none', display: 'inline-block' }}>
+          Deploy a Stock
+        </a>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-export function makeStock({ ticker, name, exchange, sector, desc }) {
+export function makeStock({ ticker, name, exchange, sector, desc, contract }) {
   // Use a pseudo-random seed based on ticker so numbers are stable and don't change every reload
   let seed = 0;
   for (let i = 0; i < ticker.length; i++) {
@@ -36,6 +36,7 @@ export function makeStock({ ticker, name, exchange, sector, desc }) {
     name,
     exchange,
     sector,
+    contract,
     price: formatNum(price),
     changePercent,
     change24h: changePercent,
