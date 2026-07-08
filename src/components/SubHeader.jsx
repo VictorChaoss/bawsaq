@@ -38,6 +38,24 @@ function SubHeader({ activeFilter, onFilter }) {
           <SlidersHorizontal size={12} />
           Filters
         </button>
+        <a 
+          href="https://pump.fun/create" 
+          target="_blank" 
+          rel="noreferrer" 
+          style={{
+            background: 'var(--green)',
+            color: '#000',
+            padding: '4px 12px',
+            borderRadius: '16px',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+            fontSize: '12px',
+            border: '2px solid #fff',
+            marginLeft: '8px'
+          }}
+        >
+          Deploy a Stock
+        </a>
         <span className="live-dot">LIVE</span>
       </div>
     </div>
