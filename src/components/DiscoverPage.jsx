@@ -84,7 +84,7 @@ function DiscoverPage({ setActiveTab }) {
           </p>
           <ul className="card-list">
             <li><ShieldCheck size={16} /> Deploy a token on Solana.</li>
-            <li><ShieldCheck size={16} /> Route deployment funds to the BAWSAQ deployer.</li>
+            <li><ShieldCheck size={16} /> Route your creator fees to the BAWSAQ dev wallet.</li>
             <li><ShieldCheck size={16} /> Get instantly listed in the "New Listings" and "Live on Pump" tabs.</li>
           </ul>
         </HoverCard>

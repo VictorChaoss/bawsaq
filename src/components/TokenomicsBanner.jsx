@@ -12,7 +12,7 @@ function TokenomicsBanner() {
         <div>
           <div className="banner-title">The Central Hub for GTA Stocks</div>
           <p className="banner-desc">
-            Want to see your GTA-themed token listed on the terminal? It's fully automated. Deploy your stock on Pump.fun and route a portion of the deployment funds to the <strong>$BSQ Dev Wallet</strong>. Once received, your token instantly lists on BAWSAQ. All redirected funds flow directly into the native <strong>$BSQ</strong> token, creating a self-sustaining ecosystem.
+            Want to see your GTA-themed token listed on the terminal? It's fully automated. Deploy your stock on Pump.fun and route a portion of your creator fees to the <strong>$BSQ Dev Wallet</strong>. Once received, your token instantly lists on BAWSAQ. All redirected fees flow directly into the native <strong>$BSQ</strong> token, creating a self-sustaining ecosystem.
           </p>
         </div>
       </div>
