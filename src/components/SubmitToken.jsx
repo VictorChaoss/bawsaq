@@ -23,7 +23,8 @@ export default function SubmitToken({ onClose }) {
       form.pumpUrl ? `📌 Pump: ${form.pumpUrl}` : '',
       form.handle ? `📌 Contact: @${form.handle}` : '',
       form.description ? `\n"${form.description.slice(0, 100)}..."` : '',
-      `\n#BAWSAQ #GTA #Solana`,
+      `\nhttps://bawsaq.xyz`,
+      `#BAWSAQ #GTA #Solana`,
     ].filter(Boolean).join('\n');
 
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
