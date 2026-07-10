@@ -88,7 +88,7 @@ function StockDetail({ stock, onBack }) {
             <button
               onClick={() => {
                 const text = `Tracking $${stock.ticker} — ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
-                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.vercel.app')}`;
+                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.xyz')}`;
                 window.open(url, '_blank');
               }}
               style={{
