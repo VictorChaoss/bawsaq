@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck, Copy, HelpCircle } from 'lucide-react';
+import GTACountdown from './GTACountdown';
 import './DiscoverPage.css';
 
 function HoverCard({ children, className, glowColor }) {
@@ -147,6 +148,9 @@ function DiscoverPage({ setActiveTab }) {
       </div>
 
       {/* Terminal Wizard: How to Buy */}
+      {/* GTA VI Countdown */}
+      <GTACountdown />
+
       {/* GTA 6 Hype Banner */}
       <div style={{
         maxWidth: '1000px', margin: '0 auto 60px auto',

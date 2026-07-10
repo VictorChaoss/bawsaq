@@ -8,6 +8,7 @@ import NewsSection from './components/NewsSection';
 import AboutPage from './components/AboutPage';
 import DiscoverPage from './components/DiscoverPage';
 import SocialsPage from './components/SocialsPage';
+import SubmitToken from './components/SubmitToken';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('Discover');
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [showSubmit, setShowSubmit] = useState(false);
 
   function handleTabChange(tab) {
     setActiveTab(tab);
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <div className="app-shell">
+      {showSubmit && <SubmitToken onClose={() => setShowSubmit(false)} />}
       <Header 
         activeTab={activeTab} 
         setActiveTab={handleTabChange} 
@@ -40,7 +43,7 @@ function App() {
             </div>
           ) : (
             <>
-              <SubHeader activeFilter={activeFilter} onFilter={setActiveFilter} />
+              <SubHeader activeFilter={activeFilter} onFilter={setActiveFilter} onSubmit={() => setShowSubmit(true)} />
               <div className="container">
                 <div style={{ paddingTop: 20 }}>
                   <TokenomicsBanner />

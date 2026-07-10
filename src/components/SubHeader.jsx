@@ -5,7 +5,7 @@ import './SubHeader.css';
 const FILTERS = ['All', 'Live on Pump 💊', 'Unregulated 🏴‍☠️', 'Trending 🔥', 'New Listings', 'GTA VI'];
 const TIMEFRAMES = ['1H', '4H', '1D', '1W', '1M'];
 
-function SubHeader({ activeFilter, onFilter }) {
+function SubHeader({ activeFilter, onFilter, onSubmit }) {
   const [tf, setTf] = useState('1D');
 
   return (
@@ -38,24 +38,22 @@ function SubHeader({ activeFilter, onFilter }) {
           <SlidersHorizontal size={12} />
           Filters
         </button>
-        <a 
-          href="https://pump.fun/create" 
-          target="_blank" 
-          rel="noreferrer" 
+        <button
+          onClick={() => onSubmit && onSubmit()}
           style={{
             background: 'var(--green)',
             color: '#000',
             padding: '4px 12px',
             borderRadius: '16px',
-            textDecoration: 'none',
             fontWeight: 'bold',
             fontSize: '12px',
             border: '2px solid #fff',
-            marginLeft: '8px'
+            marginLeft: '8px',
+            cursor: 'pointer',
           }}
         >
           Deploy a Stock
-        </a>
+        </button>
         <span className="live-dot">LIVE</span>
       </div>
     </div>

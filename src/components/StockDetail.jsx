@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, TrendingUp, TrendingDown, ExternalLink, ChevronDown, ChevronUp, Copy } from 'lucide-react';
+import { ArrowLeft, TrendingUp, TrendingDown, ExternalLink, ChevronDown, ChevronUp, Copy, Share2 } from 'lucide-react';
 import './StockDetail.css';
 import { stockImageMap } from '../data/imageMap.js';
 
@@ -84,9 +84,28 @@ function StockDetail({ stock, onBack }) {
           </div>
         </div>
         <div className="header-right" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
-          <a href={`https://pump.fun/coin/${stock.contract || ''}`} target="_blank" rel="noreferrer" className="pump-btn">
-            Trade on Pump.fun <ExternalLink size={14} />
-          </a>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <button
+              onClick={() => {
+                const text = `Tracking $${stock.ticker} — ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
+                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.vercel.app')}`;
+                window.open(url, '_blank');
+              }}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '8px', padding: '8px 12px', color: 'var(--text-1)',
+                cursor: 'pointer', fontSize: '13px', fontWeight: '600', transition: 'background 0.2s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
+            >
+              <Share2 size={14} /> Share
+            </button>
+            <a href={`https://pump.fun/coin/${stock.contract || ''}`} target="_blank" rel="noreferrer" className="pump-btn">
+              Trade on Pump.fun <ExternalLink size={14} />
+            </a>
+          </div>
           {stock.contract && (
             stock.contract === 'PUMP' ? (
               <div style={{
