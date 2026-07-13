@@ -9,6 +9,7 @@ import AboutPage from './components/AboutPage';
 import DiscoverPage from './components/DiscoverPage';
 import SocialsPage from './components/SocialsPage';
 import SubmitToken from './components/SubmitToken';
+import Trailer from './components/Trailer';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [showSubmit, setShowSubmit] = useState(false);
+  const [showTrailer, setShowTrailer] = useState(false);
 
   function handleTabChange(tab) {
     setActiveTab(tab);
@@ -25,12 +27,14 @@ function App() {
 
   return (
     <div className="app-shell">
+      {showTrailer && <Trailer onClose={() => setShowTrailer(false)} />}
       {showSubmit && <SubmitToken onClose={() => setShowSubmit(false)} />}
       <Header 
         activeTab={activeTab} 
         setActiveTab={handleTabChange} 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        onWatchTrailer={() => setShowTrailer(true)}
       />
 
       <div className="page-body">
