@@ -27,7 +27,7 @@ function TickerItem({ item }) {
   );
 }
 
-function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery, onWatchTrailer }) {
+function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
   const [logoError, setLogoError] = useState(false);
   const doubled = [...TICKER_DATA, ...TICKER_DATA];
 
@@ -60,19 +60,7 @@ function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery, onWatchT
           </nav>
         </div>
 
-        <div className="header-right flex items-center" style={{ gap: '16px' }}>
-          <button 
-            onClick={onWatchTrailer}
-            style={{
-              background: 'linear-gradient(90deg, var(--green), #00cc55)',
-              color: '#000', border: 'none', padding: '6px 16px',
-              borderRadius: '999px', fontSize: '13px', fontWeight: '800',
-              cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px',
-              boxShadow: '0 0 15px rgba(0,255,102,0.3)', letterSpacing: '1px'
-            }}
-          >
-            ▶ TRAILER
-          </button>
+        <div className="header-right flex items-center">
           <div className="search-wrap">
             <Search size={14} color="var(--text-3)" />
             <input 
