@@ -80,7 +80,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
         s.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-    if (filter === 'Unregulated 🏴‍☠️') return !!s.unregulated;
+    if (filter === 'Community Customs 🔧') return !!s.unregulated;
     if (s.unregulated) return false; // Exclude unregulated from all other tabs
     
     if (filter === 'All' || !filter) return true;
@@ -93,6 +93,40 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
 
   return (
     <div className="stock-table-wrap">
+      {filter === 'Community Customs 🔧' && (
+        <div style={{
+          display: 'flex',
+          gap: '16px',
+          alignItems: 'flex-start',
+          background: 'rgba(255,255,255,0.03)',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderRadius: '12px',
+          padding: '24px',
+          marginBottom: '24px'
+        }}>
+          <div style={{
+            background: 'rgba(0, 255, 102, 0.15)',
+            border: '1px solid rgba(0, 255, 102, 0.3)',
+            borderRadius: '12px',
+            width: '48px',
+            height: '48px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div>
+            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#fff' }}>The Central Hub for GTA Stocks</h3>
+            <p style={{ color: 'var(--text-2)', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+              Want to see your GTA-themed token listed on the terminal? It's fully automated. Deploy your stock on Pump.fun and route a portion of your creator fees to the <strong style={{color:'var(--green)'}}>$BSQ Dev Wallet</strong>. Once received, your token instantly lists on BAWSAQ. All redirected fees flow directly into the native <strong style={{color:'var(--green)'}}>$BSQ</strong> token, creating a self-sustaining ecosystem.
+            </p>
+          </div>
+        </div>
+      )}
       <div className="table-head">
         <div className="col-num">#</div>
         <div className="col-token">Company</div>
