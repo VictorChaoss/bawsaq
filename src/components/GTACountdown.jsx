@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // GTA VI release date — update this when confirmed
-const GTA6_DATE = new Date('2026-06-25T00:00:00Z');
+const GTA6_DATE = new Date('2026-11-19T00:00:00Z');
 
 function pad(n) {
   return String(n).padStart(2, '0');
