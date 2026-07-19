@@ -121,6 +121,7 @@ export const unregulatedStocks = [
     name: 'Grand Theft Auto VI',
     exchange: 'PUMP',
     sector: 'Unregulated',
+    contract: 'EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump',
     desc: 'The token is designed as a community-driven project intended to capitalize on the excitement and global anticipation surrounding the Grand Theft Auto VI game. It is an experimental meme token not affiliated with, endorsed by, or sponsored by Rockstar Games, Take-Two Interactive, or the Grand Theft Auto franchise.',
   }),
   makeStock({
@@ -128,13 +129,10 @@ export const unregulatedStocks = [
     name: 'Macca The Gator',
     exchange: 'PUMP',
     sector: 'Unregulated',
+    contract: 'GATorK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump',
     desc: 'Macca The Gator is a community-driven meme coin based on the popular character from the Grand Theft Auto universe.',
   })
 ].map(s => ({ ...s, unregulated: true }));
-
-unregulatedStocks[0].contract = 'EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump';
-unregulatedStocks[1].contract = 'Hs8JDjxT2gGzSXe6KtycDhKkFGBu7BHR71emwJz5pump';
-
 export const mockStocks = [
   nativeToken,
   ...[...bawsaqStocks, ...lcnStocks].sort((a, b) => a.name.localeCompare(b.name)),
