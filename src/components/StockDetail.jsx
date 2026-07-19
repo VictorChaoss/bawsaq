@@ -1,40 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowLeft, TrendingUp, TrendingDown, ExternalLink, ChevronDown, ChevronUp, Copy, Share2 } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Copy, Share2, ChevronDown, ChevronUp, Rocket, Clock } from 'lucide-react';
 import './StockDetail.css';
 import { stockImageMap } from '../data/imageMap.js';
-
-// Generate a fake chart path based on whether stock is trending up or down
-function generatePath(isPositive, width = 800, height = 200) {
-  const points = [];
-  let y = isPositive ? height * 0.8 : height * 0.2;
-  const steps = 40;
-  for (let i = 0; i <= steps; i++) {
-    const x = (i / steps) * width;
-    const drift = isPositive ? -2 : 2;
-    const noise = (Math.random() - 0.45) * 20;
-    y = Math.max(10, Math.min(height - 10, y + drift + noise));
-    points.push(`${x.toFixed(1)},${y.toFixed(1)}`);
-  }
-  return points.join(' ');
-}
-
-function FakeChart({ isPositive }) {
-  const path = generatePath(isPositive);
-  const strokeColor = isPositive ? '#39FF14' : '#FF2D55';
-
-  return (
-    <svg className="fake-chart-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={strokeColor} stopOpacity="0.15" />
-          <stop offset="100%" stopColor={strokeColor} stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <polyline points={path} fill="url(#chartGrad)" stroke="none" className="chart-area-fill" />
-      <polyline points={path} stroke={strokeColor} strokeWidth="2" fill="none" style={{ filter: `drop-shadow(0 0 6px ${strokeColor}44)` }} />
-    </svg>
-  );
-}
 
 function Accordion({ title, children, defaultOpen = false }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -50,7 +17,10 @@ function Accordion({ title, children, defaultOpen = false }) {
 }
 
 function StockDetail({ stock, onBack }) {
-  const isPositive = stock.change24h >= 0;
+  const [copied, setCopied] = useState(false);
+
+  const isLive = stock.contract && stock.contract !== 'PUMP';
+  const isLaunching = stock.contract === 'PUMP';
 
   // Description format has literal \n
   const fullDesc = stock.desc ? stock.desc.replace(/\\n/g, '\n') : '';
@@ -58,135 +28,155 @@ function StockDetail({ stock, onBack }) {
   const overview = paragraphs.length > 0 ? paragraphs[0] : '';
   const history = paragraphs.slice(1).join('\n\n');
 
+  const handleCopyCA = () => {
+    navigator.clipboard.writeText(stock.contract);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleShare = () => {
+    const text = `Tracking $${stock.ticker} — ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.xyz')}`;
+    window.open(url, '_blank');
+  };
+
+  // Status badge
+  const statusBadge = isLive
+    ? <span className="status-badge status-live"><span className="status-dot dot-green" /> LIVE</span>
+    : isLaunching
+      ? <span className="status-badge status-launching"><span className="status-dot dot-amber" /> LAUNCHING SOON</span>
+      : <span className="status-badge status-not-deployed"><span className="status-dot dot-gray" /> NOT DEPLOYED</span>;
+
   return (
-    <div className="minimal-detail-wrap">
-      <button className="back-btn-minimal" onClick={onBack}>
+    <div className="sd-wrap">
+      <button className="sd-back" onClick={onBack}>
         <ArrowLeft size={16} /> Back to Directory
       </button>
 
       {/* Header */}
-      <div className="minimal-header">
-        <div className="header-left">
-          <div className="logo-box">
-            {stockImageMap[stock.ticker] ? (
-              <img src={stockImageMap[stock.ticker]} alt={stock.ticker} />
-            ) : (
-              <span style={{ color: stock.color }}>{stock.ticker.slice(0, 2)}</span>
-            )}
-          </div>
-          <div className="header-info">
-            <h1>{stock.name}</h1>
-            <div className="ticker-row">
-              <span className="ticker">${stock.ticker}</span>
-              <span className="dot">·</span>
-              <span className="sector">{stock.sector}</span>
+      <div className="sd-header">
+        <div className="sd-header-top">
+          <div className="sd-identity">
+            <div className="sd-logo">
+              {stockImageMap[stock.ticker] ? (
+                <img src={stockImageMap[stock.ticker]} alt={stock.ticker} />
+              ) : (
+                <span className="sd-logo-fallback" style={{ color: stock.color }}>{stock.ticker.slice(0, 2)}</span>
+              )}
+            </div>
+            <div className="sd-name-block">
+              <div className="sd-name-row">
+                <h1 className="sd-company-name">{stock.name}</h1>
+                {statusBadge}
+              </div>
+              <div className="sd-tags">
+                <span className="sd-tag sd-tag-ticker">${stock.ticker}</span>
+                <span className="sd-tag sd-tag-sector">{stock.sector}</span>
+                <span className="sd-tag sd-tag-exchange">{stock.exchange}</span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="header-right" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <button
-              onClick={() => {
-                const text = `Tracking $${stock.ticker} — ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
-                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.xyz')}`;
-                window.open(url, '_blank');
-              }}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '6px',
-                background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '8px', padding: '8px 12px', color: 'var(--text-1)',
-                cursor: 'pointer', fontSize: '13px', fontWeight: '600', transition: 'background 0.2s',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
-            >
-              <Share2 size={14} /> Share
-            </button>
-            <a href={`https://pump.fun/coin/${stock.contract || ''}`} target="_blank" rel="noreferrer" className="pump-btn">
-              Trade on Pump.fun <ExternalLink size={14} />
-            </a>
-          </div>
-          {stock.contract && (
-            stock.contract === 'PUMP' ? (
-              <div style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: 'rgba(0,255,102,0.07)', padding: '5px 12px',
-                borderRadius: '999px', border: '1px solid rgba(0,255,102,0.25)',
-                animation: 'pulse-green 2s ease-in-out infinite'
-              }}>
-                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'pulse-green 1.5s ease-in-out infinite' }} />
-                <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', color: 'var(--green)', textTransform: 'uppercase', fontFamily: 'monospace' }}>CA Launching Soon</span>
-              </div>
-            ) : (
-              <div
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', background: 'var(--bg-3)', padding: '6px 12px', borderRadius: '6px', border: '1px solid var(--border-2)', cursor: 'pointer', userSelect: 'none', transition: 'background 0.2s' }}
-                onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-4)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'var(--bg-3)'}
-                onClick={() => {
-                  navigator.clipboard.writeText(stock.contract);
-                  alert('CA copied!');
-                }}
+
+        {/* Actions row */}
+        <div className="sd-actions">
+          <button className="sd-btn sd-btn-ghost" onClick={handleShare}>
+            <Share2 size={14} /> Share
+          </button>
+          {isLive && (
+            <>
+              <button className="sd-btn sd-btn-ghost" onClick={handleCopyCA}>
+                <Copy size={14} />
+                {copied ? 'Copied!' : `${stock.contract.slice(0, 6)}…${stock.contract.slice(-4)}`}
+              </button>
+              <a
+                href={`https://pump.fun/coin/${stock.contract}`}
+                target="_blank"
+                rel="noreferrer"
+                className="sd-btn sd-btn-primary"
               >
-                <span style={{ color: 'var(--text-2)' }}>CA:</span>
-                <span style={{ fontFamily: 'monospace' }}>{stock.contract.slice(0, 8)}...{stock.contract.slice(-4)}</span>
-                <Copy size={14} style={{ color: 'var(--text-2)', marginLeft: '4px' }} />
-              </div>
-            )
+                Trade on Pump.fun <ExternalLink size={14} />
+              </a>
+            </>
           )}
         </div>
       </div>
 
-      {/* Clean Chart Area */}
-      <div className={`minimal-chart-container${(stock.contract && stock.contract !== 'PUMP') ? '' : ' fake-chart-wrap'}`}>
-        {(stock.contract && stock.contract !== 'PUMP') ? (
+      <div className="sd-divider" />
+
+      {/* Main content area — two states */}
+      {isLive ? (
+        /* State A: Token is Live */
+        <div className="sd-chart-section">
           <iframe
+            className="sd-chart-iframe"
             src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark&info=0&trades=0`}
             allowFullScreen
-          ></iframe>
-        ) : (
-          <>
-            <div className="chart-overlay-stats">
-              <div className="stat-price">
-                {isPositive ? <TrendingUp size={24} color="var(--green)" /> : <TrendingDown size={24} color="var(--red)" />}
-                <span style={{ color: isPositive ? 'var(--green)' : 'var(--red)' }}>
-                  {isPositive ? '+' : ''}{stock.change24h}%
-                </span>
-              </div>
-            </div>
-            <FakeChart isPositive={isPositive} />
-          </>
-        )}
-      </div>
-
-      {/* Expandable Content Area */}
-      <div className="minimal-content">
-        <div className="overview-text">
-          {overview}
+          />
         </div>
+      ) : (
+        /* State B: Token Not Yet Live */
+        <div className="sd-deploy-section">
+          {isLaunching ? (
+            <div className="sd-deploy-card sd-deploy-launching">
+              <div className="sd-deploy-icon sd-deploy-icon-amber">
+                <Clock size={32} />
+              </div>
+              <h2 className="sd-deploy-title">Launching Soon</h2>
+              <p className="sd-deploy-text">
+                This stock is being prepared for launch on Pump.fun
+              </p>
+              <span className="sd-launching-badge">
+                <span className="status-dot dot-amber" /> Launching Soon
+              </span>
+            </div>
+          ) : (
+            <div className="sd-deploy-card sd-deploy-available">
+              <div className="sd-deploy-icon sd-deploy-icon-green">
+                <Rocket size={32} />
+              </div>
+              <h2 className="sd-deploy-title">Be the first to bring {stock.name} on-chain</h2>
+              <p className="sd-deploy-text">
+                Deploy this GTA stock as a token on Pump.fun and it will be automatically listed on BAWSAQ.
+              </p>
+              <a
+                href="https://pump.fun"
+                target="_blank"
+                rel="noreferrer"
+                className="sd-btn sd-btn-deploy"
+              >
+                <Rocket size={16} /> Deploy on Pump.fun
+              </a>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Description */}
+      <div className="sd-content">
+        {overview && (
+          <p className="sd-overview">{overview}</p>
+        )}
 
         {history && (
           <Accordion title="Company History">
-            <p className="history-text">{history}</p>
+            <p className="sd-history">{history}</p>
           </Accordion>
         )}
 
         <Accordion title="Corporate Data" defaultOpen={true}>
-          <div className="data-grid">
-            <div className="data-item">
-              <span className="data-label">Sector</span>
-              <span className="data-val">{stock.sector}</span>
+          <div className="sd-data-grid">
+            <div className="sd-data-item">
+              <span className="sd-data-label">Sector</span>
+              <span className="sd-data-value">{stock.sector}</span>
             </div>
-            <div className="data-item">
-              <span className="data-label">Exchange</span>
-              <span className="data-val">{stock.exchange}</span>
+            <div className="sd-data-item">
+              <span className="sd-data-label">Exchange</span>
+              <span className="sd-data-value">{stock.exchange}</span>
             </div>
-            <div className="data-item">
-              <span className="data-label">Headquarters</span>
-              <span className="data-val">Los Santos, SA</span>
-            </div>
-            <div className="data-item">
-              <span className="data-label">Risk Level</span>
-              <span className="data-val">{stock.risk}</span>
+            <div className="sd-data-item">
+              <span className="sd-data-label">Headquarters</span>
+              <span className="sd-data-value">Los Santos, SA</span>
             </div>
           </div>
         </Accordion>

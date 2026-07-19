@@ -1,5 +1,5 @@
-/* ─── Sleek Minimal Stock Detail ─── */
-.minimal-detail-wrap {
+/* ─── Sleek Minimal Stock Detail (sd- prefix) ─── */
+.sd-wrap {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px 80px;
@@ -11,7 +11,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.back-btn-minimal {
+.sd-back {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -25,23 +25,28 @@
   margin-bottom: 32px;
   transition: color 0.2s;
 }
-.back-btn-minimal:hover {
+.sd-back:hover {
   color: var(--text-1);
 }
 
 /* Header */
-.minimal-header {
+.sd-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
 }
-.header-left {
+.sd-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.sd-identity {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.logo-box {
+.sd-logo {
   width: 64px;
   height: 64px;
   background: var(--bg-surface);
@@ -54,33 +59,193 @@
   font-weight: 800;
   overflow: hidden;
 }
-.logo-box img {
+.sd-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   padding: 8px;
 }
+.sd-logo-fallback {
+  font-size: 24px;
+}
 
-.header-info h1 {
+.sd-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sd-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sd-company-name {
   font-size: 32px;
   font-weight: 800;
   color: var(--text-1);
-  margin: 0 0 4px 0;
+  margin: 0;
   letter-spacing: -0.02em;
 }
-.ticker-row {
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+.status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+.status-live { color: var(--green); background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.2); }
+.dot-green { background: var(--green); box-shadow: 0 0 8px var(--green); }
+.status-launching { color: #F59E0B; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); }
+.dot-amber { background: #F59E0B; box-shadow: 0 0 8px #F59E0B; animation: pulse 1.5s infinite; }
+.status-not-deployed { color: var(--text-3); background: var(--bg-elevated); border: 1px solid var(--border); }
+.dot-gray { background: var(--text-3); }
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.sd-tags {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
-  color: var(--text-2);
-  font-weight: 500;
 }
-.dot {
-  color: var(--text-3);
+.sd-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--bg-elevated);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
 }
 
-.pump-btn {
+.sd-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.sd-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+}
+.sd-btn-ghost:hover {
+  background: var(--bg-surface);
+  color: var(--text-1);
+}
+.sd-btn-primary {
+  background: var(--green);
+  border: 1px solid var(--green);
+  color: #000;
+}
+.sd-btn-primary:hover {
+  background: #fff;
+  border-color: #fff;
+}
+
+.sd-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 0 40px 0;
+}
+
+/* Charts / Deploy states */
+.sd-chart-section {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.sd-chart-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.sd-deploy-section {
+  margin-bottom: 40px;
+}
+.sd-deploy-card {
+  background: var(--bg-surface);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.sd-deploy-available {
+  border-color: rgba(57,255,20,0.3);
+  background: linear-gradient(180deg, rgba(57,255,20,0.02) 0%, transparent 100%);
+}
+.sd-deploy-launching {
+  border-color: rgba(245,158,11,0.3);
+  background: linear-gradient(180deg, rgba(245,158,11,0.02) 0%, transparent 100%);
+}
+
+.sd-deploy-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+}
+.sd-deploy-icon-green { background: rgba(57,255,20,0.1); color: var(--green); }
+.sd-deploy-icon-amber { background: rgba(245,158,11,0.1); color: #F59E0B; }
+
+.sd-deploy-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin: 0;
+}
+.sd-deploy-text {
+  font-size: 15px;
+  color: var(--text-2);
+  max-width: 400px;
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+}
+
+.sd-launching-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #F59E0B;
+  background: rgba(245,158,11,0.1);
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid rgba(245,158,11,0.2);
+}
+
+.sd-btn-deploy {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -93,68 +258,18 @@
   text-decoration: none;
   transition: transform 0.2s, background 0.2s;
 }
-.pump-btn:hover {
+.sd-btn-deploy:hover {
   transform: scale(1.02);
   background: #fff;
 }
 
-/* Minimal Chart */
-.minimal-chart-container {
-  position: relative;
-  width: 100%;
-  border-radius: 12px;
-  background: linear-gradient(to bottom, var(--bg-surface) 0%, transparent 100%);
-  border: 1px solid var(--border);
-  margin-bottom: 40px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-
-.minimal-chart-container iframe {
-  display: block;
-  width: 100%;
-  height: 500px;
-  border: none;
-  border-radius: 12px;
-}
-.chart-overlay-stats {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 2;
-}
-.stat-price {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-/* Fake chart gets its own fixed height when no real contract */
-.minimal-chart-container.fake-chart-wrap {
-  height: 240px;
-}
-.fake-chart-svg {
-  width: 100%;
-  height: 70%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.chart-area-fill {
-  mix-blend-mode: screen;
-}
-
-/* Content Area */
-.minimal-content {
+/* Content */
+.sd-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.overview-text {
+.sd-overview, .sd-history {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-2);
@@ -187,21 +302,13 @@
   padding-bottom: 24px;
   animation: slideDown 0.3s ease-out;
 }
-
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.history-text {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-2);
-  white-space: pre-line;
-}
-
-/* Data Grid inside Accordion */
-.data-grid {
+/* Data Grid */
+.sd-data-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
@@ -210,46 +317,38 @@
   border-radius: 16px;
   border: 1px solid var(--border);
 }
-.data-item {
+.sd-data-item {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.data-label {
+.sd-data-label {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-3);
   font-weight: 600;
 }
-.data-val {
+.sd-data-value {
   font-size: 15px;
   font-weight: 500;
   color: var(--text-1);
 }
 
-/* Mobile Breakpoints (StockDetail) */
+/* Mobile Breakpoints */
 @media (max-width: 768px) {
-  .detail-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .sd-header-top {
+    flex-direction: column;
+    gap: 20px;
   }
-  
-  .detail-top {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  
-  .dt-right {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  
-  .action-buttons {
+  .sd-name-row {
     flex-wrap: wrap;
   }
-  
-  .action-buttons .btn-primary, .action-buttons .btn-secondary {
+  .sd-actions {
+    flex-wrap: wrap;
+  }
+  .sd-btn {
     flex: 1;
+    justify-content: center;
   }
 }

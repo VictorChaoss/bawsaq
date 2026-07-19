@@ -1,19 +1,6 @@
 /* ─── Stock Table ─── */
 .stock-table-wrap { padding: 20px 0; }
 
-/* Stats bar above table */
-.stats-bar {
-  display: flex;
-  gap: 24px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 20px;
-}
-.stat-item { display: flex; flex-direction: column; gap: 3px; }
-.stat-label { font-size: 11px; font-weight: 500; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
-.stat-value { font-size: 18px; font-weight: 800; color: var(--text-1); }
-.stat-value span { font-size: 12px; font-weight: 500; }
-
 /* Table header */
 .table-head {
   display: flex;
@@ -48,7 +35,6 @@
   border-color: var(--border);
   transform: translateX(2px);
 }
-.stock-row:hover .row-arrow { opacity: 1; transform: translateX(0); }
 .stock-row.native { border-color: rgba(57,255,20,0.15); background: rgba(57,255,20,0.03); }
 .stock-row.native:hover { border-color: rgba(57,255,20,0.3); background: rgba(57,255,20,0.07); }
 
@@ -64,16 +50,12 @@
 .stock-row:hover .row-accent { opacity: 1; }
 
 /* Columns */
-.col-num    { width: 32px; color: var(--text-3); font-size: 12px; flex-shrink: 0; }
-.col-token  { flex: 2.5; display: flex; align-items: center; gap: 12px; min-width: 0; }
-.col-price  { flex: 1; min-width: 90px; }
-.col-1h     { flex: 0.8; min-width: 70px; }
-.col-24h    { flex: 0.8; min-width: 70px; }
-.col-7d     { flex: 0.8; min-width: 70px; }
-.col-mcap   { flex: 1; min-width: 90px; }
-.col-vol    { flex: 1; min-width: 90px; }
-.col-txns   { flex: 1; min-width: 80px; }
-.col-action { flex: 0.7; display: flex; justify-content: flex-end; min-width: 80px; }
+.col-num      { width: 32px; color: var(--text-3); font-size: 12px; flex-shrink: 0; }
+.col-token    { flex: 2; display: flex; align-items: center; gap: 12px; min-width: 200px; }
+.col-exchange { flex: 1; min-width: 100px; }
+.col-sector   { flex: 1.5; min-width: 140px; }
+.col-status   { flex: 1.5; min-width: 150px; }
+.col-action   { flex: 1; display: flex; justify-content: flex-end; min-width: 120px; }
 
 /* Token avatar */
 .token-avatar {
@@ -87,22 +69,43 @@
 
 .token-name   { font-size: 14px; font-weight: 700; }
 .token-sub    { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-.sector-tag   { font-size: 10px; font-weight: 600; color: var(--text-3); background: var(--bg-elevated); padding: 2px 6px; border-radius: 4px; }
 .native-badge { font-size: 10px; font-weight: 700; color: var(--green); background: var(--green-dim); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(57,255,20,0.2); }
 
-/* Buy/sell mini bars */
-.bs-bar { display: flex; gap: 2px; margin-top: 3px; }
-.bs-fill { height: 3px; border-radius: 99px; transition: width 0.3s ease; }
-.bs-fill.buy { background: var(--green); }
-.bs-fill.sell { background: var(--red); }
+/* Info Tags (Exchange & Sector) */
+.info-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--bg-elevated);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
 
-/* Change cell */
-.chg-cell {
+/* Status Badge */
+.status-badge {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-  font-size: 13px;
+  gap: 6px;
+  font-size: 12px;
   font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.status-badge .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+.status-badge.live { color: var(--green); background: rgba(57,255,20,0.1); }
+.status-badge.live .dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+.status-badge.launching { color: #F59E0B; background: rgba(245,158,11,0.1); }
+.status-badge.launching .dot { background: #F59E0B; box-shadow: 0 0 8px #F59E0B; animation: pulse 1.5s infinite; }
+.status-badge.undeployed { color: var(--text-3); }
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 
 /* Action button */
@@ -111,35 +114,26 @@
   border-radius: 6px;
   font-size: 12px;
   font-weight: 700;
-  border: 1px solid rgba(57,255,20,0.2);
-  background: rgba(57,255,20,0.08);
-  color: var(--green);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-2);
   transition: all 0.15s;
   white-space: nowrap;
 }
 .btn-trade:hover {
-  background: rgba(57,255,20,0.18);
-  border-color: rgba(57,255,20,0.4);
-  box-shadow: 0 0 12px rgba(57,255,20,0.15);
+  background: var(--bg-surface);
+  border-color: var(--text-3);
+  color: var(--text-1);
 }
-
-/* Arrow indicator on row hover */
-.row-arrow {
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.15s;
-  color: var(--text-3);
-  margin-left: 6px;
-  font-size: 12px;
+.stock-row:hover .btn-trade {
+  border-color: rgba(57,255,20,0.3);
+  background: rgba(57,255,20,0.1);
+  color: var(--green);
 }
 
 /* Mobile Breakpoints (StockTable) */
 @media (max-width: 768px) {
-  .col-num {
-    display: none;
-  }
-  
-  .row-arrow {
+  .col-num, .col-exchange, .col-sector, .col-status {
     display: none;
   }
   
@@ -169,8 +163,5 @@
     padding: 4px 10px;
     font-size: 11px;
   }
-  
-  .stats-bar {
-    gap: 16px;
-  }
 }
+

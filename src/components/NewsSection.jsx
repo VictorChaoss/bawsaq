@@ -110,12 +110,34 @@ function NewsSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate network load
-    const timer = setTimeout(() => {
-      setItems(MOCK_NEWS);
-      setLoading(false);
-    }, 800);
-    return () => clearTimeout(timer);
+    let mounted = true;
+
+    async function fetchNews() {
+      try {
+        const res = await fetch(API_URL);
+        if (!res.ok) throw new Error('Network response was not ok');
+        const data = await res.json();
+        
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+          if (mounted) {
+            setItems(data.items.slice(0, 12));
+            setLoading(false);
+          }
+        } else {
+          throw new Error('Invalid RSS data format');
+        }
+      } catch (err) {
+        console.warn('Failed to fetch Rockstar RSS, falling back to mock news:', err);
+        if (mounted) {
+          setItems(MOCK_NEWS);
+          setLoading(false);
+        }
+      }
+    }
+
+    fetchNews();
+
+    return () => { mounted = false; };
   }, []);
 
   return (

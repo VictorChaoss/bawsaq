@@ -1,24 +1,22 @@
 import React from 'react';
-import { TrendingUp, TrendingDown } from 'lucide-react';
 import { mockStocks } from '../data/stocks';
 import { stockImageMap } from '../data/imageMap.js';
 import './StockTable.css';
 
-function ChangeCell({ val }) {
-  if (val === undefined || val === null) return <span className="text-3">—</span>;
-  const pos = val >= 0;
-  return (
-    <span className={`chg-cell ${pos ? 'text-green' : 'text-red'}`}>
-      {pos ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
-      {pos ? '+' : ''}{val}%
-    </span>
-  );
-}
-
 function StockRow({ stock, index, onClick }) {
-  const buyPct = 60; // mock buy/sell ratio
-  const sellPct = 40;
   const isNative = stock.ticker === 'BSQ';
+
+  const getStatusBadge = () => {
+    if (stock.status === 'live') return <span className="status-badge live"><span className="dot"></span>Live on Pump</span>;
+    if (stock.status === 'launching') return <span className="status-badge launching"><span className="dot"></span>Launching Soon</span>;
+    return <span className="status-badge undeployed">Not Yet Deployed</span>;
+  };
+
+  const getActionText = () => {
+    if (stock.status === 'live') return 'Trade →';
+    if (stock.status === 'launching') return 'View →';
+    return 'Deploy on Pump →';
+  };
 
   return (
     <div
@@ -49,17 +47,26 @@ function StockRow({ stock, index, onClick }) {
           </div>
           <div className="token-sub">
             <span className="text-2 text-xs">{stock.name}</span>
-            <span className="sector-tag">{stock.sector}</span>
           </div>
         </div>
       </div>
 
+      <div className="col-exchange">
+        <span className="info-tag">{stock.exchange}</span>
+      </div>
+      
+      <div className="col-sector">
+        <span className="info-tag">{stock.sector}</span>
+      </div>
+
+      <div className="col-status">
+        {getStatusBadge()}
+      </div>
 
       <div className="col-action">
-        <button className="btn-trade" onClick={e => { e.stopPropagation(); }}>
-          View Info
+        <button className="btn-trade" onClick={e => { e.stopPropagation(); onClick(); }}>
+          {getActionText()}
         </button>
-        <span className="row-arrow">›</span>
       </div>
     </div>
   );
@@ -77,15 +84,8 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
     if (s.unregulated) return false; // Exclude unregulated from all other tabs
     
     if (filter === 'All' || !filter) return true;
-    if (filter === 'Live on Pump 💊') return !!s.contract;
-    if (filter === 'Trending 🔥') return s.change24h > 2; // mock logic
-    if (filter === 'New Listings') return false; // mock logic for empty list
-    if (filter === 'GTA VI') return false; // intentionally empty for now
-    if (filter === 'Top Gainers') return s.change24h > 0;
-    if (filter === 'Top Losers') return s.change24h < 0;
+    if (filter === 'Live on Pump 💊') return s.status === 'live';
     if (['Finance', 'Beverages', 'Defense', 'Tech'].includes(filter)) {
-      // In GTA universe some sectors: Diversified, Food/Beverage, Finance etc
-      // We will do a substring match
       return s.sector && s.sector.includes(filter);
     }
     return true; // default
@@ -96,6 +96,9 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
       <div className="table-head">
         <div className="col-num">#</div>
         <div className="col-token">Company</div>
+        <div className="col-exchange">Exchange</div>
+        <div className="col-sector">Sector</div>
+        <div className="col-status">Status</div>
         <div className="col-action"></div>
       </div>
 
