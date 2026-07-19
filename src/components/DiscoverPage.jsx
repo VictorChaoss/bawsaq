@@ -79,14 +79,14 @@ function DiscoverPage({ setActiveTab }) {
           </div>
           <h2 className="card-title">Token Deployment & Listings</h2>
           <p className="card-desc">
-            Want to see your GTA-themed token listed on the BAWSAQ terminal? It's fully automated. 
-            When people deploy a token and direct a portion of the funds to the native $BSQ token deployer wallet, 
-            the token automatically gets listed on the BAWSAQ exchange.
+            Want to see your GTA-themed token listed on the BAWSAQ terminal? Our on-chain system automatically tracks deployments. 
+            When you deploy a token and route a portion of the creator fees to the native $BSQ dev wallet, 
+            your token is logged into our system for a rapid security review before going live on the BAWSAQ exchange.
           </p>
           <ul className="card-list">
             <li><ShieldCheck size={16} /> Deploy a token on Solana.</li>
             <li><ShieldCheck size={16} /> Route your creator fees to the BAWSAQ dev wallet.</li>
-            <li><ShieldCheck size={16} /> Get instantly listed in the "New Listings" and "Live on Pump" tabs.</li>
+            <li><ShieldCheck size={16} /> Our system verifies the transaction and lists you upon review.</li>
           </ul>
         </HoverCard>
 
