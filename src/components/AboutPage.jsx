@@ -24,7 +24,7 @@ const TIMELINE = [
   { year: '2008', label: 'GTA IV', desc: 'BAWSAQ established in Liberty City. Referenced across Weazel News and in-world media.' },
   { year: '2013', label: 'GTA V', desc: 'BAWSAQ goes fully interactive in Los Santos. Players trade real stocks tied to Rockstar Social Club data.' },
   { year: '2026', label: 'On-Chain', desc: 'BAWSAQ launches on Solana. GTA\'s most iconic exchange moves to the blockchain.' },
-  { year: '2026', label: 'GTA VI', desc: 'Vice City opens. New stocks. New listings. The ecosystem expands with every Rockstar drop.', upcoming: true },
+  { year: '2025', label: 'GTA VI', desc: 'Vice City opens. New stocks. New listings. The ecosystem expands with every Rockstar drop.', upcoming: true },
 ];
 
 function LocationCard({ loc }) {
@@ -118,12 +118,12 @@ function AboutPage() {
           <h2 className="gta6-title">Opening in Vice City</h2>
           <p className="gta6-desc">
             Grand Theft Auto VI is set in Leonida — a sun-soaked, fictional take on Miami and the state of Florida.
-            Rockstar Games has confirmed a <strong>2026 release</strong>. When GTA VI drops, a whole new generation
+            Rockstar Games has confirmed a <strong>2025 release</strong>. When GTA VI drops, a whole new generation
             of companies, characters and brands enter the GTA universe — and BAWSAQ will be ready to list them all.
           </p>
           <div className="gta6-stats">
             <div className="gta6-stat">
-              <span className="gta6-stat-val">2026</span>
+              <span className="gta6-stat-val">2025</span>
               <span className="gta6-stat-label">Expected Release</span>
             </div>
             <div className="gta6-stat">

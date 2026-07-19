@@ -126,10 +126,7 @@ function DiscoverPage({ setActiveTab }) {
               <h3>Listing Revenue</h3>
               <p>Funds routed to the deployer for automatic listings are injected directly into the $BSQ liquidity pool.</p>
             </div>
-            <div className="mechanic">
-              <h3>Premium Features</h3>
-              <p>Holding $BSQ unlocks premium terminal features, including advanced charting, early listing alerts, and zero-fee routing.</p>
-            </div>
+
             <div className="mechanic" style={{ marginTop: '16px' }}>
               <h3 style={{ color: 'var(--text-1)' }}>Official Contract Address</h3>
               <div style={{
