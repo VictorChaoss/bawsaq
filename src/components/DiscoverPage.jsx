@@ -58,21 +58,24 @@ function DiscoverPage({ setActiveTab }) {
       </div>
 
       {/* CA Placeholder */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', padding: '8px 16px', borderRadius: '12px' }}>
-          <span style={{ fontSize: '12px', textTransform: 'uppercase', color: 'var(--text-3)', letterSpacing: '1px' }}>Official $BSQ Contract:</span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.08)', padding: '6px 12px', borderRadius: '6px' }}>
-            <span style={{ fontFamily: 'monospace', color: 'var(--green)', fontSize: '14px' }}>TBA...LAUNCHING SOON</span>
+      <div className="ca-bar">
+        <div className="ca-bar-inner">
+          <span className="ca-pulse" />
+          <span className="ca-label">$BSQ Contract Address</span>
+          <div className="ca-address-box">
+            <span className="ca-address">Launching Soon</span>
             <button 
+              className="ca-copy-btn"
               onClick={(e) => {
-                navigator.clipboard.writeText('TBA...LAUNCHING SOON');
-                e.currentTarget.style.color = 'var(--green)';
-                setTimeout(() => e.currentTarget.style.color = 'var(--text-2)', 1000);
+                const btn = e.currentTarget;
+                navigator.clipboard.writeText('LAUNCHING SOON');
+                btn.classList.add('copied');
+                setTimeout(() => btn.classList.remove('copied'), 1500);
               }}
-              style={{ background: 'none', border: 'none', color: 'var(--text-2)', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
               title="Copy CA"
             >
-              <Copy size={16} />
+              <Copy size={14} />
+              <span className="ca-copy-label">Copy</span>
             </button>
           </div>
         </div>
