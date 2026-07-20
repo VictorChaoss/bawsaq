@@ -42,11 +42,31 @@ function DiscoverPage({ setActiveTab }) {
       </div>
 
       {/* Live Stats Banner */}
-      <div className="stats-banner">
+      <div className="stats-banner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
         <div className="stat-item">
           <span className="stat-val">0</span>
           <span className="stat-label">Tokens Listed</span>
         </div>
+        
+        {/* CA Placeholder */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px', borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+          <span style={{ fontSize: '10px', textTransform: 'uppercase', color: 'var(--text-3)', letterSpacing: '1px', marginBottom: '8px' }}>Official $BSQ Contract</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.08)', padding: '6px 12px', borderRadius: '8px' }}>
+            <span style={{ fontFamily: 'monospace', color: 'var(--green)', fontSize: '13px' }}>TBA...LAUNCHING SOON</span>
+            <button 
+              onClick={(e) => {
+                navigator.clipboard.writeText('TBA...LAUNCHING SOON');
+                e.currentTarget.style.color = 'var(--green)';
+                setTimeout(() => e.currentTarget.style.color = 'var(--text-2)', 1000);
+              }}
+              style={{ background: 'none', border: 'none', color: 'var(--text-2)', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
+              title="Copy CA"
+            >
+              <Copy size={14} />
+            </button>
+          </div>
+        </div>
+
         <div className="stat-item">
           <span className="stat-val">0</span>
           <span className="stat-label">$BSQ Burned</span>
