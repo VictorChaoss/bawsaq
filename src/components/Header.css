@@ -194,6 +194,7 @@
     height: auto;
     padding: 12px;
     gap: 12px;
+    background: #000000;
   }
   
   .header-left {
