@@ -49,7 +49,7 @@ function DiscoverPage({ setActiveTab }) {
         </div>
         <div className="stat-item">
           <span className="stat-val">0</span>
-          <span className="stat-label">$BSQ Burned</span>
+          <span className="stat-label">$BAWSAQ Burned</span>
         </div>
         <div className="stat-item">
           <span className="stat-val">$0</span>
@@ -61,7 +61,7 @@ function DiscoverPage({ setActiveTab }) {
       <div className="ca-bar">
         <div className="ca-bar-inner">
           <span className="ca-pulse" />
-          <span className="ca-label">$BSQ Contract Address</span>
+          <span className="ca-label">$BAWSAQ Contract Address</span>
           <div className="ca-address-box">
             <span className="ca-address">Launching Soon</span>
             <button 
@@ -104,7 +104,7 @@ function DiscoverPage({ setActiveTab }) {
           <h2 className="card-title">Token Deployment & Listings</h2>
           <p className="card-desc">
             Want to see your GTA-themed token listed on the BAWSAQ terminal? Our on-chain system automatically tracks deployments. 
-            When you deploy a token and route a portion of the creator fees to the native $BSQ dev wallet, 
+            When you deploy a token and route a portion of the creator fees to the native $BAWSAQ dev wallet, 
             your token is logged into our system for a rapid security review before going live on the BAWSAQ exchange.
           </p>
           <ul className="card-list">
@@ -136,19 +136,19 @@ function DiscoverPage({ setActiveTab }) {
           <div className="card-icon-wrap bg-purple-tint">
             <TrendingUp size={24} color="var(--purple)" />
           </div>
-          <h2 className="card-title">The Native Token ($BSQ)</h2>
+          <h2 className="card-title">The Native Token ($BAWSAQ)</h2>
           <p className="card-desc">
-            At the heart of the ecosystem is the <strong>$BSQ</strong> token. The terminal is designed to capture value 
-            and feed it back to $BSQ holders. 
+            At the heart of the ecosystem is the <strong>$BAWSAQ</strong> token. The terminal is designed to capture value 
+            and feed it back to $BAWSAQ holders. 
           </p>
           <div className="token-mechanics">
             <div className="mechanic">
               <h3>Volume Fees</h3>
-              <p>A percentage of all trading volume across listed tokens is used to buy back and burn $BSQ.</p>
+              <p>A percentage of all trading volume across listed tokens is used to buy back and burn $BAWSAQ.</p>
             </div>
             <div className="mechanic">
               <h3>Listing Revenue</h3>
-              <p>Funds routed to the deployer for automatic listings are injected directly into the $BSQ liquidity pool.</p>
+              <p>Funds routed to the deployer for automatic listings are injected directly into the $BAWSAQ liquidity pool.</p>
             </div>
 
             <div className="mechanic" style={{ marginTop: '16px' }}>
@@ -218,7 +218,7 @@ function DiscoverPage({ setActiveTab }) {
       </div>
 
       <div className="wizard-section">
-        <h2 className="wizard-title">How to Buy $BSQ</h2>
+        <h2 className="wizard-title">How to Buy $BAWSAQ</h2>
         <div className="terminal-window">
           <div className="terminal-header">
             <div className="term-dot red" />
@@ -237,14 +237,14 @@ function DiscoverPage({ setActiveTab }) {
               <span className="step-num">02.</span>
               <div className="step-content">
                 <h4>Bridge SOL</h4>
-                <p>Transfer Solana (SOL) to your wallet. You'll need it to swap for $BSQ and pay for network fees.</p>
+                <p>Transfer Solana (SOL) to your wallet. You'll need it to swap for $BAWSAQ and pay for network fees.</p>
               </div>
             </div>
             <div className="term-step">
               <span className="step-num">03.</span>
               <div className="step-content">
-                <h4>Swap for $BSQ</h4>
-                <p>Use Jupiter or Raydium to swap your SOL for $BSQ. <span className="term-cursor"></span></p>
+                <h4>Swap for $BAWSAQ</h4>
+                <p>Use Jupiter or Raydium to swap your SOL for $BAWSAQ. <span className="term-cursor"></span></p>
               </div>
             </div>
           </div>
