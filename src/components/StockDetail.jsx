@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ExternalLink, Copy, Share2, ChevronDown, ChevronUp, Rocket, Clock } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Copy, Share2, ChevronDown, ChevronUp, Rocket, Clock, Gift, RefreshCw } from 'lucide-react';
 import './StockDetail.css';
 import { stockImageMap } from '../data/imageMap.js';
 
@@ -129,6 +129,60 @@ function StockDetail({ stock, onBack }) {
             src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark&info=0&trades=0`}
             allowFullScreen
           />
+          {stock.exchange === 'STONK' && (
+            <div className="stonk-rewards-container">
+              <div className="stonk-card">
+                <div className="stonk-card-header">
+                  <div className="stonk-card-title">
+                    <Gift size={16} className="stonk-icon" /> Holder rewards
+                  </div>
+                </div>
+                <p className="stonk-card-desc">
+                  85% of every trading fee on this 4% pool is paid out to ${stock.ticker} holders in TTWO, pro-rata, less a 2.50% fee covering the network costs of distributing and supporting operations. Fees collect until they are worth distributing, then go to wallets holding at least $20 of ${stock.ticker} at that moment.
+                </p>
+                
+                <div className="stonk-stats-grid">
+                  <div className="stonk-stat">
+                    <div className="stonk-stat-label">Paid to holders</div>
+                    <div className="stonk-stat-val">$61,847</div>
+                    <div className="stonk-stat-sub">254.95 TTWO</div>
+                  </div>
+                  <div className="stonk-stat">
+                    <div className="stonk-stat-label">Waiting to distribute</div>
+                    <div className="stonk-stat-val">$53.97</div>
+                  </div>
+                </div>
+                
+                <div className="stonk-card-footer">
+                  24621 payouts · last 19m ago
+                </div>
+              </div>
+
+              <div className="stonk-card">
+                <div className="stonk-card-header">
+                  <div className="stonk-card-title">
+                    <RefreshCw size={16} className="stonk-icon" /> Ecosystem Flywheel
+                  </div>
+                  <span className="stonk-badge">Active</span>
+                </div>
+                <p className="stonk-card-desc">
+                  ${stock.ticker} is in the flywheel's top rankings: platform revenue buys it back and burns it every few minutes, weighted by market cap. <span className="text-green cursor-pointer">View the flywheel</span>
+                </p>
+                
+                <div className="stonk-stats-grid">
+                  <div className="stonk-stat">
+                    <div className="stonk-stat-label">Bought back & burned</div>
+                    <div className="stonk-stat-val">$1,057</div>
+                  </div>
+                  <div className="stonk-stat">
+                    <div className="stonk-stat-label">Buybacks</div>
+                    <div className="stonk-stat-val">183</div>
+                    <div className="stonk-stat-sub">last 12m ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       ) : (
         /* State B: Token Not Yet Live */
