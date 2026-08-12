@@ -44,15 +44,15 @@ function DiscoverPage({ setActiveTab }) {
       {/* Live Stats Banner */}
       <div className="stats-banner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
         <div className="stat-item">
-          <span className="stat-val">14</span>
+          <span className="stat-val">0</span>
           <span className="stat-label">Tokens Listed</span>
         </div>
         <div className="stat-item">
-          <span className="stat-val">420,690</span>
+          <span className="stat-val">0</span>
           <span className="stat-label">$BAWSAQ Burned</span>
         </div>
         <div className="stat-item">
-          <span className="stat-val">$1.2M</span>
+          <span className="stat-val">$0</span>
           <span className="stat-label">24h Volume</span>
         </div>
       </div>

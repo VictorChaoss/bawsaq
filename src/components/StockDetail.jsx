@@ -144,17 +144,17 @@ function StockDetail({ stock, onBack }) {
                 <div className="stonk-stats-grid">
                   <div className="stonk-stat">
                     <div className="stonk-stat-label">Paid to holders</div>
-                    <div className="stonk-stat-val">$61,847</div>
-                    <div className="stonk-stat-sub">254.95 TTWO</div>
+                    <div className="stonk-stat-val">$0</div>
+                    <div className="stonk-stat-sub">0 TTWO</div>
                   </div>
                   <div className="stonk-stat">
                     <div className="stonk-stat-label">Waiting to distribute</div>
-                    <div className="stonk-stat-val">$53.97</div>
+                    <div className="stonk-stat-val">$0</div>
                   </div>
                 </div>
                 
                 <div className="stonk-card-footer">
-                  24621 payouts · last 19m ago
+                  0 payouts · pending
                 </div>
               </div>
 
@@ -172,12 +172,12 @@ function StockDetail({ stock, onBack }) {
                 <div className="stonk-stats-grid">
                   <div className="stonk-stat">
                     <div className="stonk-stat-label">Bought back & burned</div>
-                    <div className="stonk-stat-val">$1,057</div>
+                    <div className="stonk-stat-val">$0</div>
                   </div>
                   <div className="stonk-stat">
                     <div className="stonk-stat-label">Buybacks</div>
-                    <div className="stonk-stat-val">183</div>
-                    <div className="stonk-stat-sub">last 12m ago</div>
+                    <div className="stonk-stat-val">0</div>
+                    <div className="stonk-stat-sub">pending</div>
                   </div>
                 </div>
               </div>
