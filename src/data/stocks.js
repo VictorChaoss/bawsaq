@@ -125,6 +125,14 @@ export const unregulatedStocks = [
     desc: 'The token is designed as a community-driven project intended to capitalize on the excitement and global anticipation surrounding the Grand Theft Auto VI game. It is an experimental meme token not affiliated with, endorsed by, or sponsored by Rockstar Games, Take-Two Interactive, or the Grand Theft Auto franchise.',
   }),
   makeStock({
+    ticker: 'GTA6',
+    name: 'GTA VI',
+    exchange: 'PUMP',
+    sector: 'Unregulated',
+    contract: '4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz',
+    desc: 'A community-driven token celebrating the release of GTA VI.',
+  }),
+  makeStock({
     ticker: 'MACCA',
     name: 'Macca The Gator',
     exchange: 'PUMP',
