@@ -7,7 +7,7 @@ function StockRow({ stock, index, onClick }) {
   const isNative = stock.ticker === 'BSQ';
 
   const getStatusBadge = () => {
-    if (stock.status === 'live') return <span className="status-badge live"><span className="dot"></span>Live on Pump</span>;
+    if (stock.status === 'live') return <span className="status-badge live"><span className="dot"></span>Live</span>;
     if (stock.status === 'launching') return <span className="status-badge launching"><span className="dot"></span>Launching Soon</span>;
     return <span className="status-badge undeployed">Not Yet Deployed</span>;
   };
