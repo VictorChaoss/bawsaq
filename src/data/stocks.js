@@ -134,19 +134,27 @@ export const unregulatedStocks = [
   }),
   makeStock({
     ticker: 'GTAVIBANK',
-    name: 'GTA VI Bank',
+    name: 'GTAVIBANK',
     exchange: 'PUMP',
     sector: 'Unregulated',
     contract: 'BHX3iJAMiCXGpPPPNe98P8xKDTmyqUBDge9kQt44pump',
-    desc: 'GTAVIBank is a community-driven GTA token launched on Pump.fun.',
+    desc: 'GTAVIBANK is a community-driven GTA token launched on Pump.fun.',
   }),
   makeStock({
     ticker: 'MACCA',
     name: 'Macca The Gator',
     exchange: 'PUMP',
     sector: 'Unregulated',
-    contract: 'GATorK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump',
+    contract: '8nS87ogMnPzczKSDi4nucPPB9t9GwPKz6rrnTz3bFhGr',
     desc: 'Macca The Gator is a community-driven meme coin based on the popular character from the Grand Theft Auto universe.',
+  }),
+  makeStock({
+    ticker: 'GTA',
+    name: 'GTA',
+    exchange: 'PUMP',
+    sector: 'Unregulated',
+    contract: 'BVEaDToN2Ufn8m1Jnqy8rtwwCiiMC7JcFtvmKPxTpump',
+    desc: 'A community-driven meme token named after the iconic Grand Theft Auto franchise, launched on Pump.fun.',
   })
 ].map(s => ({ ...s, unregulated: true }));
 export const mockStocks = [
