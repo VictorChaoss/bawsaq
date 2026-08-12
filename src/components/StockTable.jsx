@@ -93,40 +93,6 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
 
   return (
     <div className="stock-table-wrap">
-      {filter === 'GTA Related Tokens' && (
-        <div style={{
-          display: 'flex',
-          gap: '16px',
-          alignItems: 'flex-start',
-          background: 'rgba(255,255,255,0.03)',
-          border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '12px',
-          padding: '24px',
-          marginBottom: '24px'
-        }}>
-          <div style={{
-            background: 'rgba(0, 255, 102, 0.15)',
-            border: '1px solid rgba(0, 255, 102, 0.3)',
-            borderRadius: '12px',
-            width: '48px',
-            height: '48px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexShrink: 0
-          }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-          </div>
-          <div>
-            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#fff' }}>The Central Hub for GTA Stocks</h3>
-            <p style={{ color: 'var(--text-2)', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-              The BAWSAQ ecosystem runs on a revolutionary Reward Token model. Every transaction carries a 3% tax that is paid straight to holders in the paired token. No creator fees—just pure, automated yield for the community. A portion of pool fees feeds the Ecosystem Flywheel, constantly buying back and burning tokens.
-            </p>
-          </div>
-        </div>
-      )}
       <div className="table-head">
         <div className="col-num">#</div>
         <div className="col-token">Company</div>
