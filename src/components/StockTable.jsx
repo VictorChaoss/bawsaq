@@ -15,7 +15,7 @@ function StockRow({ stock, index, onClick }) {
   const getActionText = () => {
     if (stock.status === 'live') return 'Trade →';
     if (stock.status === 'launching') return 'View →';
-    return 'Deploy on Pump →';
+    return 'Deploy →';
   };
 
   return (

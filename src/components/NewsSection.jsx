@@ -62,39 +62,39 @@ function NewsSkeleton() {
 
 const MOCK_NEWS = [
   {
+    title: "Grand Theft Auto VI: An Extended Look",
+    pubDate: new Date(Date.now() - 86400000 * 1).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/70a68d06371c66289d0a68f037f00d8b746816fa.jpg",
+    description: "Rockstar Games announces a special presentation premiering exclusively on Netflix on Thursday, August 27. An in-depth look at the state of Leonida."
+  },
+  {
+    title: "Take-Two Reaffirms Grand Theft Auto VI Launch Date",
+    pubDate: new Date(Date.now() - 86400000 * 3).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/892e86b2404b901bc7190089a812061e86ba841b.jpg",
+    description: "During the latest earnings call, Take-Two Interactive confirmed that Grand Theft Auto VI remains on track for its highly anticipated November 19 release."
+  },
+  {
+    title: "Grand Theft Auto VI Pre-orders Now Live",
+    pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
+    link: "https://www.rockstargames.com/newswire",
+    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/32b005e0c52bb7a5991ee8618e0018f99059f1be.jpg",
+    description: "Secure your copy of Grand Theft Auto VI. Pre-orders are now available for PlayStation 5 and Xbox Series X|S worldwide."
+  },
+  {
     title: "Grand Theft Auto VI Trailer 1",
-    pubDate: new Date(Date.now() - 86400000 * 2).toISOString(),
+    pubDate: new Date(Date.now() - 86400000 * 200).toISOString(),
     link: "https://www.youtube.com/watch?v=QdBZY2fkU-0",
     thumbnail: "https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg",
-    description: "Grand Theft Auto VI heads to the state of Leonida, home to the neon-soaked streets of Vice City and beyond in the biggest, most immersive evolution of the Grand Theft Auto series yet."
+    description: "Grand Theft Auto VI heads to the state of Leonida, home to the neon-soaked streets of Vice City and beyond in the biggest, most immersive evolution of the series yet."
   },
   {
     title: "The Chop Shop Update Now Available in GTA Online",
     pubDate: new Date(Date.now() - 86400000 * 14).toISOString(),
     link: "https://www.rockstargames.com/newswire",
-    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/70a68d06371c66289d0a68f037f00d8b746816fa.jpg",
-    description: "Team up with Liberty City real estate mogul Yusuf Amir on an all-new illicit venture. Steal the most coveted vehicles in Los Santos."
-  },
-  {
-    title: "Earn Double Rewards in Acid Lab Sell Missions",
-    pubDate: new Date(Date.now() - 86400000 * 3).toISOString(),
-    link: "https://www.rockstargames.com/newswire",
-    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/892e86b2404b901bc7190089a812061e86ba841b.jpg",
-    description: "This week in GTA Online, capitalize on the chaos of Los Santos and earn 2X GTA$ and RP on all Acid Lab Sell Missions."
-  },
-  {
-    title: "New Vehicle: The Gallivanter Baller ST-D",
-    pubDate: new Date(Date.now() - 86400000 * 7).toISOString(),
-    link: "https://www.rockstargames.com/newswire",
-    thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/32b005e0c52bb7a5991ee8618e0018f99059f1be.jpg",
-    description: "The highly anticipated Gallivanter Baller ST-D is now available for purchase at Legendary Motorsport."
-  },
-  {
-    title: "Community Series Update: Double GTA$ and RP",
-    pubDate: new Date(Date.now() - 86400000 * 10).toISOString(),
-    link: "https://www.rockstargames.com/newswire",
     thumbnail: "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/news/866039537f827284b1a455a29cc88a6d091a18c6.jpg",
-    description: "Jump into the latest batch of incredible Jobs created by the community and earn double rewards all week long."
+    description: "Team up with Liberty City real estate mogul Yusuf Amir on an all-new illicit venture. Steal the most coveted vehicles in Los Santos."
   },
   {
     title: "GTA+ Member Benefits for This Month",

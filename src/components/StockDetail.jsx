@@ -140,7 +140,7 @@ function StockDetail({ stock, onBack }) {
               </div>
               <h2 className="sd-deploy-title">Launching Soon</h2>
               <p className="sd-deploy-text">
-                This stock is being prepared for launch on Pump.fun
+                This stock is being prepared for launch.
               </p>
               <span className="sd-launching-badge">
                 <span className="status-dot dot-amber" /> Launching Soon
@@ -153,16 +153,15 @@ function StockDetail({ stock, onBack }) {
               </div>
               <h2 className="sd-deploy-title">Be the first to bring {stock.name} on-chain</h2>
               <p className="sd-deploy-text">
-                Deploy this GTA stock as a token on Pump.fun and it will be automatically listed on BAWSAQ.
+                Deploy this GTA stock as a token and it will be automatically listed on BAWSAQ.
               </p>
-              <a
-                href="https://pump.fun"
-                target="_blank"
-                rel="noreferrer"
+              <button
+                disabled
                 className="sd-btn sd-btn-deploy"
+                style={{ cursor: 'not-allowed', opacity: 0.5 }}
               >
-                <Rocket size={16} /> Deploy on Pump.fun
-              </a>
+                <Rocket size={16} /> Deploy
+              </button>
             </div>
           )}
         </div>

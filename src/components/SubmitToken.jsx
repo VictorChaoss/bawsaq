@@ -74,8 +74,8 @@ export default function SubmitToken({ onClose }) {
             </div>
 
             <div className="submit-field">
-              <label>Pump.fun Link</label>
-              <input name="pumpUrl" value={form.pumpUrl} onChange={handleChange} placeholder="https://pump.fun/coin/..." />
+              <label>Link</label>
+              <input name="pumpUrl" value={form.pumpUrl} onChange={handleChange} placeholder="https://..." />
             </div>
 
             <div className="submit-field">
