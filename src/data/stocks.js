@@ -133,12 +133,12 @@ export const unregulatedStocks = [
     desc: 'A community-driven token celebrating the release of GTA VI.',
   }),
   makeStock({
-    ticker: 'GTATOKEN',
-    name: 'GTA Token',
-    exchange: 'STONK',
+    ticker: 'GTAVIBANK',
+    name: 'GTA VI Bank',
+    exchange: 'PUMP',
     sector: 'Unregulated',
     contract: 'BHX3iJAMiCXGpPPPNe98P8xKDTmyqUBDge9kQt44pump',
-    desc: 'Another community-driven GTA token launched on the network.',
+    desc: 'GTAVIBank is a community-driven GTA token launched on Pump.fun.',
   }),
   makeStock({
     ticker: 'MACCA',
