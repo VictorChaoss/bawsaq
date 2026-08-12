@@ -57,6 +57,19 @@ function TokenomicsPage() {
       </div>
 
       <div className="tokenomics-section">
+        <div className="section-tag">Phase 2</div>
+        <h2 className="section-title">The Grand Theft Auto Hub</h2>
+        <div className="tokenomics-content-block">
+          <p>
+            As we move into Phase 2, BAWSAQ expands into its true form: the centralized hub for the biggest event of 2026. We will begin integrating actual GTA-related stocks, coins, and assets across the Solana ecosystem into our terminal.
+          </p>
+          <p>
+            Users and communities will have the ability to list their own tokens directly on BAWSAQ. As volume and listings grow, the fees generated from these ecosystem tokens will be used to systematically buy back <strong>$BAWSAQ</strong>, driving continuous value back to our core holders.
+          </p>
+        </div>
+      </div>
+
+      <div className="tokenomics-section">
         <div className="section-tag">Ecosystem</div>
         <h2 className="section-title">What is Take-Two?</h2>
         <div className="tokenomics-content-block">
