@@ -210,7 +210,7 @@ function DiscoverPage({ setActiveTab }) {
           The NASDAQ boasts a market cap of over $25 Trillion, serving as the ultimate hub for the world's most valuable tech companies. Grand Theft Auto VI is not just a video game; it is the biggest cultural and financial entertainment event of the decade.
         </p>
         <p style={{ fontSize: '16px', lineHeight: '1.7', color: 'var(--text-2)', maxWidth: '680px', marginBottom: '28px' }}>
-          An event of this magnitude deserves true representation in the crypto trenches. BAWSAQ is the definitive, centralized hub for all GTA-related tokens, stocks, and on-chain assets. We are building the NASDAQ of the GTA universe—a single, premium interface to track, trade, and launch the economy of the biggest game ever made.
+          An event of this magnitude deserves true representation in the crypto trenches. BAWSAQ is the definitive, centralized hub for all GTA-related tokens, stocks, and on-chain assets. We are building the NASDAQ of the GTA universe—a single, premium interface to track, trade, and launch the economy of the biggest game ever made. Our ultimate goal is simple: to make <strong style={{ color: 'var(--text-1)' }}>$BAWSAQ</strong> the biggest and most valuable GTA token ever created.
         </p>
       </div>
 
