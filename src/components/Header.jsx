@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Bell, Settings, ChevronDown, Zap } from 'lucide-react';
 import { mockStocks } from '../data/stocks';
 import './Header.css';
 
-function TickerItem({ item }) {
-  let statusText = '⬜ DEPLOY';
-  let color = 'var(--text-3)';
+function LiveTickerItem({ symbol, price, change, isUp }) {
+  const color = isUp ? 'var(--green)' : '#EF4444';
+  const icon = isUp ? '▲' : '▼';
   
-  if (item.status === 'live') {
-    statusText = '🟢 LIVE';
-    color = 'var(--green)';
-  } else if (item.status === 'launching') {
-    statusText = '🟡 LAUNCHING';
-    color = '#F59E0B';
-  } else if (item.ticker === 'BSQ') {
-    statusText = '★ NATIVE';
-    color = 'var(--green)';
-  }
-
   return (
     <div className="ticker-item">
-      <span style={{ color: 'var(--text-2)' }}>{item.ticker}</span>
-      <span style={{ color: color, fontWeight: 700, fontSize: '11px', letterSpacing: '1px' }}>{statusText}</span>
-      <div className="ticker-dot" style={{ background: color }} />
+      <span style={{ color: 'var(--text-2)', fontWeight: 600 }}>{symbol}</span>
+      <span style={{ color: '#fff', fontFamily: 'monospace', fontSize: '13px' }}>
+        ${price.toFixed(2)}
+      </span>
+      <span style={{ color: color, fontWeight: 700, fontSize: '11px', letterSpacing: '0.5px' }}>
+        {icon} {change}%
+      </span>
+      <div className="ticker-dot" style={{ background: color, marginLeft: '8px' }} />
     </div>
   );
 }
@@ -30,9 +24,50 @@ function TickerItem({ item }) {
 function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
   const [logoError, setLogoError] = useState(false);
   
-  // Use a slice of the real stocks for the ticker tape to keep it readable
-  const displayStocks = mockStocks.slice(0, 15);
-  const doubled = [...displayStocks, ...displayStocks];
+  // Simulated live prices for TTWO and BSQ
+  const [prices, setPrices] = useState({
+    TTWO: { price: 243.25, change: -2.89, isUp: false },
+    BSQ: { price: 0.05, change: 12.4, isUp: true }
+  });
+
+  useEffect(() => {
+    // Simulate live market updates every 3 seconds
+    const interval = setInterval(() => {
+      setPrices(prev => {
+        // Random fluctuation between -0.5% and +0.5%
+        const ttwoFluct = (Math.random() - 0.5) * 0.5;
+        const bsqFluct = (Math.random() - 0.5) * 2.0; // Crypto is more volatile
+        
+        return {
+          TTWO: {
+            price: prev.TTWO.price * (1 + ttwoFluct / 100),
+            change: prev.TTWO.change + ttwoFluct,
+            isUp: prev.TTWO.change + ttwoFluct >= 0
+          },
+          BSQ: {
+            price: prev.BSQ.price * (1 + bsqFluct / 100),
+            change: prev.BSQ.change + bsqFluct,
+            isUp: prev.BSQ.change + bsqFluct >= 0
+          }
+        };
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Repeat the two items to fill the marquee
+  const displayStocks = [
+    { symbol: 'TTWO', ...prices.TTWO },
+    { symbol: 'BSQ', ...prices.BSQ },
+    { symbol: 'TTWO', ...prices.TTWO },
+    { symbol: 'BSQ', ...prices.BSQ },
+    { symbol: 'TTWO', ...prices.TTWO },
+    { symbol: 'BSQ', ...prices.BSQ },
+    { symbol: 'TTWO', ...prices.TTWO },
+    { symbol: 'BSQ', ...prices.BSQ },
+    { symbol: 'TTWO', ...prices.TTWO },
+    { symbol: 'BSQ', ...prices.BSQ },
+  ];
 
   return (
     <>
@@ -83,7 +118,9 @@ function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
       {/* Live scrolling ticker tape */}
       <div className="ticker-tape">
         <div className="ticker-scroll">
-          {doubled.map((item, i) => <TickerItem key={i} item={item} />)}
+          {displayStocks.map((item, i) => (
+            <LiveTickerItem key={i} {...item} />
+          ))}
         </div>
       </div>
     </>
