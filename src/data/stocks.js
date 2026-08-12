@@ -127,7 +127,7 @@ export const unregulatedStocks = [
   makeStock({
     ticker: 'GTA6',
     name: 'GTA VI',
-    exchange: 'PUMP',
+    exchange: 'STONK',
     sector: 'Unregulated',
     contract: '4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz',
     desc: 'A community-driven token celebrating the release of GTA VI.',

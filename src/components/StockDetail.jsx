@@ -89,14 +89,25 @@ function StockDetail({ stock, onBack }) {
                 <Copy size={14} />
                 {copied ? 'Copied!' : `${stock.contract.slice(0, 6)}…${stock.contract.slice(-4)}`}
               </button>
-              <a
-                href={`https://pump.fun/coin/${stock.contract}`}
-                target="_blank"
-                rel="noreferrer"
-                className="sd-btn sd-btn-primary"
-              >
-                Trade on Pump.fun <ExternalLink size={14} />
-              </a>
+              {stock.exchange === 'STONK' ? (
+                <a
+                  href={`https://www.stonkfun.xyz/token/${stock.contract}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="sd-btn sd-btn-primary"
+                >
+                  Trade on StonkFun <ExternalLink size={14} />
+                </a>
+              ) : (
+                <a
+                  href={`https://pump.fun/coin/${stock.contract}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="sd-btn sd-btn-primary"
+                >
+                  Trade on Pump.fun <ExternalLink size={14} />
+                </a>
+              )}
             </>
           )}
         </div>
@@ -108,9 +119,9 @@ function StockDetail({ stock, onBack }) {
       {isLive ? (
         /* State A: Token is Live */
         <div className="sd-chart-section">
-          {stock.contract?.endsWith('pump') && (
+          {(stock.contract?.endsWith('pump') || stock.exchange === 'STONK') && (
             <div style={{ background: 'rgba(255, 170, 0, 0.1)', color: '#ffaa00', padding: '8px 12px', fontSize: '12px', textAlign: 'center', borderBottom: '1px solid rgba(255, 170, 0, 0.2)' }}>
-              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on Pump.fun" to view live data.
+              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'STONK' ? 'StonkFun' : 'Pump.fun'}" to view live data.
             </div>
           )}
           <iframe
