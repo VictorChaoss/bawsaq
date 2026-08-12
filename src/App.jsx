@@ -6,6 +6,7 @@ import StockTable from './components/StockTable';
 import StockDetail from './components/StockDetail';
 import NewsSection from './components/NewsSection';
 import AboutPage from './components/AboutPage';
+import TokenomicsPage from './components/TokenomicsPage';
 import DiscoverPage from './components/DiscoverPage';
 import SocialsPage from './components/SocialsPage';
 import SubmitToken from './components/SubmitToken';
@@ -63,6 +64,9 @@ function App() {
 
         {/* ── About ── */}
         {activeTab === 'About' && <AboutPage />}
+
+        {/* ── Tokenomics ── */}
+        {activeTab === 'Tokenomics' && <TokenomicsPage />}
 
         {/* ── Discover ── */}
         {activeTab === 'Discover' && <DiscoverPage setActiveTab={handleTabChange} />}
