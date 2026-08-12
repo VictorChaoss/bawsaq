@@ -1,7 +1,7 @@
 import React from 'react';
 import './SubHeader.css';
 
-const FILTERS = ['All', 'Live on Pump 💊', 'Community Customs 🔧', 'Trending 🔥', 'New Listings', 'GTA VI'];
+const FILTERS = ['All', 'GTA Related Tokens'];
 
 function SubHeader({ activeFilter, onFilter, onSubmit }) {
   return (

@@ -80,7 +80,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
         s.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-    if (filter === 'Community Customs 🔧') return !!s.unregulated;
+    if (filter === 'GTA Related Tokens') return !!s.unregulated;
     if (s.unregulated) return false; // Exclude unregulated from all other tabs
     
     if (filter === 'All' || !filter) return true;
@@ -93,7 +93,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
 
   return (
     <div className="stock-table-wrap">
-      {filter === 'Community Customs 🔧' && (
+      {filter === 'GTA Related Tokens' && (
         <div style={{
           display: 'flex',
           gap: '16px',
