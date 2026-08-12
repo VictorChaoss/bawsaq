@@ -122,7 +122,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
           <div>
             <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#fff' }}>The Central Hub for GTA Stocks</h3>
             <p style={{ color: 'var(--text-2)', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-              Want to see your GTA-themed token listed on the terminal? Our on-chain system automatically logs your deployment. Deploy your stock on Pump.fun and route a portion of your creator fees to the <strong style={{color:'var(--green)'}}>$BAWSAQ Dev Wallet</strong>. Once verified, your token enters our queue for a rapid security review before going live. All redirected fees flow directly into the native <strong style={{color:'var(--green)'}}>$BAWSAQ</strong> token, creating a self-sustaining ecosystem.
+              The BAWSAQ ecosystem runs on a revolutionary Reward Token model. Every transaction carries a 3% tax that is paid straight to holders in the paired token. No creator fees—just pure, automated yield for the community. A portion of pool fees feeds the Ecosystem Flywheel, constantly buying back and burning tokens.
             </p>
           </div>
         </div>

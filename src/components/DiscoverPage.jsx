@@ -103,14 +103,12 @@ function DiscoverPage({ setActiveTab }) {
           </div>
           <h2 className="card-title">Token Deployment & Listings</h2>
           <p className="card-desc">
-            Want to see your GTA-themed token listed on the BAWSAQ terminal? Our on-chain system automatically tracks deployments. 
-            When you deploy a token and route a portion of the creator fees to the native $BAWSAQ dev wallet, 
-            your token is logged into our system for a rapid security review before going live on the BAWSAQ exchange.
+            Want to see your GTA-themed token listed on the BAWSAQ terminal? Our platform is designed to track and verify the top GTA tokens on the blockchain. Contact our team on X or Telegram to apply for a listing and a rapid security review before going live on the BAWSAQ exchange.
           </p>
           <ul className="card-list">
-            <li><ShieldCheck size={16} /> Deploy a token on Solana.</li>
-            <li><ShieldCheck size={16} /> Route your creator fees to the BAWSAQ dev wallet.</li>
-            <li><ShieldCheck size={16} /> Our system verifies the transaction and lists you upon review.</li>
+            <li><ShieldCheck size={16} /> Contact us with your token details.</li>
+            <li><ShieldCheck size={16} /> We perform a strict security review.</li>
+            <li><ShieldCheck size={16} /> Verified tokens get listed on the terminal.</li>
           </ul>
         </HoverCard>
 
@@ -138,17 +136,16 @@ function DiscoverPage({ setActiveTab }) {
           </div>
           <h2 className="card-title">The Native Token ($BAWSAQ)</h2>
           <p className="card-desc">
-            At the heart of the ecosystem is the <strong>$BAWSAQ</strong> token. The terminal is designed to capture value 
-            and feed it back to $BAWSAQ holders. 
+            At the heart of the ecosystem is the <strong>$BAWSAQ</strong> token. The BAWSAQ token runs on a revolutionary <strong>Reward Token</strong> model designed to capture value and feed it back to holders. 
           </p>
           <div className="token-mechanics">
             <div className="mechanic">
-              <h3>Volume Fees</h3>
-              <p>A percentage of all trading volume across listed tokens is used to buy back and burn $BAWSAQ.</p>
+              <h3>Holder Rewards (Yield)</h3>
+              <p>A 3% transfer tax on every transaction is paid automatically and directly to holders in the paired token. You earn yield simply by holding.</p>
             </div>
             <div className="mechanic">
-              <h3>Listing Revenue</h3>
-              <p>Funds routed to the deployer for automatic listings are injected directly into the $BAWSAQ liquidity pool.</p>
+              <h3>Ecosystem Flywheel</h3>
+              <p>A share of the 1% pool fees feeds the Ecosystem Flywheel, which constantly buys back and burns $BAWSAQ to reduce supply.</p>
             </div>
 
             <div className="mechanic" style={{ marginTop: '16px' }}>
@@ -244,7 +241,7 @@ function DiscoverPage({ setActiveTab }) {
               <span className="step-num">03.</span>
               <div className="step-content">
                 <h4>Swap for $BAWSAQ</h4>
-                <p>Use Jupiter or Raydium to swap your SOL for $BAWSAQ. <span className="term-cursor"></span></p>
+                <p>Use Jupiter or Raydium to swap your SOL for $BAWSAQ. Make sure to set your slippage to at least 3-4% to account for the transfer tax. <span className="term-cursor"></span></p>
               </div>
             </div>
           </div>

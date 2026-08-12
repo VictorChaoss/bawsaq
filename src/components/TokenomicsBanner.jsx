@@ -12,7 +12,7 @@ function TokenomicsBanner() {
         <div>
           <div className="banner-title">The Central Hub for GTA Stocks</div>
           <p className="banner-desc">
-            Want to see your GTA-themed token listed on the terminal? It's fully automated. Deploy your stock on Pump.fun and route a portion of your creator fees to the <strong>$BAWSAQ Dev Wallet</strong>. Once received, your token instantly lists on BAWSAQ. All redirected fees flow directly into the native <strong>$BAWSAQ</strong> token, creating a self-sustaining ecosystem.
+            The BAWSAQ ecosystem runs on a revolutionary Reward Token model. Every transaction carries a 3% tax that is paid straight to holders in the paired token. No creator fees—just pure, automated yield for the community. A portion of pool fees feeds the Ecosystem Flywheel, constantly buying back and burning tokens.
           </p>
         </div>
       </div>
