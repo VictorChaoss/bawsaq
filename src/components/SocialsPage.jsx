@@ -19,12 +19,12 @@ function SocialsPage() {
       bgTint: 'rgba(29, 161, 242, 0.1)'
     },
     {
-      title: 'Pump.fun',
+      title: 'StonkFun',
       desc: 'Deploy and trade the newest tokens before they hit the broader market.',
-      url: 'https://pump.fun',
-      icon: <img src="/socials/pumpfun.jpg" alt="Pump.fun" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
-      color: '#10B981',
-      bgTint: 'rgba(16, 185, 129, 0.1)'
+      url: 'https://www.stonkfun.xyz',
+      icon: <img src="/socials/stonkfun.jpg" alt="StonkFun" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      color: '#F59E0B',
+      bgTint: 'rgba(245, 158, 11, 0.1)'
     },
     {
       title: 'Life Invader',
