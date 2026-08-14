@@ -70,6 +70,19 @@ function TokenomicsPage() {
       </div>
 
       <div className="tokenomics-section">
+        <div className="section-tag">Phase 3</div>
+        <h2 className="section-title">The Vice City Expansion & RP Integration</h2>
+        <div className="tokenomics-content-block">
+          <p>
+            The future of BAWSAQ extends directly into the streets. We are laying the groundwork for deep <strong>FiveM & GTA RP Server Integrations</strong>, allowing players to trade real crypto assets on their in-game phones and embedding the BAWSAQ economy directly into virtual worlds. Our ultimate goal is to launch an exclusive BAWSAQ-branded RP Server for our core community.
+          </p>
+          <p>
+            As the highly anticipated launch of GTA VI approaches, we will be executing one of the largest community reward initiatives on Solana. Top loyal shareholders will receive exclusive airdrops, insider access, and actual <strong>gifted copies of GTA VI</strong> on release day as a thank you for their unwavering support.
+          </p>
+        </div>
+      </div>
+
+      <div className="tokenomics-section">
         <div className="section-tag">Ecosystem</div>
         <h2 className="section-title">What is Take-Two?</h2>
         <div className="tokenomics-content-block">
