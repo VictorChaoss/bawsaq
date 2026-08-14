@@ -201,13 +201,13 @@ body::before {
 
 /* Custom hand cursor */
 html, body, * {
-  cursor: url("/custom_hand_cursor_optimized.png") 29 5, auto !important;
+  cursor: url("/custom_hand_cursor_optimized.png") 15 3, auto !important;
 }
 
 /* Keep the same cursor over clickable elements */
 a, button, input[type="button"], input[type="submit"],
 input[type="reset"], [role="button"], select,
 .cursor-pointer, [style*="cursor: pointer"] {
-  cursor: url("/custom_hand_cursor_optimized.png") 29 5, pointer !important;
+  cursor: url("/custom_hand_cursor_optimized.png") 15 3, pointer !important;
 }
 
