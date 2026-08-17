@@ -88,12 +88,25 @@ export default function NativeChart({ contractAddress }) {
                 height: chartContainerRef.current.clientHeight || 400,
             });
             
+            const minPrice = Math.min(...formattedData.map(d => d.low));
+            let precision = 2;
+            let minMove = 0.01;
+            if (minPrice < 0.0000001) { precision = 10; minMove = 0.0000000001; }
+            else if (minPrice < 0.00001) { precision = 8; minMove = 0.00000001; }
+            else if (minPrice < 0.001) { precision = 6; minMove = 0.000001; }
+            else if (minPrice < 0.1) { precision = 4; minMove = 0.0001; }
+            
             const candlestickSeries = chart.addSeries(CandlestickSeries, {
                 upColor: '#26a69a',
                 downColor: '#ef5350',
                 borderVisible: false,
                 wickUpColor: '#26a69a',
                 wickDownColor: '#ef5350',
+                priceFormat: {
+                    type: 'price',
+                    precision: precision,
+                    minMove: minMove,
+                },
             });
             
             candlestickSeries.setData(formattedData);

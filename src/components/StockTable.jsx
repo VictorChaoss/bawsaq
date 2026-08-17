@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { mockStocks } from '../data/stocks';
 import { stockImageMap } from '../data/imageMap.js';
 import './StockTable.css';
 
-function StockRow({ stock, index, onClick }) {
+const formatMcap = (val) => {
+  if (!val) return '--';
+  if (val >= 1000000000) return '$' + (val / 1000000000).toFixed(2) + 'B';
+  if (val >= 1000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+  if (val >= 1000) return '$' + (val / 1000).toFixed(2) + 'K';
+  return '$' + val.toFixed(2);
+};
+
+function StockRow({ stock, index, onClick, marketCap }) {
   const isNative = stock.ticker === 'BSQ';
 
   const getStatusBadge = () => {
@@ -58,6 +66,12 @@ function StockRow({ stock, index, onClick }) {
       <div className="col-sector">
         <span className="info-tag">{stock.sector}</span>
       </div>
+      
+      <div className="col-mcap">
+        <span className="info-tag" style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--green)' }}>
+          {marketCap ? formatMcap(marketCap) : '--'}
+        </span>
+      </div>
 
       <div className="col-status">
         {getStatusBadge()}
@@ -73,6 +87,8 @@ function StockRow({ stock, index, onClick }) {
 }
 
 function StockTable({ filter, onSelectStock, searchQuery }) {
+  const [marketCaps, setMarketCaps] = useState({});
+
   const filteredStocks = mockStocks.filter(s => {
     if (searchQuery) {
       return (
@@ -91,6 +107,49 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
     return true; // default
   });
 
+  const contractsString = JSON.stringify(
+    filteredStocks.filter(s => s.status === 'live' && s.contract).map(s => s.contract)
+  );
+
+  useEffect(() => {
+    const contracts = JSON.parse(contractsString);
+    if (contracts.length === 0) return;
+    
+    const fetchMarketCaps = async () => {
+      try {
+        const chunks = [];
+        for (let i = 0; i < contracts.length; i += 30) {
+            chunks.push(contracts.slice(i, i + 30).join(','));
+        }
+        
+        const caps = { ...marketCaps };
+        let hasNew = false;
+        
+        for (const chunk of chunks) {
+            const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${chunk}`);
+            const data = await res.json();
+            
+            if (data.pairs) {
+                data.pairs.forEach(pair => {
+                    const addr = pair.baseToken.address;
+                    if (!caps[addr] || (pair.fdv || pair.marketCap) > caps[addr]) {
+                        caps[addr] = pair.fdv || pair.marketCap;
+                        hasNew = true;
+                    }
+                });
+            }
+        }
+        if (hasNew) {
+            setMarketCaps(caps);
+        }
+      } catch (err) {
+        console.error("Failed to fetch market caps:", err);
+      }
+    };
+    
+    fetchMarketCaps();
+  }, [contractsString]);
+
   return (
     <div className="stock-table-wrap">
       <div className="table-head">
@@ -98,6 +157,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
         <div className="col-token">Company</div>
         <div className="col-exchange">Exchange</div>
         <div className="col-sector">Sector</div>
+        <div className="col-mcap">M.Cap</div>
         <div className="col-status">Status</div>
         <div className="col-action"></div>
       </div>
@@ -106,12 +166,13 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
       <div className="table-body">
         {filteredStocks.length > 0 ? (
           filteredStocks.map((stock, i) => (
-            <StockRow
-              key={stock.id}
-              stock={stock}
-              index={i}
-              onClick={() => onSelectStock(stock)}
-            />
+              <StockRow
+                key={stock.id}
+                stock={stock}
+                index={i}
+                marketCap={marketCaps[stock.contract]}
+                onClick={() => onSelectStock(stock)}
+              />
           ))
         ) : (
           <div style={{ padding: '32px', textAlign: 'center', color: 'var(--text-3)' }}>

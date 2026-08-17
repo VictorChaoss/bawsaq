@@ -54,6 +54,7 @@
 .col-token    { flex: 2; display: flex; align-items: center; gap: 12px; min-width: 200px; }
 .col-exchange { flex: 1; min-width: 100px; }
 .col-sector   { flex: 1.5; min-width: 140px; }
+.col-mcap     { flex: 1; min-width: 120px; }
 .col-status   { flex: 1.5; min-width: 150px; }
 .col-action   { flex: 1; display: flex; justify-content: flex-end; min-width: 120px; }
 
@@ -133,7 +134,7 @@
 
 /* Mobile Breakpoints (StockTable) */
 @media (max-width: 768px) {
-  .col-num, .col-exchange, .col-sector, .col-status {
+  .col-num, .col-exchange, .col-sector, .col-mcap, .col-status {
     display: none;
   }
   

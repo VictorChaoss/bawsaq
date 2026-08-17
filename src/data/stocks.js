@@ -116,7 +116,7 @@ export const lcnStocks = [
 export const nativeToken = makeStock({ ticker: 'BSQ', name: ' Token', exchange: 'NATIVE', sector: 'Ecosystem', desc: 'The native token of the BAWSAQ terminal.  accrues value through trading fees and network activity.' });
 
 export const unregulatedStocks = [
-  makeStock({ ticker: 'CJ', name: 'Carl Johnson', exchange: 'BAWSAQ', sector: 'GTA related', contract: 'Bmv7ho39ijT6ur3GSN3GK4bxZnwM7qrf1ReF5qYfpump', desc: "Carl 'CJ' Johnson is the iconic protagonist of Grand Theft Auto: San Andreas. He returns to Los Santos following his mother's murder, only to be drawn back into his former gang life with the Grove Street Families." }),
+  makeStock({ ticker: 'CJ', name: 'Carl Johnson', exchange: 'PUMP', sector: 'GTA related', contract: 'Bmv7ho39ijT6ur3GSN3GK4bxZnwM7qrf1ReF5qYfpump', desc: "Carl 'CJ' Johnson is the iconic protagonist of Grand Theft Auto: San Andreas. He returns to Los Santos following his mother's murder, only to be drawn back into his former gang life with the Grove Street Families." }),
   makeStock({
     ticker: 'GTAVI',
     name: 'Grand Theft Auto VI',
