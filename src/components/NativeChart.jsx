@@ -40,6 +40,13 @@ export default function NativeChart({ contractAddress }) {
             throw new Error("No chart data available");
         }
         
+        let multiplier = 1;
+        if (pair.fdv && pair.priceUsd) {
+            multiplier = Number(pair.fdv) / Number(pair.priceUsd);
+        } else {
+            multiplier = 1000000000; // typical meme coin total supply fallback
+        }
+        
         // Gecko returns newest first: [timestamp, open, high, low, close, volume]
         // lightweight-charts needs oldest first and strictly unique times
         const rawData = ohlcvData.data.attributes.ohlcv_list;
@@ -48,10 +55,10 @@ export default function NativeChart({ contractAddress }) {
         rawData.forEach(item => {
             uniqueDataMap.set(Number(item[0]), {
                 time: Number(item[0]),
-                open: Number(item[1]),
-                high: Number(item[2]),
-                low: Number(item[3]),
-                close: Number(item[4])
+                open: Number(item[1]) * multiplier,
+                high: Number(item[2]) * multiplier,
+                low: Number(item[3]) * multiplier,
+                close: Number(item[4]) * multiplier
             });
         });
         
@@ -89,12 +96,11 @@ export default function NativeChart({ contractAddress }) {
             });
             
             const minPrice = Math.min(...formattedData.map(d => d.low));
-            let precision = 2;
-            let minMove = 0.01;
-            if (minPrice < 0.0000001) { precision = 10; minMove = 0.0000000001; }
-            else if (minPrice < 0.00001) { precision = 8; minMove = 0.00000001; }
-            else if (minPrice < 0.001) { precision = 6; minMove = 0.000001; }
-            else if (minPrice < 0.1) { precision = 4; minMove = 0.0001; }
+            let minMove = 1;
+            if (minPrice > 10000000) minMove = 10000;
+            else if (minPrice > 1000000) minMove = 1000;
+            else if (minPrice > 100000) minMove = 100;
+            else if (minPrice > 10000) minMove = 10;
             
             const candlestickSeries = chart.addSeries(CandlestickSeries, {
                 upColor: '#26a69a',
@@ -103,9 +109,14 @@ export default function NativeChart({ contractAddress }) {
                 wickUpColor: '#26a69a',
                 wickDownColor: '#ef5350',
                 priceFormat: {
-                    type: 'price',
-                    precision: precision,
+                    type: 'custom',
                     minMove: minMove,
+                    formatter: price => {
+                        if (price >= 1000000000) return (price / 1000000000).toFixed(2) + 'B';
+                        if (price >= 1000000) return (price / 1000000).toFixed(2) + 'M';
+                        if (price >= 1000) return (price / 1000).toFixed(1) + 'K';
+                        return price.toFixed(2);
+                    },
                 },
             });
             
