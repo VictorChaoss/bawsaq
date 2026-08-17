@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, ExternalLink, Copy, Share2, ChevronDown, ChevronUp, Rocket, Clock, Gift, RefreshCw } from 'lucide-react';
 import './StockDetail.css';
 import { stockImageMap } from '../data/imageMap.js';
+import NativeChart from './NativeChart';
 
 function Accordion({ title, children, defaultOpen = false }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -124,11 +125,9 @@ function StockDetail({ stock, onBack }) {
               Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'STONK' ? 'StonkFun' : 'Pump.fun'}" to view live data.
             </div>
           )}
-          <iframe
-            className="sd-chart-iframe"
-            src={`https://dexscreener.com/solana/${stock.contract}?embed=1&theme=dark&info=0&trades=0`}
-            allowFullScreen
-          />
+          <div className="sd-chart-iframe-container" style={{ width: '100%', height: '500px' }}>
+            <NativeChart contractAddress={stock.contract} />
+          </div>
           {stock.exchange === 'STONK' && (
             <div className="stonk-rewards-container">
               <div className="stonk-card">

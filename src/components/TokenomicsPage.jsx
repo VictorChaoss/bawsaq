@@ -1,5 +1,6 @@
 import React from 'react';
 import './TokenomicsPage.css';
+import NativeChart from './NativeChart';
 
 function TokenomicsPage() {
   return (
@@ -100,11 +101,7 @@ function TokenomicsPage() {
             <span className="live-badge">Live</span>
           </div>
           <div className="chart-iframe-wrapper">
-            <iframe
-              src="https://dexscreener.com/solana/TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo?embed=1&theme=dark&trades=0&info=0"
-              title="Take-Two Chart"
-              className="chart-iframe"
-            ></iframe>
+            <NativeChart contractAddress="TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo" />
           </div>
         </div>
       </div>
