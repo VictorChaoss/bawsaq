@@ -41,15 +41,25 @@ export default function NativeChart({ contractAddress }) {
         }
         
         // Gecko returns newest first: [timestamp, open, high, low, close, volume]
-        // lightweight-charts needs oldest first
+        // lightweight-charts needs oldest first and strictly unique times
         const rawData = ohlcvData.data.attributes.ohlcv_list;
-        const formattedData = rawData.map(item => ({
-            time: item[0],
-            open: item[1],
-            high: item[2],
-            low: item[3],
-            close: item[4]
-        })).sort((a, b) => a.time - b.time);
+        
+        const uniqueDataMap = new Map();
+        rawData.forEach(item => {
+            uniqueDataMap.set(Number(item[0]), {
+                time: Number(item[0]),
+                open: Number(item[1]),
+                high: Number(item[2]),
+                low: Number(item[3]),
+                close: Number(item[4])
+            });
+        });
+        
+        const formattedData = Array.from(uniqueDataMap.values()).sort((a, b) => a.time - b.time);
+        
+        if (formattedData.length === 0) {
+            throw new Error("No chart data points found.");
+        }
         
         if (!isMounted) return;
         
