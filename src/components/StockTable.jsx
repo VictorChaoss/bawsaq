@@ -11,7 +11,7 @@ const formatMcap = (val) => {
   return '$' + val.toFixed(2);
 };
 
-function StockRow({ stock, index, onClick, marketCap }) {
+function StockRow({ stock, index, onClick, marketCap, isMcapView }) {
   const isNative = stock.ticker === 'BSQ';
 
   const getStatusBadge = () => {
@@ -63,15 +63,17 @@ function StockRow({ stock, index, onClick, marketCap }) {
         <span className="info-tag">{stock.exchange}</span>
       </div>
       
-      <div className="col-sector">
-        <span className="info-tag">{stock.sector}</span>
-      </div>
-      
-      <div className="col-mcap">
-        <span className="info-tag" style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--green)' }}>
-          {marketCap ? formatMcap(marketCap) : '--'}
-        </span>
-      </div>
+      {isMcapView ? (
+        <div className="col-mcap">
+          <span className="info-tag" style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--green)' }}>
+            {marketCap ? formatMcap(marketCap) : '--'}
+          </span>
+        </div>
+      ) : (
+        <div className="col-sector">
+          <span className="info-tag">{stock.sector}</span>
+        </div>
+      )}
 
       <div className="col-status">
         {getStatusBadge()}
@@ -150,14 +152,19 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
     fetchMarketCaps();
   }, [contractsString]);
 
+  const isMcapView = filter === 'GTA Related Tokens';
+
   return (
     <div className="stock-table-wrap">
       <div className="table-head">
         <div className="col-num">#</div>
         <div className="col-token">Company</div>
         <div className="col-exchange">Exchange</div>
-        <div className="col-sector">Sector</div>
-        <div className="col-mcap">M.Cap</div>
+        {isMcapView ? (
+          <div className="col-mcap">M.Cap</div>
+        ) : (
+          <div className="col-sector">Sector</div>
+        )}
         <div className="col-status">Status</div>
         <div className="col-action"></div>
       </div>
@@ -171,6 +178,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
                 stock={stock}
                 index={i}
                 marketCap={marketCaps[stock.contract]}
+                isMcapView={isMcapView}
                 onClick={() => onSelectStock(stock)}
               />
           ))
