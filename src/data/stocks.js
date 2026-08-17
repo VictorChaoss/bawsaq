@@ -145,7 +145,7 @@ export const unregulatedStocks = [
     name: 'Macca The Gator',
     exchange: 'PUMP',
     sector: 'Unregulated',
-    contract: '8nS87ogMnPzczKSDi4nucPPB9t9GwPKz6rrnTz3bFhGr',
+    contract: 'Hs8JDjxT2gGzSXe6KtycDhKkFGBu7BHR71emwJz5pump',
     desc: 'Macca The Gator is a community-driven meme coin based on the popular character from the Grand Theft Auto universe.',
   }),
   makeStock({
