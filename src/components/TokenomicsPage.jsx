@@ -93,6 +93,9 @@ function TokenomicsPage() {
           <p>
             By integrating Take-Two's price action into our terminal, users can trade and hedge against the macro performance of the very studio that built the HD universe.
           </p>
+          <p>
+            <strong>Where to trade TTWO:</strong> You can find and trade the TTWO tokenized stock directly on Backpack Exchange, via decentralized exchanges like Raydium, or by searching the contract address on DexScreener.
+          </p>
         </div>
 
         <div className="chart-container">
