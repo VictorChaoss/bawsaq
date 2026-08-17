@@ -86,5 +86,6 @@ export const stockImageMap = {
   "VUN": "/explore_photos/VanillaUnicorn-GTAV-Logo.webp",
   "SPR": "/explore_photos/Sprunk-HDUniverse-Logo.webp",
   "RED": "/explore_photos/RedwoodCigarettes-GTAIV-Logo.webp",
-  "PSS": "/explore_photos/Pisswasser.webp"
+  "PSS": "/explore_photos/Pisswasser.webp",
+  "CJ": "/explore_photos/CJ.jpg"
 };
