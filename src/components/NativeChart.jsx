@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { createChart, ColorType } from 'lightweight-charts';
+import { createChart, ColorType, CandlestickSeries } from 'lightweight-charts';
 import './NativeChart.css';
 
 export default function NativeChart({ contractAddress }) {
@@ -78,7 +78,7 @@ export default function NativeChart({ contractAddress }) {
                 height: chartContainerRef.current.clientHeight || 400,
             });
             
-            const candlestickSeries = chart.addCandlestickSeries({
+            const candlestickSeries = chart.addSeries(CandlestickSeries, {
                 upColor: '#26a69a',
                 downColor: '#ef5350',
                 borderVisible: false,
