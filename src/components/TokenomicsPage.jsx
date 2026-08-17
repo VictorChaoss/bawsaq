@@ -58,13 +58,13 @@ function TokenomicsPage() {
 
       <div className="tokenomics-section">
         <div className="section-tag">Phase 2</div>
-        <h2 className="section-title">The Grand Theft Auto Hub</h2>
+        <h2 className="section-title">Official Listings & The Global Flywheel</h2>
         <div className="tokenomics-content-block">
           <p>
-            As we move into Phase 2, BAWSAQ expands into its true form: the centralized hub for the biggest event of 2026. We will begin integrating actual GTA-related stocks, coins, and assets across the Solana ecosystem into our terminal.
+            The NASDAQ runs on liquidity and listing fees; BAWSAQ runs on the Ecosystem Flywheel. To ignite the terminal's volume, our core team will deploy the first wave of 'Blue Chip' stocks. Every transaction on these official listings acts as a micro-tax that buys back <strong>$BAWSAQ</strong>.
           </p>
           <p>
-            Users and communities will have the ability to list their own tokens directly on BAWSAQ. As volume and listings grow, the fees generated from these ecosystem tokens will be used to systematically buy back <strong>$BAWSAQ</strong>, driving continuous value back to our core holders.
+            But the vision extends far beyond our own deployments. Developers launching stocks on <em>any</em> platform (like Pump.fun or Raydium) can route a portion of their token's trading fees into the BAWSAQ Flywheel. By integrating, they gain immediate exposure to our community and terminal, while their trading volume systematically buys back and burns <strong>$BAWSAQ</strong>. No matter where a token is launched, if it routes fees through BAWSAQ, it sends our main token higher. Just like holding shares of a traditional stock exchange, holding <strong>$BAWSAQ</strong> means you own a piece of the house.
           </p>
         </div>
       </div>
