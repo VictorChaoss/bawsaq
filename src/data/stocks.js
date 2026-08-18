@@ -150,7 +150,7 @@ export const unregulatedStocks = [
     desc: 'Macca The Gator is a community-driven meme coin based on the popular character from the Grand Theft Auto universe.',
   }),
   makeStock({
-    ticker: 'GTA',
+    ticker: 'GTAOG',
     name: 'GTA',
     exchange: 'PUMP',
     sector: 'Unregulated',
@@ -166,7 +166,7 @@ export const unregulatedStocks = [
     desc: 'Leonida is a community-driven GTA 6 Map token launched on Pump.fun.',
   }),
   makeStock({
-    ticker: 'GTA1',
+    ticker: 'GTA',
     name: 'GTA - Grand Theft Auto',
     exchange: 'PUMP',
     sector: 'Unregulated',
