@@ -19,6 +19,14 @@ function SocialsPage() {
       bgTint: 'rgba(29, 161, 242, 0.1)'
     },
     {
+      title: 'X Community',
+      desc: 'Join the official BAWSAQ X Community to discuss trades, share memes, and connect with other traders.',
+      url: 'https://x.com/i/communities/1941269406102765933',
+      icon: <img src="/socials/x.jpg" alt="X Community" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      color: '#1DA1F2',
+      bgTint: 'rgba(29, 161, 242, 0.1)'
+    },
+    {
       title: 'StonkFun',
       desc: 'Deploy and trade the newest tokens before they hit the broader market.',
       url: 'https://www.stonkfun.xyz',
