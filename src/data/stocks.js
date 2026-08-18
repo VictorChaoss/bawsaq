@@ -156,6 +156,14 @@ export const unregulatedStocks = [
     sector: 'Unregulated',
     contract: 'BVEaDToN2Ufn8m1Jnqy8rtwwCiiMC7JcFtvmKPxTpump',
     desc: 'A community-driven meme token named after the iconic Grand Theft Auto franchise, launched on Pump.fun.',
+  }),
+  makeStock({
+    ticker: 'LEONIDA',
+    name: 'Leonida - GTA 6 Map',
+    exchange: 'PUMP',
+    sector: 'Unregulated',
+    contract: 'FHhPcCkRZRbyaKQn6uN1Uf5jYadvnFzohGxjWmSHpump',
+    desc: 'Leonida is a community-driven GTA 6 Map token launched on Pump.fun.',
   })
 ].map(s => ({ ...s, unregulated: true }));
 export const mockStocks = [

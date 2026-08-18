@@ -88,5 +88,6 @@ export const stockImageMap = {
   "RED": "/explore_photos/RedwoodCigarettes-GTAIV-Logo.webp",
   "PSS": "/explore_photos/Pisswasser.webp",
   "CJ": "/explore_photos/CJ.jpg",
-  "GTA6": "/explore_photos/GTA6.png"
+  "GTA6": "/explore_photos/GTA6.png",
+  "LEONIDA": "/leonida.jpg"
 };
