@@ -90,5 +90,5 @@ export const stockImageMap = {
   "CJ": "/explore_photos/CJ.jpg",
   "GTA6": "/explore_photos/GTA6.png",
   "LEONIDA": "/leonida.jpg",
-  "DAILLY": "/dailly.png"
+  "GTA1": "/dailly.png"
 };

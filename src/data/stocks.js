@@ -166,7 +166,7 @@ export const unregulatedStocks = [
     desc: 'Leonida is a community-driven GTA 6 Map token launched on Pump.fun.',
   }),
   makeStock({
-    ticker: 'DAILLY',
+    ticker: 'GTA1',
     name: 'GTA - Grand Theft Auto',
     exchange: 'PUMP',
     sector: 'Unregulated',
