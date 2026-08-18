@@ -164,6 +164,14 @@ export const unregulatedStocks = [
     sector: 'Unregulated',
     contract: 'FHhPcCkRZRbyaKQn6uN1Uf5jYadvnFzohGxjWmSHpump',
     desc: 'Leonida is a community-driven GTA 6 Map token launched on Pump.fun.',
+  }),
+  makeStock({
+    ticker: 'DAILLY',
+    name: 'GTA - Grand Theft Auto',
+    exchange: 'PUMP',
+    sector: 'Unregulated',
+    contract: '2wMTr4ZttVr5tmS4wLStee59wi8f9QQfMtT2Hoispump',
+    desc: 'A community-driven coin where the rewards go to the creator Mike Dailly — the legendary game programmer and creator of Lemmings and Grand Theft Auto.',
   })
 ].map(s => ({ ...s, unregulated: true }));
 export const mockStocks = [

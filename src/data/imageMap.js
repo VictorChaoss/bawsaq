@@ -89,5 +89,6 @@ export const stockImageMap = {
   "PSS": "/explore_photos/Pisswasser.webp",
   "CJ": "/explore_photos/CJ.jpg",
   "GTA6": "/explore_photos/GTA6.png",
-  "LEONIDA": "/leonida.jpg"
+  "LEONIDA": "/leonida.jpg",
+  "DAILLY": "/dailly.png"
 };
