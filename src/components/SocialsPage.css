@@ -64,6 +64,7 @@
   text-decoration: none;
   transition: all 0.2s ease;
   position: relative;
+  min-height: 130px;
 }
 
 .social-card:hover:not(.coming-soon) {
