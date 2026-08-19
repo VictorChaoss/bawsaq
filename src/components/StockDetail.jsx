@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ExternalLink, Copy, Share2, ChevronDown, ChevronUp, Rocket, Clock, Gift, RefreshCw } from 'lucide-react';
 import './StockDetail.css';
 import { stockImageMap } from '../data/imageMap.js';
 import NativeChart from './NativeChart';
+
+const formatMcap = (val) => {
+  if (!val) return '--';
+  if (val >= 1000000000) return '$' + (val / 1000000000).toFixed(2) + 'B';
+  if (val >= 1000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+  if (val >= 1000) return '$' + (val / 1000).toFixed(2) + 'K';
+  return '$' + val.toFixed(2);
+};
 
 function Accordion({ title, children, defaultOpen = false }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -19,9 +27,24 @@ function Accordion({ title, children, defaultOpen = false }) {
 
 function StockDetail({ stock, onBack }) {
   const [copied, setCopied] = useState(false);
+  const [marketCap, setMarketCap] = useState(null);
 
   const isLive = stock.contract && stock.contract !== 'PUMP';
   const isLaunching = stock.contract === 'PUMP';
+
+  useEffect(() => {
+    if (isLive && stock.contract) {
+      fetch(`https://api.dexscreener.com/latest/dex/tokens/${stock.contract}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.pairs && data.pairs.length > 0) {
+            data.pairs.sort((a,b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
+            setMarketCap(data.pairs[0].marketCap || data.pairs[0].fdv);
+          }
+        })
+        .catch(console.error);
+    }
+  }, [stock.contract, isLive]);
 
   // Description format has literal \n
   const fullDesc = stock.desc ? stock.desc.replace(/\\n/g, '\n') : '';
@@ -246,6 +269,12 @@ function StockDetail({ stock, onBack }) {
               <span className="sd-data-label">Headquarters</span>
               <span className="sd-data-value">Los Santos, SA</span>
             </div>
+            {marketCap && (
+              <div className="sd-data-item">
+                <span className="sd-data-label">Market Cap</span>
+                <span className="sd-data-value" style={{ color: 'var(--green)', fontWeight: 600 }}>{formatMcap(marketCap)}</span>
+              </div>
+            )}
           </div>
         </Accordion>
       </div>

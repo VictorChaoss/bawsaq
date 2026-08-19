@@ -36,7 +36,7 @@ function DiscoverPage({ setActiveTab }) {
           <h1 className="discover-title">The GTA Stock Market, Live on Solana</h1>
           <p className="discover-subtitle">
             Trade your favorite Grand Theft Auto companies as real crypto tokens. 
-            BAWSAQ is the iconic in-game stock exchange, brought on-chain to Solana.
+            BAWSAQ is the iconic in-game stock exchange, brought on-chain.
           </p>
         </div>
       </div>

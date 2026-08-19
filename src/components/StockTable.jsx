@@ -94,15 +94,23 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
   const [marketCaps, setMarketCaps] = useState({});
 
   const filteredStocks = mockStocks.filter(s => {
+    // If we're not specifically viewing GTA Related, NEVER show unregulated tokens
+    if (filter !== 'GTA Related Tokens' && s.unregulated) {
+      return false;
+    }
+    // If we ARE viewing GTA Related, ONLY show unregulated tokens
+    if (filter === 'GTA Related Tokens' && !s.unregulated) {
+      return false;
+    }
+
     if (searchQuery) {
       return (
         s.ticker.toLowerCase().includes(searchQuery.toLowerCase()) || 
         s.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-    if (filter === 'GTA Related Tokens') return !!s.unregulated;
-    if (s.unregulated) return false; // Exclude unregulated from all other tabs
     
+    if (filter === 'GTA Related Tokens') return true;
     if (filter === 'All' || !filter) return true;
     if (filter === 'Live on Pump 💊') return s.status === 'live';
     if (['Finance', 'Beverages', 'Defense', 'Tech'].includes(filter)) {
@@ -134,10 +142,11 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
             const data = await res.json();
             
             if (data.pairs) {
+                data.pairs.sort((a,b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
                 data.pairs.forEach(pair => {
                     const addr = pair.baseToken.address;
-                    if (!caps[addr] || (pair.fdv || pair.marketCap) > caps[addr]) {
-                        caps[addr] = pair.fdv || pair.marketCap;
+                    if (!caps[addr]) {
+                        caps[addr] = pair.marketCap || pair.fdv;
                         hasNew = true;
                     }
                 });

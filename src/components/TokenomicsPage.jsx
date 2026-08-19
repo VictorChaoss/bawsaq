@@ -1,6 +1,7 @@
 import React from 'react';
 import './TokenomicsPage.css';
 import NativeChart from './NativeChart';
+import { nativeToken } from '../data/stocks';
 
 function TokenomicsPage() {
   return (
@@ -48,12 +49,22 @@ function TokenomicsPage() {
         <div className="chart-container">
           <div className="chart-header">
             <h3>$BAWSAQ / STONK</h3>
-            <span className="live-badge disabled">CA Not Live</span>
+            {nativeToken.contract ? (
+              <span className="live-badge">Live</span>
+            ) : (
+              <span className="live-badge disabled">CA Not Live</span>
+            )}
           </div>
-          <div className="chart-placeholder">
-            <div className="loader-spinner"></div>
-            <p>Chart Loading... CA Not Live Yet</p>
-          </div>
+          {nativeToken.contract ? (
+            <div className="chart-iframe-wrapper">
+              <NativeChart contractAddress={nativeToken.contract} />
+            </div>
+          ) : (
+            <div className="chart-placeholder">
+              <div className="loader-spinner"></div>
+              <p>Chart Loading... CA Not Live Yet</p>
+            </div>
+          )}
         </div>
       </div>
 
