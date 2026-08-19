@@ -98,7 +98,7 @@ function AboutPage() {
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
           <p>
-            Plus, it pays to be an investor. <strong>$BAWSAQ</strong> carries a 3% transfer tax on every single trade that is paid straight to holders automatically. And because the coin is paired against <strong>Take-Two Interactive (TTWO)</strong> tokenized stock, those rewards are paid out directly in Take-Two stock. You accumulate shares of Rockstar's parent company just for holding, while terminal fees feed a flywheel that constantly buys back and burns the supply. You earn as a holder like everyone else.
+            Plus, it pays to be an investor. <strong>$BAWSAQ</strong> integrates with <strong>Memestonk</strong> to deliver real value. You launch from your wallet. Memestonk receives creator fees and uses them to airdrop stock dividends automatically. You accumulate shares of Rockstar's parent company (Take-Two Interactive) just for holding. You earn as a holder like everyone else.
           </p>
         </div>
       </div>

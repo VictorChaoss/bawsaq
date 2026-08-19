@@ -27,12 +27,12 @@ function SocialsPage() {
       bgTint: 'rgba(29, 161, 242, 0.1)'
     },
     {
-      title: 'StonkFun',
-      desc: 'Deploy and trade the newest tokens before they hit the broader market.',
-      url: 'https://www.stonkfun.xyz',
-      icon: <img src="/socials/stonkfun.jpg" alt="StonkFun" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
-      color: '#F59E0B',
-      bgTint: 'rgba(245, 158, 11, 0.1)'
+      title: 'Memestonk',
+      desc: 'Launch platform & Dividend distributor',
+      url: 'https://memestonk.xyz',
+      icon: <img src="/socials/stonkfun.jpg" alt="Memestonk" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      color: '#3498db',
+      bgTint: 'rgba(52, 152, 219, 0.1)'
     },
     {
       title: 'Life Invader',

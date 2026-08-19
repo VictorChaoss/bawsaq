@@ -12,7 +12,7 @@ function TokenomicsBanner() {
         <div>
           <div className="banner-title">The Central Hub for GTA Stocks</div>
           <p className="banner-desc">
-            The BAWSAQ ecosystem runs on a revolutionary Reward Token model. Every transaction carries a 3% tax that is paid straight to holders in the paired token. No creator fees, just pure, automated yield for the community. A portion of pool fees feeds the Ecosystem Flywheel, constantly buying back and burning tokens.
+            The BAWSAQ ecosystem runs on a unique dividend model powered by Memestonk. You launch from your wallet. Memestonk receives creator fees and uses them to airdrop stock dividends directly to the community. No complex taxes, just pure, automated yield for holders.
           </p>
         </div>
       </div>

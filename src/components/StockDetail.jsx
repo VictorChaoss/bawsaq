@@ -113,14 +113,14 @@ function StockDetail({ stock, onBack }) {
                 <Copy size={14} />
                 {copied ? 'Copied!' : `${stock.contract.slice(0, 6)}…${stock.contract.slice(-4)}`}
               </button>
-              {stock.exchange === 'STONK' ? (
+              {stock.exchange === 'MEMESTONK' ? (
                 <a
-                  href={`https://www.stonkfun.xyz/token/${stock.contract}`}
+                  href={`https://memestonk.xyz/token/${stock.contract}`}
                   target="_blank"
                   rel="noreferrer"
                   className="sd-btn sd-btn-primary"
                 >
-                  Trade on StonkFun <ExternalLink size={14} />
+                  Trade on Memestonk <ExternalLink size={14} />
                 </a>
               ) : (
                 <a
@@ -143,63 +143,35 @@ function StockDetail({ stock, onBack }) {
       {isLive ? (
         /* State A: Token is Live */
         <div className="sd-chart-section">
-          {(stock.contract?.endsWith('pump') || stock.exchange === 'STONK') && (
+          {(stock.contract?.endsWith('pump') || stock.exchange === 'MEMESTONK') && (
             <div style={{ background: 'rgba(255, 170, 0, 0.1)', color: '#ffaa00', padding: '8px 12px', fontSize: '12px', textAlign: 'center', borderBottom: '1px solid rgba(255, 170, 0, 0.2)' }}>
-              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'STONK' ? 'StonkFun' : 'Pump.fun'}" to view live data.
+              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'MEMESTONK' ? 'Memestonk' : 'Pump.fun'}" to view live data.
             </div>
           )}
           <div className="sd-chart-iframe-container" style={{ width: '100%', height: '500px' }}>
             <NativeChart contractAddress={stock.contract} />
           </div>
-          {stock.exchange === 'STONK' && (
+          {stock.exchange === 'MEMESTONK' && (
             <div className="stonk-rewards-container">
-              <div className="stonk-card">
+              <div className="stonk-card" style={{ width: '100%' }}>
                 <div className="stonk-card-header">
                   <div className="stonk-card-title">
-                    <Gift size={16} className="stonk-icon" /> Holder rewards
-                  </div>
-                </div>
-                <p className="stonk-card-desc">
-                  85% of every trading fee on this 4% pool is paid out to ${stock.ticker} holders in TTWO, pro-rata, less a 2.50% fee covering the network costs of distributing and supporting operations. Fees collect until they are worth distributing, then go to wallets holding at least $20 of ${stock.ticker} at that moment.
-                </p>
-                
-                <div className="stonk-stats-grid">
-                  <div className="stonk-stat">
-                    <div className="stonk-stat-label">Paid to holders</div>
-                    <div className="stonk-stat-val">$0</div>
-                    <div className="stonk-stat-sub">0 TTWO</div>
-                  </div>
-                  <div className="stonk-stat">
-                    <div className="stonk-stat-label">Waiting to distribute</div>
-                    <div className="stonk-stat-val">$0</div>
-                  </div>
-                </div>
-                
-                <div className="stonk-card-footer">
-                  0 payouts · pending
-                </div>
-              </div>
-
-              <div className="stonk-card">
-                <div className="stonk-card-header">
-                  <div className="stonk-card-title">
-                    <RefreshCw size={16} className="stonk-icon" /> Ecosystem Flywheel
+                    <Gift size={16} className="stonk-icon" /> Memestonk Dividends
                   </div>
                   <span className="stonk-badge">Active</span>
                 </div>
                 <p className="stonk-card-desc">
-                  ${stock.ticker} is in the flywheel's top rankings: platform revenue buys it back and burns it every few minutes, weighted by market cap. <span className="text-green cursor-pointer">View the flywheel</span>
+                  ${stock.ticker} is launched on Memestonk. Creator fees are automatically used to airdrop stock dividends directly to holders' wallets.
                 </p>
                 
                 <div className="stonk-stats-grid">
                   <div className="stonk-stat">
-                    <div className="stonk-stat-label">Bought back & burned</div>
+                    <div className="stonk-stat-label">Airdropped Dividends</div>
                     <div className="stonk-stat-val">$0</div>
                   </div>
                   <div className="stonk-stat">
-                    <div className="stonk-stat-label">Buybacks</div>
+                    <div className="stonk-stat-label">Total Payouts</div>
                     <div className="stonk-stat-val">0</div>
-                    <div className="stonk-stat-sub">pending</div>
                   </div>
                 </div>
               </div>
