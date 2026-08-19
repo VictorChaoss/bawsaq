@@ -65,17 +65,15 @@ function StockRow({ stock, index, onClick, marketCap, isMcapView }) {
         <span className="info-tag">{stock.exchange}</span>
       </div>
       
-      {isMcapView ? (
-        <div className="col-mcap">
-          <span className="info-tag" style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--green)' }}>
-            {marketCap ? formatMcap(marketCap) : '--'}
-          </span>
-        </div>
-      ) : (
-        <div className="col-sector">
-          <span className="info-tag">{stock.sector}</span>
-        </div>
-      )}
+      <div className="col-mcap">
+        <span className="info-tag" style={{ fontFamily: 'monospace', fontWeight: 600, color: 'var(--green)' }}>
+          {marketCap ? formatMcap(marketCap) : '--'}
+        </span>
+      </div>
+
+      <div className="col-sector">
+        <span className="info-tag">{stock.sector}</span>
+      </div>
 
       <div className="col-status">
         {getStatusBadge()}
@@ -171,11 +169,8 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
         <div className="col-num">#</div>
         <div className="col-token">Company</div>
         <div className="col-exchange">Exchange</div>
-        {isMcapView ? (
-          <div className="col-mcap">M.Cap</div>
-        ) : (
-          <div className="col-sector">Sector</div>
-        )}
+        <div className="col-mcap">M.Cap</div>
+        <div className="col-sector">Sector</div>
         <div className="col-status">Status</div>
         <div className="col-action"></div>
       </div>
