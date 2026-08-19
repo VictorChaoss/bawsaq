@@ -161,16 +161,16 @@ function DiscoverPage({ setActiveTab }) {
           </div>
           <h2 className="card-title">The Native Token ($BAWSAQ)</h2>
           <p className="card-desc">
-            At the heart of the ecosystem is the <strong>$BAWSAQ</strong> token. The BAWSAQ token runs on a revolutionary <strong>Reward Token</strong> model designed to capture value and feed it back to holders. 
+            At the heart of the ecosystem is the <strong>$BAWSAQ</strong> token. The BAWSAQ token runs on a revolutionary <strong>dividend model</strong> designed to capture value and feed it back to holders. 
           </p>
           <div className="token-mechanics">
             <div className="mechanic">
-              <h3>Holder Rewards (Yield)</h3>
-              <p>A 3% transfer tax on every transaction is paid automatically and directly to holders in the paired token. You earn yield simply by holding.</p>
+              <h3>Memestonk Dividends</h3>
+              <p>You launch from your wallet. Memestonk receives creator fees and uses them to airdrop stock dividends straight to your wallet.</p>
             </div>
             <div className="mechanic">
-              <h3>Ecosystem Flywheel</h3>
-              <p>A share of the 1% pool fees feeds the Ecosystem Flywheel, which constantly buys back and burns $BAWSAQ to reduce supply.</p>
+              <h3>Passive Yield</h3>
+              <p>No complicated taxes or staking required. You accumulate tokenized Take-Two (Rockstar) shares simply by holding $BAWSAQ.</p>
             </div>
 
             <div className="mechanic" style={{ marginTop: '16px' }}>

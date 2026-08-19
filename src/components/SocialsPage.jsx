@@ -30,7 +30,7 @@ function SocialsPage() {
       title: 'Memestonk',
       desc: 'Launch platform & Dividend distributor',
       url: 'https://memestonk.xyz',
-      icon: <img src="/socials/stonkfun.jpg" alt="Memestonk" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      icon: <img src="/socials/memestonk.png" alt="Memestonk" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
       color: '#3498db',
       bgTint: 'rgba(52, 152, 219, 0.1)'
     },
