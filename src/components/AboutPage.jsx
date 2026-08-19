@@ -75,7 +75,7 @@ function AboutPage() {
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
           <p>
-            Plus, it pays to be an investor. By holding the native <strong className="text-green">$BAWSAQ</strong> token, you earn a share of the fees generated across the platform. The more the terminal gets used, the more you earn just for holding.
+            Plus, it pays to be an investor. Just like holding Take-Two stock in the real world, holding the native <strong className="text-green">$BAWSAQ</strong> token pays you back. You earn a share of the fees generated across the platform — the more the terminal gets used, the more you earn just for holding.
           </p>
         </div>
       </div>
