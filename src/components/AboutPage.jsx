@@ -74,6 +74,9 @@ function AboutPage() {
             It's simple: we find the best GTA-related memecoins on Solana, list them on our terminal, and let you track their charts and 
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
+          <p>
+            Plus, it pays to be an investor. By holding the native <strong className="text-green">$BAWSAQ</strong> token, you earn a share of the fees generated across the platform. The more the terminal gets used, the more you earn just for holding.
+          </p>
         </div>
       </div>
 
