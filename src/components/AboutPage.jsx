@@ -60,23 +60,19 @@ function AboutPage() {
       {/* What is BAWSAQ */}
       <div className="about-section">
         <div className="section-tag">About</div>
-        <h2 className="section-title">What is BAWSAQ?</h2>
+        <h2 className="section-title">What coin makes the most sense when it comes to GTA?</h2>
         <div className="about-body-grid">
           <p>
-            BAWSAQ is a global stock exchange featured across the HD Universe of the Grand Theft Auto series.
-            First appearing in <strong>Grand Theft Auto IV</strong>, the exchange was headquartered in the iconic
-            BAWSAQ Building in Star Junction, Algonquin — Liberty City's financial heartbeat.
+            Think about it. If you're going to trade Grand Theft Auto memecoins, you need the right exchange. 
+            In the real world, you have the <strong>NASDAQ</strong>. In the GTA world, you have the <strong>BAWSAQ</strong>.
           </p>
           <p>
-            In <strong>Grand Theft Auto V</strong>, BAWSAQ became fully interactive. Players could access
-            a working in-game website — <em>bawsaq.com</em> — to buy and sell stocks in real time. Stock prices
-            were directly influenced by the Rockstar Social Club community, making BAWSAQ one of gaming's
-            first real crowd-driven financial simulations.
+            We built this terminal to be the ultimate hub for the GTA community. Instead of trading on boring, standard platforms, 
+            you can track and trade tokens for iconic in-game companies — like Ammu-Nation, Maze Bank, and Sprunk — right here on the BAWSAQ terminal.
           </p>
           <p>
-            Now, we've brought BAWSAQ on-chain. Every GTA company listed on this terminal — from Ammu-Nation
-            to Maze Bank — generates real fees that flow directly into the native <strong className="text-green">$BAWSAQ</strong> token.
-            As the GTA universe expands into Vice City with GTA VI, so does our ecosystem.
+            It's simple: we find the best GTA-related memecoins on Solana, list them on our terminal, and let you track their charts and 
+            prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
         </div>
       </div>
