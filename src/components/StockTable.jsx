@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { mockStocks } from '../data/stocks';
 import { stockImageMap } from '../data/imageMap.js';
+import { playHoverSound, playSelectSound } from '../utils/soundManager';
 import './StockTable.css';
 
 const formatMcap = (val) => {
@@ -29,7 +30,8 @@ function StockRow({ stock, index, onClick, marketCap, isMcapView }) {
   return (
     <div
       className={`stock-row${isNative ? ' native' : ''}`}
-      onClick={onClick}
+      onClick={() => { playSelectSound(); onClick(); }}
+      onMouseEnter={playHoverSound}
     >
       {/* Color accent bar */}
       <div className="row-accent" style={{ background: stock.color }} />

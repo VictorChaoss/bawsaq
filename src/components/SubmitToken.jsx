@@ -16,7 +16,7 @@ export default function SubmitToken({ onClose }) {
   function handleSubmit(e) {
     e.preventDefault();
     const tweet = [
-      `👋 @${BAWSAQ_X} — Token Listing Request`,
+      `👋 @${BAWSAQ_X}, Token Listing Request`,
       `📌 Name: ${form.name}`,
       `📌 Ticker: $${form.ticker.toUpperCase()}`,
       form.contract ? `📌 CA: ${form.contract}` : '',
@@ -40,7 +40,7 @@ export default function SubmitToken({ onClose }) {
           <div>
             <div className="submit-eyebrow">🚀 List Your Token</div>
             <h2 className="submit-title">Submit for BAWSAQ Listing</h2>
-            <p className="submit-sub">Fill in the details below. Hitting submit will open a pre-filled tweet to <strong>@{BAWSAQ_X}</strong> — we'll review and list your token.</p>
+            <p className="submit-sub">Fill in the details below. Hitting submit will open a pre-filled tweet to <strong>@{BAWSAQ_X}</strong>, we'll review and list your token.</p>
           </div>
           <button className="submit-close" onClick={onClose}>✕</button>
         </div>
@@ -94,7 +94,7 @@ export default function SubmitToken({ onClose }) {
             <button type="submit" className="submit-btn">
               Submit via X &nbsp;𝕏
             </button>
-            <p className="submit-note">This will open a pre-filled tweet. You just hit post — we take it from there.</p>
+            <p className="submit-note">This will open a pre-filled tweet. You just hit post, we take it from there.</p>
           </form>
         )}
       </div>

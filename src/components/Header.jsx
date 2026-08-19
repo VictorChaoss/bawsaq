@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Bell, Settings, ChevronDown, Zap } from 'lucide-react';
 import { mockStocks } from '../data/stocks';
+import { playHoverSound, playSelectSound } from '../utils/soundManager';
 import './Header.css';
 
 function LiveTickerItem({ symbol, price, change, isUp }) {
@@ -90,7 +91,11 @@ function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
               <button
                 key={tab}
                 className={`nav-item${activeTab === tab ? ' active' : ''}`}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => {
+                  playSelectSound();
+                  setActiveTab(tab);
+                }}
+                onMouseEnter={playHoverSound}
               >
                 {tab}
               </button>

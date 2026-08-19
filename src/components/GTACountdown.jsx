@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// GTA VI release date — update this when confirmed
+// GTA VI release date, update this when confirmed
 const GTA6_DATE = new Date('2026-11-19T00:00:00Z');
 
 function pad(n) {
@@ -67,7 +67,7 @@ export default function GTACountdown() {
           LIVE COUNTDOWN
         </span>
         <span style={{ fontSize: '13px', color: 'var(--text-2)', fontFamily: 'monospace' }}>
-          GTA VI — Estimated Release
+          GTA VI, Estimated Release
         </span>
       </div>
 

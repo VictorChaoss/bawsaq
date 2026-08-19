@@ -36,7 +36,7 @@ function StockDetail({ stock, onBack }) {
   };
 
   const handleShare = () => {
-    const text = `Tracking $${stock.ticker} — ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
+    const text = `Tracking $${stock.ticker}, ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.xyz')}`;
     window.open(url, '_blank');
   };
@@ -116,7 +116,7 @@ function StockDetail({ stock, onBack }) {
 
       <div className="sd-divider" />
 
-      {/* Main content area — two states */}
+      {/* Main content area, two states */}
       {isLive ? (
         /* State A: Token is Live */
         <div className="sd-chart-section">

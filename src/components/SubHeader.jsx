@@ -1,4 +1,5 @@
 import React from 'react';
+import { playHoverSound, playSelectSound } from '../utils/soundManager';
 import './SubHeader.css';
 
 const FILTERS = ['All', 'GTA Related Tokens'];
@@ -11,7 +12,8 @@ function SubHeader({ activeFilter, onFilter, onSubmit }) {
           <button
             key={f}
             className={`filter-tab${activeFilter === f ? ' active' : ''}`}
-            onClick={() => { onFilter && onFilter(f); }}
+            onClick={() => { playSelectSound(); onFilter && onFilter(f); }}
+            onMouseEnter={playHoverSound}
           >
             {f}
           </button>

@@ -24,10 +24,10 @@ function TokenomicsPage() {
           </div>
           <div className="tokenomics-card-body">
             <p>
-              A reward token trades on a 1% pool and carries a 3% transfer tax paid straight to holders, automatically, in the token it is paired against — on every transfer, on any venue.
+              A reward token trades on a 1% pool and carries a 3% transfer tax paid straight to holders, automatically, in the token it is paired against, on every transfer, on any venue.
             </p>
             <p>
-              A share of pool fees feeds the <strong>Ecosystem Flywheel</strong>, which buys back and burns the platform's top tokens. You earn as a holder like everyone else — there is no separate creator fee position.
+              A share of pool fees feeds the <strong>Ecosystem Flywheel</strong>, which buys back and burns the platform's top tokens. You earn as a holder like everyone else, there is no separate creator fee position.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ function TokenomicsPage() {
         <h2 className="section-title">What is Take-Two?</h2>
         <div className="tokenomics-content-block">
           <p>
-            <strong>Take-Two Interactive</strong> is the massive parent company behind Rockstar Games — the creators of the Grand Theft Auto series. In the context of the BAWSAQ ecosystem, tracking the Take-Two (TTWO) tokenized stock serves as a major bellwether for the health and hype of the GTA economy on-chain.
+            <strong>Take-Two Interactive</strong> is the massive parent company behind Rockstar Games, the creators of the Grand Theft Auto series. In the context of the BAWSAQ ecosystem, tracking the Take-Two (TTWO) tokenized stock serves as a major bellwether for the health and hype of the GTA economy on-chain.
           </p>
           <p>
             By integrating Take-Two's price action into our terminal, users can trade and hedge against the macro performance of the very studio that built the HD universe.

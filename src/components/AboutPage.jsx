@@ -8,7 +8,7 @@ const LOCATIONS = [
     address: 'Bawsaq Building, Burlesque, Star Junction, Algonquin, Liberty City',
     img: '/gtaiv-bawsaq.jpg',
     imgPos: 'center 40%',
-    desc: 'The BAWSAQ Building towers over Star Junction — Liberty City\'s answer to Times Square. BAWSAQ is frequently mentioned across Weazel News reports and by the general public, cementing its status as the backbone of the HD Universe financial system.',
+    desc: 'The BAWSAQ Building towers over Star Junction, Liberty City\'s answer to Times Square. BAWSAQ is frequently mentioned across Weazel News reports and by the general public, cementing its status as the backbone of the HD Universe financial system.',
   },
   {
     game: 'Grand Theft Auto V',
@@ -16,7 +16,7 @@ const LOCATIONS = [
     address: 'Boulevard Del Perro, Morningwood, Los Santos',
     img: '/gtav-bawsaq.jpg',
     imgPos: 'center 65%',
-    desc: 'In GTA V, BAWSAQ became fully interactive — players could access bawsaq.com in-game and buy and sell stocks in real time, influenced by the Rockstar Social Club community. It operates alongside the LCN Exchange as one of two active stock markets in San Andreas.',
+    desc: 'In GTA V, BAWSAQ became fully interactive, players could access bawsaq.com in-game and buy and sell stocks in real time, influenced by the Rockstar Social Club community. It operates alongside the LCN Exchange as one of two active stock markets in San Andreas.',
   },
 ];
 
@@ -52,12 +52,35 @@ function AboutPage() {
           <h1 className="about-title">The World's Most<br />Recognisable Stock Exchange</h1>
           <p className="about-subtitle">
             BAWSAQ is a global stock exchange originating from the HD Universe of the Grand Theft Auto series.
-            From the skyline of Liberty City to the boulevards of Los Santos — and now, the Solana blockchain.
+            From the skyline of Liberty City to the boulevards of Los Santos, and now, the Solana blockchain.
           </p>
         </div>
       </div>
 
       {/* What is BAWSAQ */}
+      <div className="about-section">
+        <div className="section-tag">History</div>
+        <h2 className="section-title">What is BAWSAQ?</h2>
+        <div className="about-body-grid">
+          <p>
+            BAWSAQ is a global stock exchange featured across the HD Universe of the Grand Theft Auto series.
+            First appearing in <strong>Grand Theft Auto IV</strong>, the exchange was headquartered in the iconic
+            BAWSAQ Building in Star Junction, Algonquin, Liberty City's financial heartbeat.
+          </p>
+          <p>
+            In <strong>Grand Theft Auto V</strong>, BAWSAQ became fully interactive. Players could access
+            a working in-game website, <em>bawsaq.com</em>, to buy and sell stocks in real time. Stock prices
+            were directly influenced by the Rockstar Social Club community, making BAWSAQ one of gaming's
+            first real crowd-driven financial simulations.
+          </p>
+          <p>
+            Now, we've brought BAWSAQ on-chain. Every GTA company listed on this terminal, from Ammu-Nation
+            to Maze Bank, generates real fees that flow directly into the native <strong className="text-green">$BAWSAQ</strong> token.
+            As the GTA universe expands into Vice City with GTA VI, so does our ecosystem.
+          </p>
+        </div>
+      </div>
+
       <div className="about-section">
         <div className="section-tag">About</div>
         <h2 className="section-title">What coin makes the most sense when it comes to GTA?</h2>
@@ -68,7 +91,7 @@ function AboutPage() {
           </p>
           <p>
             We built this terminal to be the ultimate hub for the GTA community. Instead of trading on boring, standard platforms, 
-            you can track and trade tokens for iconic in-game companies — like Ammu-Nation, Maze Bank, and Sprunk — right here on the BAWSAQ terminal.
+            you can track and trade tokens for iconic in-game companies, like Ammu-Nation, Maze Bank, and Sprunk, right here on the BAWSAQ terminal.
           </p>
           <p>
             It's simple: we find the best GTA-related memecoins on Solana, list them on our terminal, and let you track their charts and 
@@ -116,9 +139,9 @@ function AboutPage() {
           <div className="gta6-tag">Next Chapter</div>
           <h2 className="gta6-title">Opening in Vice City</h2>
           <p className="gta6-desc">
-            Grand Theft Auto VI is set in Leonida — a sun-soaked, fictional take on Miami and the state of Florida.
+            Grand Theft Auto VI is set in Leonida, a sun-soaked, fictional take on Miami and the state of Florida.
             Rockstar Games has confirmed a <strong>2026 release</strong>. When GTA VI drops, a whole new generation
-            of companies, characters and brands enter the GTA universe — and BAWSAQ will be ready to list them all.
+            of companies, characters and brands enter the GTA universe, and BAWSAQ will be ready to list them all.
           </p>
           <div className="gta6-stats">
             <div className="gta6-stat">
@@ -141,7 +164,7 @@ function AboutPage() {
       <div className="about-credit">
         <span>Lore sourced from </span>
         <a href="https://gta.fandom.com/wiki/BAWSAQ" target="_blank" rel="noopener noreferrer">
-          GTA Wiki — Fandom ↗
+          GTA Wiki, Fandom ↗
         </a>
       </div>
 
