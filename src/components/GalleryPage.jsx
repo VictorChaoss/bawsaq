@@ -31,7 +31,6 @@ export default function GalleryPage() {
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-close" onClick={() => setSelectedImg(null)}>&times;</button>
             <img src={`/gallery/${selectedImg}`} alt="Full screen" />
-            <div className="lightbox-filename">{selectedImg}</div>
           </div>
         </div>
       )}
