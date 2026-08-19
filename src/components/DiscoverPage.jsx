@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { mockStocks, nativeToken } from '../data/stocks';
 import { ArrowRight, Coins, Newspaper, TrendingUp, ShieldCheck, Copy, HelpCircle } from 'lucide-react';
 import GTACountdown from './GTACountdown';
 import './DiscoverPage.css';
@@ -28,6 +29,30 @@ function HoverCard({ children, className, glowColor }) {
 }
 
 function DiscoverPage({ setActiveTab }) {
+  const [volume, setVolume] = useState(0);
+
+  const liveTokensCount = mockStocks.filter(s => s.contract && s.contract !== 'PUMP').length;
+
+  useEffect(() => {
+    if (nativeToken.contract) {
+      fetch(`https://api.dexscreener.com/latest/dex/tokens/${nativeToken.contract}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.pairs && data.pairs.length > 0) {
+            data.pairs.sort((a,b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
+            setVolume(data.pairs[0].volume?.h24 || 0);
+          }
+        })
+        .catch(console.error);
+    }
+  }, []);
+
+  const formatCurrency = (val) => {
+    if (val >= 1000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+    if (val >= 1000) return '$' + (val / 1000).toFixed(2) + 'K';
+    return '$' + val.toFixed(2);
+  };
+
   return (
     <div className="discover-page">
       <div className="discover-hero">
@@ -44,7 +69,7 @@ function DiscoverPage({ setActiveTab }) {
       {/* Live Stats Banner */}
       <div className="stats-banner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
         <div className="stat-item">
-          <span className="stat-val">0</span>
+          <span className="stat-val">{liveTokensCount}</span>
           <span className="stat-label">Tokens Listed</span>
         </div>
         <div className="stat-item">
@@ -52,7 +77,7 @@ function DiscoverPage({ setActiveTab }) {
           <span className="stat-label">$BAWSAQ Burned</span>
         </div>
         <div className="stat-item">
-          <span className="stat-val">$0</span>
+          <span className="stat-val">{volume > 0 ? formatCurrency(volume) : '$0'}</span>
           <span className="stat-label">24h Volume</span>
         </div>
       </div>
