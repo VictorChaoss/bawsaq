@@ -75,7 +75,7 @@ function AboutPage() {
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
           <p>
-            Plus, it pays to be an investor. Just like holding Take-Two stock in the real world, holding the native <strong className="text-green">$BAWSAQ</strong> token pays you back. You earn a share of the fees generated across the platform — the more the terminal gets used, the more you earn just for holding.
+            Plus, it pays to be an investor. Because <strong className="text-green">$BAWSAQ</strong> is built on a revolutionary reward token model, simply holding it in your wallet automatically earns you dividends paid out in <strong>Take-Two Interactive (TTWO)</strong> tokenized stock. Every transaction across the ecosystem generates fees that flow straight back to you — the more the terminal is used, the more Take-Two stock you accumulate just for holding.
           </p>
         </div>
       </div>
