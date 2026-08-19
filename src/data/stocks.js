@@ -11,7 +11,7 @@ export function makeStock({ ticker, name, exchange, sector, desc, contract }) {
   const color = `hsl(${Math.abs(hash) % 360}, 70%, 55%)`;
 
   return {
-    id: ticker,
+    id: `${ticker}-${contract || Math.random().toString(36).substr(2, 5)}`,
     ticker,
     name,
     exchange,
@@ -172,14 +172,6 @@ export const unregulatedStocks = [
     sector: 'Unregulated',
     contract: 'FHhPcCkRZRbyaKQn6uN1Uf5jYadvnFzohGxjWmSHpump',
     desc: 'Leonida is a community-driven GTA 6 Map token launched on Pump.fun.',
-  }),
-  makeStock({
-    ticker: 'GTA',
-    name: 'GTA - Grand Theft Auto',
-    exchange: 'PUMP',
-    sector: 'Unregulated',
-    contract: '2wMTr4ZttVr5tmS4wLStee59wi8f9QQfMtT2Hoispump',
-    desc: 'A community-driven coin where the rewards go to the creator Mike Dailly, the legendary game programmer and creator of Lemmings and Grand Theft Auto.',
   })
 ].map(s => ({ ...s, unregulated: true }));
 export const mockStocks = [
