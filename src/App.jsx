@@ -10,6 +10,7 @@ import TokenomicsPage from './components/TokenomicsPage';
 import DiscoverPage from './components/DiscoverPage';
 import SocialsPage from './components/SocialsPage';
 import SubmitToken from './components/SubmitToken';
+import GalleryPage from './components/GalleryPage';
 import './App.css';
 
 function App() {
@@ -73,6 +74,9 @@ function App() {
 
         {/* ── Socials ── */}
         {activeTab === 'Socials' && <SocialsPage />}
+
+        {/* ── Gallery ── */}
+        {activeTab === 'Gallery' && <GalleryPage />}
 
       </div>
     </div>

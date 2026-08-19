@@ -87,7 +87,7 @@ function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
             )}
           </div>
           <nav className="main-nav">
-            {['Discover', 'Explore', 'Tokenomics', 'News', 'Socials', 'About'].map(tab => (
+            {['Discover', 'Explore', 'Tokenomics', 'News', 'Socials', 'Gallery', 'About'].map(tab => (
               <button
                 key={tab}
                 className={`nav-item${activeTab === tab ? ' active' : ''}`}
