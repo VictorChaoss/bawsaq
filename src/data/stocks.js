@@ -116,6 +116,14 @@ export const lcnStocks = [
 export const nativeToken = makeStock({ ticker: 'BSQ', name: ' Token', exchange: 'NATIVE', sector: 'Ecosystem', desc: 'The native token of the BAWSAQ terminal.  accrues value through trading fees and network activity.' });
 
 export const unregulatedStocks = [
+  makeStock({
+    ticker: 'CYBERLEEK',
+    name: 'CyberLeek',
+    exchange: 'RAYDIUM',
+    sector: 'Unregulated',
+    contract: 'ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg',
+    desc: 'CyberLeek is a GTA VI leak memecoin turned gamer rights activist token, with a cyberpunk leek mascot pushing back against big publishers. The narrative stems from recent X leaks of GTA 6 maps and gameplay by the CyberLeek persona, who threatens more drops unless Rockstar and others apologize for anti-consumer moves like digital preorders and server-dependent single-player games. It frames the coin as funding resistance via "leeks," punning leaks with the veggie in a cyberpunk vibe.',
+  }),
   makeStock({ ticker: 'CJ', name: 'Carl Johnson', exchange: 'PUMP', sector: 'GTA related', contract: 'Bmv7ho39ijT6ur3GSN3GK4bxZnwM7qrf1ReF5qYfpump', desc: "Carl 'CJ' Johnson is the iconic protagonist of Grand Theft Auto: San Andreas. He returns to Los Santos following his mother's murder, only to be drawn back into his former gang life with the Grove Street Families." }),
   makeStock({
     ticker: 'GTAVI',
