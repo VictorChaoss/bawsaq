@@ -75,7 +75,7 @@ function AboutPage() {
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
           <p>
-            Plus, it pays to be an investor. Because <strong className="text-green">$BAWSAQ</strong> is built on a revolutionary reward token model, simply holding it in your wallet automatically earns you dividends paid out in <strong>Take-Two Interactive (TTWO)</strong> tokenized stock. Every transaction across the ecosystem generates fees that flow straight back to you — the more the terminal is used, the more Take-Two stock you accumulate just for holding.
+            Plus, it pays to be an investor. <strong>$BAWSAQ</strong> carries a 3% transfer tax on every single trade that is paid straight to holders automatically. And because the coin is paired against <strong>Take-Two Interactive (TTWO)</strong> tokenized stock, those rewards are paid out directly in Take-Two stock. You accumulate shares of Rockstar's parent company just for holding, while terminal fees feed a flywheel that constantly buys back and burns the supply. You earn as a holder like everyone else.
           </p>
         </div>
       </div>
