@@ -181,7 +181,7 @@ export const mockStocks = [
 ,
   makeStock({
     ticker: 'CBE',
-    contract: 'PUMP',
+    contract: 'HbiyFHaauSg7QYADWMGtotSsqNYXS4D8jqnxxU2Jpump',
     name: 'Cluckin Bell',
     exchange: 'BAWSAQ',
     sector: 'Food/Beverage',
