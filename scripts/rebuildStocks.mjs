@@ -182,7 +182,7 @@ export const lcnStocks = [
 
   const endLogic = `];
 
-export const nativeToken = makeStock({ ticker: 'BSQ', name: '$BAWSAQ Token', exchange: 'NATIVE', sector: 'Ecosystem', desc: 'The native token of the BAWSAQ terminal. $BAWSAQ accrues value through trading fees and network activity.' });
+export const nativeToken = makeStock({ ticker: 'BSQ', name: '$BAWSAQ Token', exchange: 'NATIVE', sector: 'Ecosystem', contract: 'DQzCgtCaNYBohhWVih1QbpWaQTeDhGsSdFzwacNV41MS', desc: 'The native token of the BAWSAQ terminal. $BAWSAQ accrues value through trading fees and network activity.' });
 
 export const mockStocks = [
   nativeToken,

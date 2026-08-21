@@ -113,7 +113,7 @@ export const lcnStocks = [
   makeStock({ ticker: 'WFM', name: 'WorldWideFM', exchange: 'LCN', sector: 'Diversified', desc: "WorldWide FM is a radio station featured in Grand Theft Auto V and Grand Theft Auto Online that plays world music and jazz." }),
 ];
 
-export const nativeToken = makeStock({ ticker: 'BSQ', name: ' Token', exchange: 'NATIVE', sector: 'Ecosystem', desc: 'The native token of the BAWSAQ terminal.  accrues value through trading fees and network activity.' });
+export const nativeToken = makeStock({ ticker: 'BSQ', name: '$BAWSAQ Token', exchange: 'NATIVE', sector: 'Ecosystem', contract: 'DQzCgtCaNYBohhWVih1QbpWaQTeDhGsSdFzwacNV41MS', desc: 'The native token of the BAWSAQ terminal. $BAWSAQ accrues value through trading fees and network activity.' });
 
 export const unregulatedStocks = [
   makeStock({

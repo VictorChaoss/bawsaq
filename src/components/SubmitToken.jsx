@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SubmitToken.css';
 
-const BAWSAQ_X = 'bawsaq_x';
+const BAWSAQ_X = 'BawsaqXYZ';
 
 export default function SubmitToken({ onClose }) {
   const [form, setForm] = useState({

@@ -88,12 +88,12 @@ function DiscoverPage({ setActiveTab }) {
           <span className="ca-pulse" />
           <span className="ca-label">$BAWSAQ Contract Address</span>
           <div className="ca-address-box">
-            <span className="ca-address">Launching Soon</span>
+            <span className="ca-address">{nativeToken.contract || 'LAUNCHING SOON'}</span>
             <button 
               className="ca-copy-btn"
               onClick={(e) => {
                 const btn = e.currentTarget;
-                navigator.clipboard.writeText('LAUNCHING SOON');
+                if(nativeToken.contract) navigator.clipboard.writeText(nativeToken.contract);
                 btn.classList.add('copied');
                 setTimeout(() => btn.classList.remove('copied'), 1500);
               }}
@@ -182,7 +182,7 @@ function DiscoverPage({ setActiveTab }) {
                 marginTop: '10px'
               }}>
                 <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--green)', display: 'inline-block', animation: 'blink 1.5s ease-in-out infinite' }} />
-                <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', color: 'var(--green)', textTransform: 'uppercase', fontFamily: 'monospace' }}>CA Launching Soon</span>
+                <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', color: 'var(--green)', textTransform: 'uppercase', fontFamily: 'monospace' }}>{nativeToken.contract || 'CA Launching Soon'}</span>
               </div>
               <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--text-3)' }}>Ensure you are only interacting with this official contract address to avoid scams.</p>
             </div>

@@ -13,7 +13,7 @@ function SocialsPage() {
     {
       title: 'X (Twitter)',
       desc: 'Follow the official BAWSAQ updates, listing announcements, and market news.',
-      url: 'https://x.com/bawsaq_x',
+      url: 'https://x.com/BawsaqXYZ',
       icon: <img src="/socials/x.jpg" alt="X (Twitter)" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
       color: '#1DA1F2',
       bgTint: 'rgba(29, 161, 242, 0.1)'
