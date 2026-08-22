@@ -213,7 +213,7 @@ export const mockStocks = [
   }),
   makeStock({
     ticker: 'VUN',
-    contract: 'PUMP',
+    contract: 'GF9oFxh6eSCR2QsziPzGkszFs4Ccq7YJLNwcy47fpump',
     name: 'Vanilla Unicorn',
     exchange: 'BAWSAQ',
     sector: 'Entertainment',
