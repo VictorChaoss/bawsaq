@@ -229,7 +229,7 @@ export const mockStocks = [
   }),
   makeStock({
     ticker: 'RED',
-    contract: 'PUMP',
+    contract: 'GJgSTitv1dATsQsq4WoGbsPpaVT5Wmj9551DQrEWpump',
     name: 'Redwood',
     exchange: 'BAWSAQ',
     sector: 'Consumer Goods',
