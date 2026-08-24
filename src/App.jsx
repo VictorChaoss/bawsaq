@@ -20,30 +20,22 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSubmit, setShowSubmit] = useState(false);
 
-  const [bypassed, setBypassed] = useState(localStorage.getItem('bawsaq_override') === 'true');
-
   function handleTabChange(tab) {
     setActiveTab(tab);
     setSelectedStock(null);
   }
 
-  const handleSecretClick = () => {
-    localStorage.setItem('bawsaq_override', 'true');
-    setBypassed(true);
-  };
-
   const MAINTENANCE_MODE = true;
 
-  if (MAINTENANCE_MODE && !bypassed) {
+  if (MAINTENANCE_MODE) {
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw', backgroundColor: '#000', color: '#00ff66', fontFamily: 'monospace', flexDirection: 'column', textAlign: 'center', padding: '20px' }}>
         <h1 
           style={{ fontSize: '2rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', cursor: 'default', userSelect: 'none' }}
-          onDoubleClick={handleSecretClick}
         >
           Terminal Offline
         </h1>
-        <p style={{ color: '#888', fontSize: '1.2rem' }}>The BAWSAQ terminal is undergoing emergency maintenance.<br/>We will be back online shortly.</p>
+        <p style={{ color: '#888', fontSize: '1.2rem' }}>We are working on Phase 2.</p>
       </div>
     );
   }
