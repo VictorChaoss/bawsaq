@@ -32,7 +32,7 @@ function App() {
     setBypassed(true);
   };
 
-  const MAINTENANCE_MODE = false;
+  const MAINTENANCE_MODE = true;
 
   if (MAINTENANCE_MODE && !bypassed) {
     return (
