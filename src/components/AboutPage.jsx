@@ -98,7 +98,7 @@ function AboutPage() {
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
           <p>
-            Plus, it pays to be an investor. <strong>$BAWSAQ</strong> integrates with <strong>Memestonk</strong> to deliver real value. You launch from your wallet. Memestonk receives creator fees and uses them to airdrop stock dividends automatically. You accumulate shares of Rockstar's parent company (Take-Two Interactive) just for holding. You earn as a holder like everyone else.
+            Plus, it pays to be an investor. <strong>$BAWSAQ</strong> integrates with <strong>Pons</strong> to deliver real value. You launch from your wallet. Pons receives creator fees and uses them to airdrop stock dividends automatically. You accumulate shares of Rockstar's parent company (Take-Two Interactive) just for holding. You earn as a holder like everyone else.
           </p>
         </div>
       </div>

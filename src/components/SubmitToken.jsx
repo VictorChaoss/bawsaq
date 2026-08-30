@@ -5,7 +5,7 @@ const BAWSAQ_X = 'BawsaqXYZ';
 
 export default function SubmitToken({ onClose }) {
   const [form, setForm] = useState({
-    name: '', ticker: '', contract: '', pumpUrl: '', description: '', handle: '',
+    name: '', ticker: '', contract: '', ponsUrl: '', description: '', handle: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -20,7 +20,7 @@ export default function SubmitToken({ onClose }) {
       `📌 Name: ${form.name}`,
       `📌 Ticker: $${form.ticker.toUpperCase()}`,
       form.contract ? `📌 CA: ${form.contract}` : '',
-      form.pumpUrl ? `📌 Pump: ${form.pumpUrl}` : '',
+      form.ponsUrl ? `📌 Pons: ${form.ponsUrl}` : '',
       form.handle ? `📌 Contact: @${form.handle}` : '',
       form.description ? `\n"${form.description.slice(0, 100)}..."` : '',
       `\nhttps://bawsaq.xyz`,
@@ -75,7 +75,7 @@ export default function SubmitToken({ onClose }) {
 
             <div className="submit-field">
               <label>Link</label>
-              <input name="pumpUrl" value={form.pumpUrl} onChange={handleChange} placeholder="https://..." />
+              <input name="ponsUrl" value={form.ponsUrl} onChange={handleChange} placeholder="https://..." />
             </div>
 
             <div className="submit-field">

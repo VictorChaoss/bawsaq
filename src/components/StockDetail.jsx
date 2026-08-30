@@ -113,14 +113,14 @@ function StockDetail({ stock, onBack }) {
                 <Copy size={14} />
                 {copied ? 'Copied!' : `${stock.contract.slice(0, 6)}…${stock.contract.slice(-4)}`}
               </button>
-              {stock.exchange === 'MEMESTONK' ? (
+              {stock.exchange === 'PONS' ? (
                 <a
-                  href={`https://memestonk.xyz/token/${stock.contract}`}
+                  href={`https://www.ponsfamily.com/token/${stock.contract}`}
                   target="_blank"
                   rel="noreferrer"
                   className="sd-btn sd-btn-primary"
                 >
-                  Trade on Memestonk <ExternalLink size={14} />
+                  Trade on Pons <ExternalLink size={14} />
                 </a>
               ) : (
                 <a
@@ -143,25 +143,25 @@ function StockDetail({ stock, onBack }) {
       {isLive ? (
         /* State A: Token is Live */
         <div className="sd-chart-section">
-          {(stock.contract?.endsWith('pump') || stock.exchange === 'MEMESTONK') && (
+          {(stock.contract?.endsWith('pump') || stock.exchange === 'PONS') && (
             <div style={{ background: 'rgba(255, 170, 0, 0.1)', color: '#ffaa00', padding: '8px 12px', fontSize: '12px', textAlign: 'center', borderBottom: '1px solid rgba(255, 170, 0, 0.2)' }}>
-              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'MEMESTONK' ? 'Memestonk' : 'Pons'}" to view live data.
+              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'PONS' ? 'Pons' : 'Pons'}" to view live data.
             </div>
           )}
           <div className="sd-chart-iframe-container" style={{ width: '100%', height: '500px' }}>
             <NativeChart contractAddress={stock.contract} />
           </div>
-          {stock.exchange === 'MEMESTONK' && (
+          {stock.exchange === 'PONS' && (
             <div className="stonk-rewards-container">
               <div className="stonk-card" style={{ width: '100%' }}>
                 <div className="stonk-card-header">
                   <div className="stonk-card-title">
-                    <Gift size={16} className="stonk-icon" /> Memestonk Dividends
+                    <Gift size={16} className="stonk-icon" /> Pons Dividends
                   </div>
                   <span className="stonk-badge">Active</span>
                 </div>
                 <p className="stonk-card-desc">
-                  ${stock.ticker} is launched on Memestonk. Creator fees are automatically used to airdrop stock dividends directly to holders' wallets.
+                  ${stock.ticker} is launched on Pons. Creator fees are automatically used to airdrop stock dividends directly to holders' wallets.
                 </p>
                 
                 <div className="stonk-stats-grid">

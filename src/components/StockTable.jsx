@@ -110,7 +110,7 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
     
     if (filter === 'GTA Related Tokens') return true;
     if (filter === 'All' || !filter) return true;
-    if (filter === 'Live on Pump 💊') return s.status === 'live';
+    if (filter === 'Live on Pons') return s.status === 'live';
     if (['Finance', 'Beverages', 'Defense', 'Tech'].includes(filter)) {
       return s.sector && s.sector.includes(filter);
     }

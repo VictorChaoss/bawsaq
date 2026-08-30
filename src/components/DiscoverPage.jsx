@@ -58,7 +58,7 @@ function DiscoverPage({ setActiveTab }) {
       <div className="discover-hero">
         <div className="discover-hero-inner">
           <div className="discover-eyebrow">The Ecosystem</div>
-          <h1 className="discover-title">The GTA Stock Market, Live on Solana</h1>
+          <h1 className="discover-title">The GTA Stock Market, Live on Robinhood Chain</h1>
           <p className="discover-subtitle">
             Trade your favorite Grand Theft Auto companies as real crypto tokens. 
             BAWSAQ is the iconic in-game stock exchange, brought on-chain.
@@ -168,8 +168,8 @@ function DiscoverPage({ setActiveTab }) {
           </p>
           <div className="token-mechanics">
             <div className="mechanic">
-              <h3>Memestonk Dividends</h3>
-              <p>You launch from your wallet. Memestonk receives creator fees and uses them to airdrop stock dividends straight to your wallet.</p>
+              <h3>Pons Dividends</h3>
+              <p>You launch from your wallet. Pons receives creator fees and uses them to airdrop stock dividends straight to your wallet.</p>
             </div>
             <div className="mechanic">
               <h3>Passive Yield</h3>

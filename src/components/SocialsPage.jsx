@@ -27,10 +27,10 @@ function SocialsPage() {
       bgTint: 'rgba(29, 161, 242, 0.1)'
     },
     {
-      title: 'Memestonk',
+      title: 'Pons',
       desc: 'Launch platform & Dividend distributor',
-      url: 'https://memestonk.xyz',
-      icon: <img src="/socials/memestonk.png" alt="Memestonk" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      url: 'https://www.ponsfamily.com/memestock',
+      icon: <img src="/socials/memestonk.png" alt="Pons" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
       color: '#3498db',
       bgTint: 'rgba(52, 152, 219, 0.1)'
     },
