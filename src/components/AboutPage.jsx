@@ -23,7 +23,7 @@ const LOCATIONS = [
 const TIMELINE = [
   { year: '2008', label: 'GTA IV', desc: 'BAWSAQ established in Liberty City. Referenced across Weazel News and in-world media.' },
   { year: '2013', label: 'GTA V', desc: 'BAWSAQ goes fully interactive in Los Santos. Players trade real stocks tied to Rockstar Social Club data.' },
-  { year: '2026', label: 'On-Chain', desc: 'BAWSAQ launches on Solana. GTA\'s most iconic exchange moves to the blockchain.' },
+  { year: '2026', label: 'On-Chain', desc: 'BAWSAQ launches on Robinhood Chain. GTA\'s most iconic exchange moves to the blockchain.' },
   { year: '2026', label: 'GTA VI', desc: 'Vice City opens. New stocks. New listings. The ecosystem expands with every Rockstar drop.', upcoming: true },
 ];
 
@@ -52,7 +52,7 @@ function AboutPage() {
           <h1 className="about-title">The World's Most<br />Recognisable Stock Exchange</h1>
           <p className="about-subtitle">
             BAWSAQ is a global stock exchange originating from the HD Universe of the Grand Theft Auto series.
-            From the skyline of Liberty City to the boulevards of Los Santos, and now, the Solana blockchain.
+            From the skyline of Liberty City to the boulevards of Los Santos, and now, the Robinhood Chain.
           </p>
         </div>
       </div>
@@ -94,7 +94,7 @@ function AboutPage() {
             you can track and trade tokens for iconic in-game companies, like Ammu-Nation, Maze Bank, and Sprunk, right here on the BAWSAQ terminal.
           </p>
           <p>
-            It's simple: we find the best GTA-related memecoins on Solana, list them on our terminal, and let you track their charts and 
+            It's simple: we find the best GTA-related memecoins on Robinhood Chain, list them on our terminal, and let you track their charts and 
             prices in one place. And as GTA VI brings us back to Vice City, we'll be listing every new coin that pops up.
           </p>
           <p>

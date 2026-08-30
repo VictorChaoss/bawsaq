@@ -117,7 +117,10 @@ function DiscoverPage({ setActiveTab }) {
             If you've played GTA V, you know <strong>BAWSAQ</strong>. It's the notorious in-game stock market where players trade fictional companies like Ammu-Nation, Cluckin' Bell, and Los Santos Customs.
           </p>
           <p className="card-desc mt-2">
-            We brought those iconic companies out of the game and onto the Solana blockchain. You're no longer just pretending to trade, you are buying and selling real GTA-themed meme tokens on a fully functional, decentralized terminal.
+            We brought those iconic companies out of the game and onto the Robinhood Chain. You're no longer just pretending to trade, you are buying and selling real GTA-themed meme tokens on a fully functional, decentralized terminal.
+          </p>
+          <p className="card-desc mt-2" style={{ color: '#00ff66' }}>
+            <strong>Why Robinhood Chain?</strong> Solana became a PvP warzone driven by fleeting hype and pump-and-dump rug culture. Robinhood Chain investors respect hold culture. They understand that to build a multi-million dollar ecosystem—especially one tracking the real-world Take-Two Interactive (TTWO) tokenized stock—you need patience, diamond hands, and a community that actually holds the line.
           </p>
         </HoverCard>
 
@@ -251,15 +254,15 @@ function DiscoverPage({ setActiveTab }) {
             <div className="term-step">
               <span className="step-num">01.</span>
               <div className="step-content">
-                <h4>Get Phantom Wallet</h4>
-                <p>Download Phantom or another Solana-compatible wallet to hold your funds.</p>
+                <h4>Get Web3 Wallet</h4>
+                <p>Download MetaMask, Robinhood Wallet, or any EVM-compatible wallet to hold your funds.</p>
               </div>
             </div>
             <div className="term-step">
               <span className="step-num">02.</span>
               <div className="step-content">
-                <h4>Bridge SOL</h4>
-                <p>Transfer Solana (SOL) to your wallet. You'll need it to swap for $BAWSAQ and pay for network fees.</p>
+                <h4>Bridge Funds</h4>
+                <p>Transfer ETH to the Robinhood Chain. You'll need it to swap for $BAWSAQ and pay for network fees.</p>
               </div>
             </div>
             <div className="term-step">

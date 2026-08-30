@@ -30,7 +30,7 @@ export default function NativeChart({ contractAddress }) {
         const pairAddress = pair.pairAddress;
         
         // Step 2: Fetch OHLCV data from GeckoTerminal
-        const ohlcvRes = await fetch(`https://api.geckoterminal.com/api/v2/networks/solana/pools/${pairAddress}/ohlcv/hour?limit=100`);
+        const ohlcvRes = await fetch(`https://api.geckoterminal.com/api/v2/networks/robinhood/pools/${pairAddress}/ohlcv/hour?limit=100`);
         if (!ohlcvRes.ok) {
             throw new Error("Rate limited or no chart data");
         }

@@ -24,7 +24,7 @@ export default function SubmitToken({ onClose }) {
       form.handle ? `📌 Contact: @${form.handle}` : '',
       form.description ? `\n"${form.description.slice(0, 100)}..."` : '',
       `\nhttps://bawsaq.xyz`,
-      `#BAWSAQ #GTA #Solana`,
+      `#BAWSAQ #GTA #RobinhoodChain`,
     ].filter(Boolean).join('\n');
 
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
@@ -69,8 +69,8 @@ export default function SubmitToken({ onClose }) {
             </div>
 
             <div className="submit-field">
-              <label>Contract Address (Solana CA)</label>
-              <input name="contract" value={form.contract} onChange={handleChange} placeholder="Paste your Solana contract address" style={{ fontFamily: 'monospace', fontSize: '13px' }} />
+              <label>Contract Address (Robinhood Chain CA)</label>
+              <input name="contract" value={form.contract} onChange={handleChange} placeholder="Paste your Robinhood Chain contract address" style={{ fontFamily: 'monospace', fontSize: '13px' }} />
             </div>
 
             <div className="submit-field">

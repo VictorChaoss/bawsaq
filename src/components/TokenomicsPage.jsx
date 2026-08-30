@@ -89,7 +89,7 @@ function TokenomicsPage() {
             The future of BAWSAQ extends directly into the streets. We are laying the groundwork for deep <strong>FiveM & GTA RP Server Integrations</strong>, allowing players to trade real crypto assets on their in-game phones and embedding the BAWSAQ economy directly into virtual worlds. Our ultimate goal is to launch an exclusive BAWSAQ-branded RP Server for our core community.
           </p>
           <p>
-            As the highly anticipated launch of GTA VI approaches, we will be executing one of the largest community reward initiatives on Solana. Top loyal shareholders will receive exclusive airdrops, insider access, and actual <strong>gifted copies of GTA VI</strong> on release day as a thank you for their unwavering support.
+            As the highly anticipated launch of GTA VI approaches, we will be executing one of the largest community reward initiatives on Robinhood Chain. Top loyal shareholders will receive exclusive airdrops, insider access, and actual <strong>gifted copies of GTA VI</strong> on release day as a thank you for their unwavering support.
           </p>
         </div>
       </div>
@@ -111,7 +111,7 @@ function TokenomicsPage() {
 
         <div className="chart-container">
           <div className="chart-header">
-            <h3>Take-Two (Backpack Solana Stock)</h3>
+            <h3>Take-Two (Tokenized Stock on Robinhood Chain)</h3>
             <span className="live-badge">Live</span>
           </div>
           <div className="chart-iframe-wrapper">

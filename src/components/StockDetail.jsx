@@ -59,7 +59,7 @@ function StockDetail({ stock, onBack }) {
   };
 
   const handleShare = () => {
-    const text = `Tracking $${stock.ticker}, ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Solana\n`;
+    const text = `Tracking $${stock.ticker}, ${stock.name} on BAWSAQ 📈\nThe GTA stock market is live on Robinhood Chain\n`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://bawsaq.xyz')}`;
     window.open(url, '_blank');
   };
@@ -124,12 +124,12 @@ function StockDetail({ stock, onBack }) {
                 </a>
               ) : (
                 <a
-                  href={`https://pump.fun/coin/${stock.contract}`}
+                  href={`https://www.ponsfamily.com/token/${stock.contract}`}
                   target="_blank"
                   rel="noreferrer"
                   className="sd-btn sd-btn-primary"
                 >
-                  Trade on Pump.fun <ExternalLink size={14} />
+                  Trade on Pons <ExternalLink size={14} />
                 </a>
               )}
             </>
@@ -145,7 +145,7 @@ function StockDetail({ stock, onBack }) {
         <div className="sd-chart-section">
           {(stock.contract?.endsWith('pump') || stock.exchange === 'MEMESTONK') && (
             <div style={{ background: 'rgba(255, 170, 0, 0.1)', color: '#ffaa00', padding: '8px 12px', fontSize: '12px', textAlign: 'center', borderBottom: '1px solid rgba(255, 170, 0, 0.2)' }}>
-              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'MEMESTONK' ? 'Memestonk' : 'Pump.fun'}" to view live data.
+              Note: Charts for early-stage tokens may take time to index. If it's stuck loading, click "Trade on {stock.exchange === 'MEMESTONK' ? 'Memestonk' : 'Pons'}" to view live data.
             </div>
           )}
           <div className="sd-chart-iframe-container" style={{ width: '100%', height: '500px' }}>
