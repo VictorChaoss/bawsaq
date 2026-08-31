@@ -30,9 +30,9 @@ function SocialsPage() {
       title: 'Pons',
       desc: 'Launch platform & Dividend distributor',
       url: 'https://www.ponsfamily.com/memestock',
-      icon: <img src="/socials/memestonk.png" alt="Pons" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
-      color: '#3498db',
-      bgTint: 'rgba(52, 152, 219, 0.1)'
+      icon: <img src="/socials/pons.png" alt="Pons" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />,
+      color: '#e0e5e2',
+      bgTint: 'rgba(224, 229, 226, 0.1)'
     },
     {
       title: 'Life Invader',
