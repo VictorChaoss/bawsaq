@@ -4,12 +4,16 @@
 }
 
 .tokenomics-hero {
-  margin-bottom: 60px;
+  background: rgba(0,0,0,0.85);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 800px;
   text-align: center;
 }
 
 .tokenomics-hero-inner {
-  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -33,23 +37,26 @@
   margin-bottom: 24px;
   line-height: 1.1;
   letter-spacing: -1px;
-  color: #1A1D16;
+  color: var(--text-1);
 }
 
 .tokenomics-subtitle {
   font-size: 18px;
-  color: #353A2D;
+  color: var(--text-2);
   line-height: 1.6;
-  font-weight: 500;
 }
 
 .tokenomics-section {
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 40px;
+  padding: 40px;
+  background: rgba(0,0,0,0.85);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
 }
 
 .section-title {
-  color: #1A1D16;
+  color: var(--text-1);
   font-size: 28px;
   margin: 12px 0 24px;
 }
@@ -95,7 +102,7 @@
 }
 
 .tokenomics-content-block p {
-  color: #2E3326;
+  color: var(--text-2);
   line-height: 1.7;
   font-size: 16px;
   font-weight: 500;
@@ -103,7 +110,7 @@
 }
 
 .tokenomics-content-block p strong {
-  color: #1A1D16;
+  color: var(--text-1);
 }
 
 .chart-container {
