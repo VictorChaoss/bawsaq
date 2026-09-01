@@ -5,10 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(6, 6, 8, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  background: var(--green);
+  border-bottom: 2px solid rgba(0,0,0,0.3);
   position: sticky;
   top: 0;
   z-index: 200;

@@ -165,6 +165,16 @@ function StockTable({ filter, onSelectStock, searchQuery }) {
 
   return (
     <div className="stock-table-wrap">
+      {filter === 'GTA Related Tokens' && (
+        <div style={{ padding: '16px', borderBottom: '1px solid var(--border)', textAlign: 'center', background: 'rgba(0, 255, 102, 0.05)' }}>
+          <h3 style={{ margin: 0, color: 'var(--green)', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            This section is for all GTA related stocks no matter what chain
+          </h3>
+          <p style={{ margin: '8px 0 0', color: 'var(--text-2)', fontSize: '0.9rem' }}>
+            Note: The coins currently listed below are on the <strong>Solana</strong> chain.
+          </p>
+        </div>
+      )}
       <div className="table-head">
         <div className="col-num">#</div>
         <div className="col-token">Company</div>
