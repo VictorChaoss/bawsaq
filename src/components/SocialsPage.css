@@ -4,7 +4,7 @@
 }
 
 .socials-hero {
-  background: rgba(0,0,0,0.85);
+  background: #121212;
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 12px;
   padding: 60px 40px;
@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  background: rgba(24, 25, 27, 0.7);
+  background: #18191B;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -73,7 +73,7 @@
 .social-card:hover:not(.coming-soon) {
   transform: translateY(-2px);
   border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(24, 25, 27, 0.9);
+  background: #242527;
 }
 
 .social-card.coming-soon {

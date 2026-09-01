@@ -38,8 +38,8 @@ export default function GTACountdown() {
   return (
     <div style={{
       maxWidth: '1000px', margin: '0 auto 48px auto',
-      background: 'linear-gradient(135deg, rgba(255,60,0,0.05) 0%, rgba(10,10,10,0.95) 100%)',
-      border: '1px solid rgba(255,60,0,0.18)',
+      background: '#121212',
+      border: '1px solid rgba(255,255,255,0.05)',
       borderRadius: '20px',
       padding: '36px 40px',
       position: 'relative',

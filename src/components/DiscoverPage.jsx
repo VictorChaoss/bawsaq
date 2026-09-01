@@ -200,8 +200,8 @@ function DiscoverPage({ setActiveTab }) {
       {/* GTA 6 Hype Banner */}
       <div style={{
         maxWidth: '1000px', margin: '0 auto 60px auto',
-        background: 'linear-gradient(135deg, rgba(255,60,0,0.08) 0%, rgba(168,85,247,0.08) 50%, rgba(0,255,102,0.06) 100%)',
-        border: '1px solid rgba(255,60,0,0.2)',
+        background: '#121212',
+        border: '1px solid rgba(255,255,255,0.05)',
         borderRadius: '20px',
         padding: '48px 40px',
         position: 'relative',
