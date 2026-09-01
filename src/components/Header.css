@@ -31,7 +31,6 @@
   width: 120px;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.8);
 }
 .logo-fallback {
   font-size: 18px;
