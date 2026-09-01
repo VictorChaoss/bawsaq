@@ -77,7 +77,7 @@ function Header({ activeTab, setActiveTab, searchQuery, setSearchQuery }) {
           <div className="logo-wrap">
             {!logoError ? (
               <img
-                src="/logo.jpeg"
+                src="/logo_transparent.png"
                 alt="BAWSAQ"
                 className="logo-img"
                 onError={() => setLogoError(true)}

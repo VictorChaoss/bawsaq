@@ -29,8 +29,8 @@
 .logo-img {
   height: 32px;
   width: 120px;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: left center;
 }
 .logo-fallback {
   font-size: 18px;
